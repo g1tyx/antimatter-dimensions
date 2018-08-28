@@ -424,11 +424,11 @@ function updateMoney() {
 function updateCoinPerSec() {
     var element = document.getElementById("coinsPerSec");
     if (player.currentChallenge == "challenge3" || player.currentChallenge == "postc1") {
-      element.textContent = 'You are getting ' + shortenDimensions(getDimensionProductionPerSecond(1).times(player.chall3Pow)) + ' antimatter per second.'
+      element.textContent = '你每秒可以得到 ' + shortenDimensions(getDimensionProductionPerSecond(1).times(player.chall3Pow)) + ' 反物质。'
     } else if (player.currentChallenge == "challenge7") {
-      element.textContent = 'You are getting ' + (shortenDimensions(getDimensionProductionPerSecond(1).plus(getDimensionProductionPerSecond(2)))) + ' antimatter per second.'
+      element.textContent = '你每秒可以得到 ' + (shortenDimensions(getDimensionProductionPerSecond(1).plus(getDimensionProductionPerSecond(2)))) + ' 反物质。'
     } else {
-      element.textContent = 'You are getting ' + shortenDimensions(getDimensionProductionPerSecond(1)) + ' antimatter per second.'
+      element.textContent = '你每秒可以得到 ' + shortenDimensions(getDimensionProductionPerSecond(1)) + ' 反物质。'
     }
 }
 
@@ -578,7 +578,7 @@ function updateDimensions() {
         else {
             var places = 0
             if (tickmult < 0.2) places = Math.floor(Math.log10(Math.round(1/tickmult)))
-            document.getElementById("tickLabel").textContent = 'Reduce the tick interval by ' + ((1 - tickmult) * 100).toFixed(places) + '%.'
+            document.getElementById("tickLabel").textContent = '减少每轮间隔' + ((1 - tickmult) * 100).toFixed(places) + '%.'
         }
 
         document.getElementById("tickSpeed").style.visibility = "visible";

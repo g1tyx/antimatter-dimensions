@@ -3,14 +3,15 @@
 <html>
 
 <head>
-    <title>Antimatter Dimensions</title>
+    <title>反物质维度 - Antimatter Dimensions</title>
     <link rel="icon" type="image/png" href="icon.png">
     <meta name="Antimatter Dimensions" content="A game about huge numbers and watching them go up." charset="utf-8"/>
-    <h1 id="hiddenheader" style="display: none">Antimatter Dimensions</h1>
-    <script type="text/javascript" src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
+    <h1 id="hiddenheader" style="display: none">反物质维度</h1>
+<!--    <script type="text/javascript" src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>-->
     <script type="text/javascript" src="javascripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="javascripts/notify.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css?3">
+<!--
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -28,6 +29,7 @@
         ga('send', 'pageview');
 
     </script>
+-->
 </head>
 <img id="loading" src="images/Loading.png">
 <div id="snow" style="display: none; "></div>
@@ -40,7 +42,7 @@
         <div style="position: relative"><div class="IP" id="infinityPoints2"></div></div>
         <div style="position: relative"><div class="EP" id="eternityPoints2"></div></div>
         <div>
-            <p>You have <span id="coinAmount" style="font-size:25px; color: black">0</span> antimatter.</p>
+            <p>你拥有 <span id="coinAmount" style="font-size:25px; color: black">0</span> 反物质。</p>
         </div>
 
         <div style="position: relative">
@@ -52,22 +54,22 @@
 
         <tr id="tickSpeedRow" style="visibility: hidden">
             <div id="tickLabel" style="visibility: hidden">Make the game 10% faster.</div>
-            <button id="tickSpeed" style="color:black; visibility: hidden; height: 25px;width: 170px; font-size: 12px" class="storebtn">Cost: 1000</button>
-            <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="color:black; visibility: hidden; height: 25px; font-size: 12px" class="storebtn">Buy Max</button>
-            <div id="tickSpeedAmount" style="visibility: hidden">Tickspeed: 1000</div>
+            <button id="tickSpeed" style="color:black; visibility: hidden; height: 25px;width: 170px; font-size: 12px" class="storebtn">成本: 1000</button>
+            <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="color:black; visibility: hidden; height: 25px; font-size: 12px" class="storebtn">购买最大</button>
+            <div id="tickSpeedAmount" style="visibility: hidden">每轮速度: 1000</div>
         </tr>
         <p></p>
         <div style="position:absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 360px; top: 19px">
             <button id="bigcrunch" style="font-family: Typewriter; font-size: 50px; width: 360px; height: 100px;" class="tabbtn">Big Crunch</button>
         </div>
         <div>
-            <button id="dimensionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Dimensions</button>
-            <button id="optionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Options</button>
-            <button id="statisticsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Statistics</button>
-            <button id="achievementsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Achievements</button>
-            <button id="challengesbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Challenges</button>
-            <button id="infinitybtn" style="font-family: Typewriter; font-size: 20px; display: none" class="infinitybtn">Infinity</button>
-            <button id="eternitystorebtn" style="font-family: Typewriter; font-size: 20px; display: none" class="eternitytabbtn">Eternity</button>
+            <button id="dimensionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">维度</button>
+            <button id="optionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">选项</button>
+            <button id="statisticsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">统计</button>
+            <button id="achievementsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">成就</button>
+            <button id="challengesbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">挑战</button>
+            <button id="infinitybtn" style="font-family: Typewriter; font-size: 20px; display: none" class="infinitybtn">无限</button>
+            <button id="eternitystorebtn" style="font-family: Typewriter; font-size: 20px; display: none" class="eternitytabbtn">永恒</button>
             <button id="shopbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Shop</button>
         </div>
         <div id="emptiness" class="tab" style="font-size: 150%">
@@ -586,7 +588,7 @@
                 <p></p>
                 <input id="confirmation" type="checkbox" style="width:20px; height: 18px; display: none" ach-tooltip="No confirmation when doing Dimensional Sacrifice" onchange="sacrificeConf()">
                 <button id="sacrifice" class="storebtn" style="font-size:12px; width: 320px; display: none" ach-tooltip="">Dimensional Sacrifice</button>
-                <button id="maxall" class="storebtn" style="font-size: 12px">Max all (M)</Button>
+                <button id="maxall" class="storebtn" style="font-size: 12px">全部最大 (M)</Button>
                 <span id="chall2Pow"></span>
                 <span id="chall3Pow"></span>
                 <table class="table" >
@@ -711,7 +713,7 @@
                             Dimension Shift: requires 20 Fourth Dimension
                         </td>
                         <td>
-                            <button id="softReset" style="color:black; width: 200px; height: 25px; font-size: 9px" class="storebtn">Reset the game for a new Dimension</button>
+                            <button id="softReset" style="color:black; width: 200px; height: 25px; font-size: 9px" class="storebtn">重置游戏进入新的维度</button>
                         </td>
                     </tr>
                     <tr style="font-size: 15px">
@@ -980,28 +982,28 @@
             <br>
             <table>
                 <tr>
-                    <td><div><button id="theme" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">Current theme: Normal</button></div></td>
-                    <td><div><button id="notation" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Notation: Standard</button></div></td>
-                    <td><div><button id="newsbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Hide/show the news</button></div></td>
+                    <td><div><button id="theme" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">当前主题: 默认</button></div></td>
+                    <td><div><button id="notation" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">数据格式: 标准</button></div></td>
+                    <td><div><button id="newsbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">隐藏/显示新闻</button></div></td>
                 </tr>
                 <tr>
 					<td><div><button id="retry" onclick="toggleChallengeRetry()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Automatically retry challenges</button></div></td>
-                    <td><div><button id="exportbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">Export</button></div></td>
-                    <td><div><button id="importbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">Import</button></div></td>
+                    <td><div><button id="exportbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">导出</button></div></td>
+                    <td><div><button id="importbtn" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">导入</button></div></td>
                 </tr>
                 <tr>
-                    <td><div><button id="challengeconfirmation" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 15px">Challenge confirmation ON</button></div></td>
-					<td><div><button id="save" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">Save</button></div></td>
-					<td><div><button id="load" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">Load</button></div></td>
+                    <td><div><button id="challengeconfirmation" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 15px">挑战确认开启</button></div></td>
+					<td><div><button id="save" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">保存</button></div></td>
+					<td><div><button id="load" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">加载</button></div></td>
                 </tr>
                 <tr id="cloudOptions">
-                    <td><div><button onclick="playFabSaveCheck()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Cloud save</button></div></td>
-                    <td><div><button onclick="playFabLoadCheck()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Cloud load</button></div></td>
-                    <td><div><button id="cloud" onclick="toggleCloud()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Toggle automatic cloud saving/loading</button></div></td>
+                    <td><div><button onclick="playFabSaveCheck()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">保存云存档</button></div></td>
+                    <td><div><button onclick="playFabLoadCheck()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">加载云存档</button></div></td>
+                    <td><div><button id="cloud" onclick="toggleCloud()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">切换自动云存储和加载</button></div></td>
                 </tr>
                 <tr>
-                    <td><div><button id="hotkeys" onclick="toggleHotkeys()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Disable hotkeys</button></div></td>
-					<td><div><button id="reset" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">RESET THE GAME</button></div></td>
+                    <td><div><button id="hotkeys" onclick="toggleHotkeys()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">禁用快捷键</button></div></td>
+					<td><div><button id="reset" class="storebtn" style="color:black; width: 200px; height: 55px; font-size: 20px">重置游戏</button></div></td>
                     <td><div><button id="commas" onclick="toggleCommas()" class="storebtn" style="color:black; width: 200px; height: 55px; font-size:120%">Commas on large exponents ON</button></div></td>
                 </tr>
                 <tr>
@@ -2747,6 +2749,9 @@
 
 <script type="text/javascript" src="javascripts/sha512.js"></script>
 
-
+<!--客服 开始-->
+<link rel="stylesheet" href="https://likexia.gitee.io/game/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="https://likexia.gitee.io/game/js/kf.js"></script>
+<!-- 客服 结束 -->
 
 </html>

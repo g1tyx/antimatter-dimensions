@@ -80,7 +80,7 @@ function getTimeDimensionDescription(tier) {
   let description = shortenDimensions(player['timeDimension'+tier].amount);
 
   if (tier < 8) {
-      description += '  (+' + formatValue(player.options.notation, getTimeDimensionRateOfChange(tier), 2, 2) + '%/s)';
+      description += '  (+' + formatValue(player.options.notation, getTimeDimensionRateOfChange(tier), 2, 2) + '%/秒)';
   }
 
   return description;

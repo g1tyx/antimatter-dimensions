@@ -638,7 +638,7 @@ function load_game(root) {
 function save_game(changed, silent) {
   if (window.location.href.split("//")[1].length > 20) set_save('dimensionTestSave', currentSave, player);
   else set_save('dimensionSave', currentSave, player);
-  if (!silent) $.notify(changed ? "Game loaded" : "Game saved", "info")
+  if (!silent) $.notify(changed ? "游戏已加载" : "游戏已保存", "info")
 }
 
 function change_save(saveId) {
