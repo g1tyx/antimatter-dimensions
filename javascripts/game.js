@@ -578,7 +578,7 @@ function updateDimensions() {
         else {
             var places = 0
             if (tickmult < 0.2) places = Math.floor(Math.log10(Math.round(1/tickmult)))
-            document.getElementById("tickLabel").textContent = '减少每轮间隔' + ((1 - tickmult) * 100).toFixed(places) + '%.'
+            document.getElementById("tickLabel").textContent = '游戏加速 ' + ((1 - tickmult) * 100).toFixed(places) + '%.'
         }
 
         document.getElementById("tickSpeed").style.visibility = "visible";
@@ -694,14 +694,14 @@ function updateCosts() {
     document.getElementById("seventh").textContent = '成本: ' + shortenCosts(player.seventhCost);
     document.getElementById("eight").textContent = '成本: ' + shortenCosts(player.eightCost);
 
-    document.getElementById("firstMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.firstCost.times(10 - dimBought(1)));
-    document.getElementById("secondMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.secondCost.times(10 - dimBought(2)));
-    document.getElementById("thirdMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.thirdCost.times(10 - dimBought(3)));
-    document.getElementById("fourthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.fourthCost.times(10 - dimBought(4)));
-    document.getElementById("fifthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.fifthCost.times(10 - dimBought(5)));
-    document.getElementById("sixthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.sixthCost.times(10 - dimBought(6)));
-    document.getElementById("seventhMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.seventhCost.times(10 - dimBought(7)));
-    document.getElementById("eightMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.eightCost.times(10 - dimBought(8)));
+    document.getElementById("firstMax").textContent = '直到 10, 成本: ' + shortenCosts(player.firstCost.times(10 - dimBought(1)));
+    document.getElementById("secondMax").textContent = '直到 10, 成本: ' + shortenCosts(player.secondCost.times(10 - dimBought(2)));
+    document.getElementById("thirdMax").textContent = '直到 10, 成本: ' + shortenCosts(player.thirdCost.times(10 - dimBought(3)));
+    document.getElementById("fourthMax").textContent = '直到 10, 成本: ' + shortenCosts(player.fourthCost.times(10 - dimBought(4)));
+    document.getElementById("fifthMax").textContent = '直到 10, 成本: ' + shortenCosts(player.fifthCost.times(10 - dimBought(5)));
+    document.getElementById("sixthMax").textContent = '直到 10, 成本: ' + shortenCosts(player.sixthCost.times(10 - dimBought(6)));
+    document.getElementById("seventhMax").textContent = '直到 10, 成本: ' + shortenCosts(player.seventhCost.times(10 - dimBought(7)));
+    document.getElementById("eightMax").textContent = '直到 10, 成本: ' + shortenCosts(player.eightCost.times(10 - dimBought(8)));
 
     document.getElementById("tickSpeed").textContent = '成本: ' + shortenCosts(player.tickSpeedCost);
 
