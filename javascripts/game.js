@@ -547,28 +547,28 @@ function updateDimensions() {
 
         var shiftRequirement = getShiftRequirement(0);
         if (player.currentChallenge == "challenge4" ? shiftRequirement.tier < 6 : shiftRequirement.tier < 8) {
-            document.getElementById("resetLabel").textContent = 'Dimension Shift ('+ player.resets +'): requires ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " Dimensions"
+            document.getElementById("resetLabel").textContent = '维度转换 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
         }
-        else document.getElementById("resetLabel").textContent = 'Dimension Boost ('+ player.resets +'): requires ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " Dimensions"
+        else document.getElementById("resetLabel").textContent = '维度提升 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
 
         if (player.currentChallenge == "challenge4" ? player.resets > 2 : player.resets > 3) {
-            document.getElementById("softReset").textContent = "Reset the game for a Boost"
+            document.getElementById("softReset").textContent = "重置游戏以获得加成"
         } else {
-            document.getElementById("softReset").textContent = "Reset the game for a new Dimension"
+            document.getElementById("softReset").textContent = "重置游戏进入新的维度"
         }
         let extraGals = player.replicanti.galaxies
         if (player.timestudy.studies.includes(225)) extraGals += Math.floor(player.replicanti.amount.e / 1000)
         if (player.timestudy.studies.includes(226)) extraGals += Math.floor(player.replicanti.gal / 15)
         var galString = ""
         if (player.galaxies >= 800) galString += "Remote Antimatter Galaxies (";
-        else if (player.galaxies >= getGalaxyCostScalingStart() || player.currentEternityChall === "eterc5") galString += "Distant Antimatter Galaxies (";
-        else galString += "Antimatter Galaxies (";
+        else if (player.galaxies >= getGalaxyCostScalingStart() || player.currentEternityChall === "eterc5") galString += "远距离反物质星系 (";
+        else galString += "反物质星系 (";
         galString += player.galaxies;
         if (extraGals > 0) galString += " + "+extraGals;
         if (player.dilation.freeGalaxies > 0) galString += " + "+player.dilation.freeGalaxies;
         galString += "): requires " + getGalaxyRequirement()
-        if (player.currentChallenge == "challenge4") galString +=  " Sixth Dimensions";
-        else galString +=  " Eighth Dimensions";
+        if (player.currentChallenge == "challenge4") galString +=  " 第六维度";
+        else galString +=  " 第八维度";
         document.getElementById("secondResetLabel").textContent = galString;
     }
 
@@ -614,10 +614,10 @@ function updateDimensions() {
     }
 
     if (document.getElementById("stats").style.display == "block" && document.getElementById("statistics").style.display == "block") {
-        document.getElementById("totalmoney").textContent = 'You have made a total of ' + shortenMoney(player.totalmoney) + ' antimatter.'
-        document.getElementById("totalresets").textContent = 'You have done ' + player.resets + ' dimensional boosts/shifts.'
+        document.getElementById("totalmoney").textContent = '你累计制造了 ' + shortenMoney(player.totalmoney) + ' 反物质.'
+        document.getElementById("totalresets").textContent = '你完成了 ' + player.resets + ' 维度提升/转变。'
         document.getElementById("galaxies").textContent = 'You have ' + Math.round(player.galaxies) + ' Antimatter Galaxies.'
-        document.getElementById("totalTime").textContent = "You have played for " + timeDisplay(player.totalTimePlayed) + "."
+        document.getElementById("totalTime").textContent = "你在本游戏玩了 " + timeDisplay(player.totalTimePlayed) + "."
 
         if (player.eternities == 0) {
             document.getElementById("eternitied").textContent = ""
@@ -644,7 +644,7 @@ function updateDimensions() {
         else if (document.getElementById("postinf").style.display == "block") {
             document.getElementById("postinfi11").innerHTML = "Power up all dimensions based on total antimatter produced<br>Currently: "+ Math.pow(player.totalmoney.e+1, 0.5).toFixed(2)+"x<br>Cost: "+shortenCosts(1e4)+" IP"
             document.getElementById("postinfi21").innerHTML = "Power up all dimensions based on current antimatter<br>Currently: "+ Math.pow(player.money.e+1, 0.5).toFixed(2)+"x<br>Cost: "+shortenCosts(5e4)+" IP"
-            document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>Cost: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" IP"
+            document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>成本: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" IP"
             if (player.tickSpeedMultDecrease <= 2) document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x"
             document.getElementById("postinfi22").innerHTML = "Power up all dimensions based on achievements completed <br>Currently: "+achievementMult.toFixed(2)+"x<br>Cost: "+shortenCosts(1e6)+" IP"
             document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>Currently: "+(1+Math.log10(getInfinitied()+1)*10).toFixed(2)+"x<br>Cost: "+shortenCosts(1e5)+" IP"
@@ -685,35 +685,35 @@ function updateDimensions() {
 }
 
 function updateCosts() {
-    document.getElementById("first").textContent = 'Cost: ' + shortenCosts(player.firstCost);
-    document.getElementById("second").textContent = 'Cost: ' + shortenCosts(player.secondCost);
-    document.getElementById("third").textContent = 'Cost: ' + shortenCosts(player.thirdCost);
-    document.getElementById("fourth").textContent = 'Cost: ' + shortenCosts(player.fourthCost);
-    document.getElementById("fifth").textContent = 'Cost: ' + shortenCosts(player.fifthCost);
-    document.getElementById("sixth").textContent = 'Cost: ' + shortenCosts(player.sixthCost);
-    document.getElementById("seventh").textContent = 'Cost: ' + shortenCosts(player.seventhCost);
-    document.getElementById("eight").textContent = 'Cost: ' + shortenCosts(player.eightCost);
+    document.getElementById("first").textContent = '成本: ' + shortenCosts(player.firstCost);
+    document.getElementById("second").textContent = '成本: ' + shortenCosts(player.secondCost);
+    document.getElementById("third").textContent = '成本: ' + shortenCosts(player.thirdCost);
+    document.getElementById("fourth").textContent = '成本: ' + shortenCosts(player.fourthCost);
+    document.getElementById("fifth").textContent = '成本: ' + shortenCosts(player.fifthCost);
+    document.getElementById("sixth").textContent = '成本: ' + shortenCosts(player.sixthCost);
+    document.getElementById("seventh").textContent = '成本: ' + shortenCosts(player.seventhCost);
+    document.getElementById("eight").textContent = '成本: ' + shortenCosts(player.eightCost);
 
-    document.getElementById("firstMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.firstCost.times(10 - dimBought(1)));
-    document.getElementById("secondMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.secondCost.times(10 - dimBought(2)));
-    document.getElementById("thirdMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.thirdCost.times(10 - dimBought(3)));
-    document.getElementById("fourthMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.fourthCost.times(10 - dimBought(4)));
-    document.getElementById("fifthMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.fifthCost.times(10 - dimBought(5)));
-    document.getElementById("sixthMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.sixthCost.times(10 - dimBought(6)));
-    document.getElementById("seventhMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.seventhCost.times(10 - dimBought(7)));
-    document.getElementById("eightMax").textContent = 'Until 10, Cost: ' + shortenCosts(player.eightCost.times(10 - dimBought(8)));
+    document.getElementById("firstMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.firstCost.times(10 - dimBought(1)));
+    document.getElementById("secondMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.secondCost.times(10 - dimBought(2)));
+    document.getElementById("thirdMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.thirdCost.times(10 - dimBought(3)));
+    document.getElementById("fourthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.fourthCost.times(10 - dimBought(4)));
+    document.getElementById("fifthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.fifthCost.times(10 - dimBought(5)));
+    document.getElementById("sixthMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.sixthCost.times(10 - dimBought(6)));
+    document.getElementById("seventhMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.seventhCost.times(10 - dimBought(7)));
+    document.getElementById("eightMax").textContent = 'Until 10, 成本: ' + shortenCosts(player.eightCost.times(10 - dimBought(8)));
 
-    document.getElementById("tickSpeed").textContent = 'Cost: ' + shortenCosts(player.tickSpeedCost);
+    document.getElementById("tickSpeed").textContent = '成本: ' + shortenCosts(player.tickSpeedCost);
 
 
     for (var i=1; i<=8; i++) {
 
-        document.getElementById("infMax"+i).textContent = "Cost: " + shortenCosts(player["infinityDimension"+i].cost) + " IP"
+        document.getElementById("infMax"+i).textContent = "成本: " + shortenCosts(player["infinityDimension"+i].cost) + " IP"
     }
 
     for (var i=1; i<=8; i++) {
 
-        document.getElementById("timeMax"+i).textContent = "Cost: " + shortenDimensions(player["timeDimension"+i].cost) + " EP"
+        document.getElementById("timeMax"+i).textContent = "成本: " + shortenDimensions(player["timeDimension"+i].cost) + " EP"
     }
 }
 

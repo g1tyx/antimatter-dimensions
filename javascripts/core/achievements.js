@@ -246,7 +246,7 @@ function updateAchievements() {
 
   player.achPow = Decimal.pow(1.5, amount)
 
-  document.getElementById("achmultlabel").textContent = "Current achievement multiplier on each Dimension: " + player.achPow.toFixed(1) + "x"
+  document.getElementById("achmultlabel").textContent = "当前成就在每个维度的加成倍数: " + player.achPow.toFixed(1) + "x"
 
 }
 
