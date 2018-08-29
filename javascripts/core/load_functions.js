@@ -532,9 +532,9 @@ if (player.version < 5) {
       document.getElementById("game").style.display = "none";
   }
   if (player.options.challConf) {
-      document.getElementById("challengeconfirmation").textContent = "Challenge confirmation OFF"
+      document.getElementById("challengeconfirmation").textContent = "挑战确认 关闭"
   } else {
-      document.getElementById("challengeconfirmation").textContent = "Challenge confirmation ON"
+      document.getElementById("challengeconfirmation").textContent = "挑战确认 开启"
   }
 
   document.getElementById("chartDurationInput").value = player.options.chart.duration;

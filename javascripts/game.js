@@ -315,29 +315,29 @@ function setTheme(name) {
 
     if(name !== undefined && name.length < 3) giveAchievement("Shhh... It's a secret")
     if(name === undefined) {
-        document.getElementById("theme").textContent = "Current theme: Normal"
+        document.getElementById("theme").textContent = "当前主题: 普通"
     } else if(name === "S1") {
-        document.getElementById("theme").textContent="Current theme: " + player.options.secretThemeKey;
+        document.getElementById("theme").textContent="当前主题: " + player.options.secretThemeKey;
         Chart.defaults.global.defaultFontColor = 'black';
         normalDimChart.data.datasets[0].borderColor = '#000'
     } else if(name === "S2") {
-        document.getElementById("theme").textContent="Current theme: " + player.options.secretThemeKey;
+        document.getElementById("theme").textContent="当前主题: " + player.options.secretThemeKey;
         Chart.defaults.global.defaultFontColor = 'black';
         normalDimChart.data.datasets[0].borderColor = '#000'
     } else if(name === "S3") {
-        document.getElementById("theme").textContent="Current theme: " + player.options.secretThemeKey;
+        document.getElementById("theme").textContent="当前主题: " + player.options.secretThemeKey;
         Chart.defaults.global.defaultFontColor = 'black';
         normalDimChart.data.datasets[0].borderColor = '#000'
     } else if(name === "S4") {
-        document.getElementById("theme").textContent="Current theme: " + player.options.secretThemeKey;
+        document.getElementById("theme").textContent="当前主题: " + player.options.secretThemeKey;
         Chart.defaults.global.defaultFontColor = 'black';
         normalDimChart.data.datasets[0].borderColor = '#000'
     }  else if(name === "S5") {
-        document.getElementById("theme").textContent="Current theme: " + player.options.secretThemeKey;
+        document.getElementById("theme").textContent="当前主题: " + player.options.secretThemeKey;
         Chart.defaults.global.defaultFontColor = 'black';
         normalDimChart.data.datasets[0].borderColor = '#000'
     } else {
-        document.getElementById("theme").textContent="Current theme: " + name;
+        document.getElementById("theme").textContent="当前主题: " + name;
     }
 
     if (name === undefined) return;
@@ -527,7 +527,7 @@ function updateDimensions() {
             if (!canBuyDimension(tier) && document.getElementById(name + "Row").style.display !== "table-row") {
                 break;
             }
-            document.getElementById(name + "D").childNodes[0].nodeValue = DISPLAY_NAMES[tier] + " Dimension x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 1, 1);
+            document.getElementById(name + "D").childNodes[0].nodeValue = cnwd(DISPLAY_NAMES[tier]) + "维度 x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 1, 1);
             document.getElementById(name + "Amount").textContent = getDimensionDescription(tier);
         }
 
@@ -547,9 +547,9 @@ function updateDimensions() {
 
         var shiftRequirement = getShiftRequirement(0);
         if (player.currentChallenge == "challenge4" ? shiftRequirement.tier < 6 : shiftRequirement.tier < 8) {
-            document.getElementById("resetLabel").textContent = '维度转换 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
+            document.getElementById("resetLabel").textContent = '维度转换 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + cnwd(DISPLAY_NAMES[shiftRequirement.tier]) + "维度"
         }
-        else document.getElementById("resetLabel").textContent = '维度提升 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
+        else document.getElementById("resetLabel").textContent = '维度提升 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + cnwd(DISPLAY_NAMES[shiftRequirement.tier]) + "维度"
 
         if (player.currentChallenge == "challenge4" ? player.resets > 2 : player.resets > 3) {
             document.getElementById("softReset").textContent = "重置游戏以获得加成"
@@ -566,7 +566,7 @@ function updateDimensions() {
         galString += player.galaxies;
         if (extraGals > 0) galString += " + "+extraGals;
         if (player.dilation.freeGalaxies > 0) galString += " + "+player.dilation.freeGalaxies;
-        galString += "): requires " + getGalaxyRequirement()
+        galString += "): 需要 " + getGalaxyRequirement()
         if (player.currentChallenge == "challenge4") galString +=  " 第六维度";
         else galString +=  " 第八维度";
         document.getElementById("secondResetLabel").textContent = galString;
@@ -578,7 +578,7 @@ function updateDimensions() {
         else {
             var places = 0
             if (tickmult < 0.2) places = Math.floor(Math.log10(Math.round(1/tickmult)))
-            document.getElementById("tickLabel").textContent = '游戏加速 ' + ((1 - tickmult) * 100).toFixed(places) + '%.'
+            document.getElementById("tickLabel").textContent = '时刻间隔减少 ' + ((1 - tickmult) * 100).toFixed(places) + '%.'
         }
 
         document.getElementById("tickSpeed").style.visibility = "visible";
@@ -616,8 +616,8 @@ function updateDimensions() {
     if (document.getElementById("stats").style.display == "block" && document.getElementById("statistics").style.display == "block") {
         document.getElementById("totalmoney").textContent = '你累计制造了 ' + shortenMoney(player.totalmoney) + ' 反物质.'
         document.getElementById("totalresets").textContent = '你完成了 ' + player.resets + ' 维度提升/转变。'
-        document.getElementById("galaxies").textContent = 'You have ' + Math.round(player.galaxies) + ' Antimatter Galaxies.'
-        document.getElementById("totalTime").textContent = "你在本游戏玩了 " + timeDisplay(player.totalTimePlayed) + "."
+        document.getElementById("galaxies").textContent = '你拥有 ' + Math.round(player.galaxies) + ' 反物质星系。'
+        document.getElementById("totalTime").textContent = "你在本游戏玩了 " + timeDisplay(player.totalTimePlayed) + "。"
 
         if (player.eternities == 0) {
             document.getElementById("eternitied").textContent = ""
@@ -829,10 +829,10 @@ function updateEternityChallenges() {
 function toggleChallengeRetry() {
     if (player.options.retryChallenge) {
         player.options.retryChallenge = false
-        document.getElementById("retry").textContent = "Automatically retry challenges OFF"
+        document.getElementById("retry").textContent = "自动重试挑战 关闭"
     } else {
         player.options.retryChallenge = true
-        document.getElementById("retry").textContent = "Automatically retry challenges ON"
+        document.getElementById("retry").textContent = "自动重试挑战 开启"
     }
 }
 
@@ -979,10 +979,10 @@ document.getElementById("maxall").onclick = function () {
 document.getElementById("challengeconfirmation").onclick = function () {
     if (!player.options.challConf) {
         player.options.challConf = true;
-        document.getElementById("challengeconfirmation").textContent = "Challenge confirmation OFF"
+        document.getElementById("challengeconfirmation").textContent = "挑战确认 关闭"
     } else {
         player.options.challConf = false;
-        document.getElementById("challengeconfirmation").textContent = "Challenge confirmation ON"
+        document.getElementById("challengeconfirmation").textContent = "挑战确认 开启"
     }
 }
 
@@ -2044,9 +2044,9 @@ function setAchieveTooltip() {
     let thinking = document.getElementById("Now you're thinking with dilation!")
     let thisis = document.getElementById("This is what I have to do to get rid of you.")
 
-    apocAchieve.setAttribute('ach-tooltip', "Get over " + formatValue(player.options.notation, 1e80, 0, 0) + " antimatter.");
-    noPointAchieve.setAttribute('ach-tooltip', "Buy a single First Dimension when you have over " + formatValue(player.options.notation, 1e150, 0, 0) + " of them. Reward: First Dimensions are 10% stronger.");
-    forgotAchieve.setAttribute('ach-tooltip', "Get any Dimension multiplier over " + formatValue(player.options.notation, 1e31, 0, 0)) + ". Reward: First Dimensions are 5% stronger.";
+    apocAchieve.setAttribute('ach-tooltip', "拥有超过 " + formatValue(player.options.notation, 1e80, 0, 0) + " 反物质。");
+    noPointAchieve.setAttribute('ach-tooltip', "当你拥有超过 " + formatValue(player.options.notation, 1e150, 0, 0) + " 个第一维度时，再买一个。 奖励: 第一维度增强10%。");
+    forgotAchieve.setAttribute('ach-tooltip', "使任意维度倍数超过 " + formatValue(player.options.notation, 1e31, 0, 0)) + "。 奖励: 第一维度增强5%。";
     sanic.setAttribute('ach-tooltip', "Have antimatter/sec exceed your current antimatter above " + formatValue(player.options.notation, 1e63, 0, 0));
     potato.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e29, 0, 0) + " ticks per second. Reward: Reduces starting tick interval by 2%.");
     potato2.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e58, 0, 0) + " ticks per second. Reward: Reduces starting tick interval by 2%.");
@@ -5233,7 +5233,7 @@ function gameLoop(diff) {
     } else if (!player.break) {
         document.getElementById("progressbar").style.width = Decimal.min((Decimal.log10(player.money.plus(1)) / Decimal.log10(Number.MAX_VALUE) * 100), 100).toFixed(2) + "%"
         document.getElementById("progresspercent").textContent = Decimal.min((Decimal.log10(player.money.plus(1)) / Decimal.log10(Number.MAX_VALUE) * 100), 100).toFixed(2) + "%"
-        document.getElementById("progresspercent").setAttribute('ach-tooltip',"Percentage to Infinity")
+        document.getElementById("progresspercent").setAttribute('ach-tooltip',"距离无限进度")
     } else if (player.infDimensionsUnlocked.includes(false)) {
         document.getElementById("progressbar").style.width = Decimal.min(player.money.e / getNewInfReq().e * 100, 100).toFixed(2) + "%"
         document.getElementById("progresspercent").textContent = Decimal.min(player.money.e / getNewInfReq().e * 100, 100).toFixed(2) + "%"
@@ -5279,13 +5279,13 @@ function gameLoop(diff) {
             while (player.money.times(4.22419e-105).gt(scale1[id])) id++;
             if (id > 0) id--;
         }
-        if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to fill " + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
-        else document.getElementById("infoScale").textContent = "If every antimatter were a planck volume, you would have enough to make " + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
+        if (id >= 7 && id < 11) document.getElementById("infoScale").textContent = "如果每个反物质都占据一个普朗克单位, 你就可以填满" + formatValue(player.options.notation, player.money * 4.22419e-105 / scale1[id], 2, 1) + scale2[id];
+        else document.getElementById("infoScale").textContent = "如果每个反物质都占据一个普朗克单位, 你就可以构成" + formatValue(player.options.notation, player.money.times(4.22419e-105).dividedBy(scale1[id]), 2, 1) + scale2[id];
     } else { //does this part work correctly? i doubt it does
-        if (player.money.times(1e-54) < 2.82e-45) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation,2.82e-45 / 1e-54 / player.money, 2, 1) + " attometers cubed, you would have enough to make a proton."
-        else if (player.money * 1e-63 < 2.82e-45) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation,2.82e-45 / 1e-63 / player.money, 2, 1) + " zeptometers cubed, you would have enough to make a proton."
-        else if (player.money * 1e-72 < 2.82e-45) document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation,2.82e-45 / 1e-72 / player.money, 2, 1) + " yoctometers cubed, you would have enough to make a proton."
-        else document.getElementById("infoScale").textContent = "If every antimatter were " + formatValue(player.options.notation,2.82e-45 / 4.22419e-105 / player.money, 2, 1) + " planck volumes, you would have enough to make a proton."
+        if (player.money.times(1e-54) < 2.82e-45) document.getElementById("infoScale").textContent = "如果每个反物质都占据 " + formatValue(player.options.notation,2.82e-45 / 1e-54 / player.money, 2, 1) + " 10^-18立方米，你就可以填满一个质子。"
+        else if (player.money * 1e-63 < 2.82e-45) document.getElementById("infoScale").textContent = "如果每个反物质都占据 " + formatValue(player.options.notation,2.82e-45 / 1e-63 / player.money, 2, 1) + " 10^-21立方米，你就可以填满一个质子。"
+        else if (player.money * 1e-72 < 2.82e-45) document.getElementById("infoScale").textContent = "如果每个反物质都占据 " + formatValue(player.options.notation,2.82e-45 / 1e-72 / player.money, 2, 1) + " 10^-24立方米，你就可以填满一个质子。"
+        else document.getElementById("infoScale").textContent = "如果每个反物质都占据 " + formatValue(player.options.notation,2.82e-45 / 4.22419e-105 / player.money, 2, 1) + " 普朗克单位, 你就可以填满一个质子。"
     }
     if (player.money.gt(new Decimal("1e100000"))) {
         document.getElementById("infoScale").innerHTML = "<br>If you wrote 3 numbers a second, it would take you <br>" + timeDisplay(player.money.log10()*10/3) + "<br> to write down your antimatter amount.";
@@ -5969,3 +5969,32 @@ setInterval( function() {
         ec10bonus = new Decimal(1)
     }
 }, 100)
+
+    function cnwd(text) {
+    var cnwd = "";
+    var temp = text;
+    if (temp == "First") {
+        cnwd = "第一";
+    } else if (temp == "Second") {
+        cnwd = "第二";
+    } else if (temp == "Third") {
+        cnwd = "第三";
+    } else if (temp == "Fourth") {
+        cnwd = "第四";
+    } else if (temp == "Fifth") {
+        cnwd = "第五";
+    } else if (temp == "Sixth") {
+        cnwd = "第六";
+    } else if (temp=="Seventh"){
+        cnwd = "第七";   
+    } else if (temp=="Eighth"){
+        cnwd = "第八";   
+    } else if (temp==""){
+        cnwd = "";   
+    } else if (temp==""){
+        cnwd = "";   
+    } else {
+        return text;
+    }
+    return cnwd;
+    }

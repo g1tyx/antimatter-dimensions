@@ -56,7 +56,7 @@
             <div id="tickLabel" style="visibility: hidden">游戏速度加快10%。</div>
             <button id="tickSpeed" style="color:black; visibility: hidden; height: 25px;width: 170px; font-size: 12px" class="storebtn">成本: 1000</button>
             <button id="tickSpeedMax" onclick="buyMaxTickSpeed()" style="color:black; visibility: hidden; height: 25px; font-size: 12px" class="storebtn">购买最大</button>
-            <div id="tickSpeedAmount" style="visibility: hidden">时钟速率: 1000</div>
+            <div id="tickSpeedAmount" style="visibility: hidden">时刻间隔: 1000</div>
         </tr>
         <p></p>
         <div style="position:absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 360px; top: 19px">
@@ -1020,7 +1020,7 @@
 
             </table>
             <div style="display: none;"><textarea id="exportOutput" style="color:black; width: 200px; height: 55px;"></textarea></div>
-            <p>快捷键: 1-8 用于购买10次维度, shift+1-8 用于购买1次维度, T 用于购买最大时钟速率, shift+T 用于购买1次时钟速率, M 用来设置全部最大<br>S 用于牺牲, D 用于维度提升, G 用于星系, C for crunch, A 切换自动购买者, R 用于复制星系, E 用于永生.<br>你可以按住shift，同时购买时间研究来购买所有直到那一点，看到每个研究的数字，并保存学习树。<br>按着Ctrl键时，热键将不起作用。</p>
+            <p>快捷键: 1-8 用于购买10次维度, shift+1-8 用于购买1次维度, T 用于购买最大减少时刻间隔, shift+T 用于购买1次减少时刻间隔, M 用来设置全部最大<br>S 用于牺牲, D 用于维度提升, G 用于星系, C for crunch, A 切换自动购买者, R 用于复制星系, E 用于永生.<br>你可以按住shift，同时购买时间研究来购买所有直到那一点，看到每个研究的数字，并保存学习树。<br>按着Ctrl键时，热键将不起作用。</p>
             <div id="footercontainer">
                 <table id="footer">
                     <tr>
@@ -1041,10 +1041,10 @@
         <div id="statistics" class="tab" align="center" style="color: black; font-size: 12px; font-family: Typewriter; margin: 0 auto">
             <br>
             <tr>
-                <td><button class="secondarytabbtn" onclick="showStatsTab('stats')">Statistics</button><td>
-                <td><button class="secondarytabbtn" onclick="showStatsTab('challengetimes')" id="challengetimesbtn" style="display:none" >Challenge records</button><td>
+                <td><button class="secondarytabbtn" onclick="showStatsTab('stats')">统计</button><td>
+                <td><button class="secondarytabbtn" onclick="showStatsTab('challengetimes')" id="challengetimesbtn" style="display:none" >挑战纪录</button><td>
                 <td><button class="secondarytabbtn" onclick="showStatsTab('infchallengetimes')" id="infchallengesbtn" style="display:none">InfChallenge records</button><td>
-                <td><button class="secondarytabbtn" onclick="showStatsTab('lasttenruns')" id="pastinfs" style="display:none">Past Infinities</button><td>
+                <td><button class="secondarytabbtn" onclick="showStatsTab('lasttenruns')" id="pastinfs" style="display:none">过去的无限</button><td>
                 <td><button class="secondarytabbtn" onclick="showStatsTab('lastteneternities')" id="pasteternities" >Past Eternities</button><td>
             </tr>
             <div id="stats" class="statstab">
@@ -1153,28 +1153,28 @@
                 <table id="achievementtable" style="margin: auto">
                     <tr id="achRow1">
                         <td>
-                            <div id="You gotta start somewhere" class="achievement achievementlocked" style="background-image: url(images/1.png)" ach-tooltip="购买单一的第一维度。"><br></div>
+                            <div id="You gotta start somewhere" class="achievement achievementlocked" style="background-image: url(images/1.png)" ach-tooltip="购买一个第一维度。"><br></div>
                         </td>
                         <td>
-                            <div id="100 antimatter is a lot" class="achievement achievementlocked" style="background-image: url(images/2.png)" ach-tooltip="购买单一的第二维度。"><br></div>
+                            <div id="100 antimatter is a lot" class="achievement achievementlocked" style="background-image: url(images/2.png)" ach-tooltip="购买一个第二维度。"><br></div>
                         </td>
                         <td>
-                            <div id="Half life 3 confirmed" class="achievement achievementlocked" style="background-image: url(images/3.png)" ach-tooltip="购买单一的第三维度。"><br></div>
+                            <div id="Half life 3 confirmed" class="achievement achievementlocked" style="background-image: url(images/3.png)" ach-tooltip="购买一个第三维度。"><br></div>
                         </td>
                         <td>
-                            <div id="L4D: Left 4 Dimensions" class="achievement achievementlocked" style="background-image: url(images/4.png)" ach-tooltip="购买单一的第四维度。"><br></div>
+                            <div id="L4D: Left 4 Dimensions" class="achievement achievementlocked" style="background-image: url(images/4.png)" ach-tooltip="购买一个第四维度。"><br></div>
                         </td>
                         <td>
-                            <div id="5 Dimension Antimatter Punch" class="achievement achievementlocked" style="background-image: url(images/5.png)" ach-tooltip="购买单一的第五维度。"><br></div>
+                            <div id="5 Dimension Antimatter Punch" class="achievement achievementlocked" style="background-image: url(images/5.png)" ach-tooltip="购买一个第五维度。"><br></div>
                         </td>
                         <td>
-                            <div id="We couldn't afford 9" class="achievement achievementlocked" style="background-image: url(images/6.png)" ach-tooltip="购买单一的第六维度。"><br></div>
+                            <div id="We couldn't afford 9" class="achievement achievementlocked" style="background-image: url(images/6.png)" ach-tooltip="购买一个第六维度。"><br></div>
                         </td>
                         <td>
-                            <div id="Not a luck related achievement" class="achievement achievementlocked" style="background-image: url(images/7.png)" ach-tooltip="购买单一的第七维度。"><br></div>
+                            <div id="Not a luck related achievement" class="achievement achievementlocked" style="background-image: url(images/7.png)" ach-tooltip="购买一个第七维度。"><br></div>
                         </td>
                         <td>
-                            <div id="90 degrees to infinity" class="achievement achievementlocked" style="background-image: url(images/8.png)" ach-tooltip="购买单一的第八维度。"><br></div>
+                            <div id="90 degrees to infinity" class="achievement achievementlocked" style="background-image: url(images/8.png)" ach-tooltip="购买一个第八维度。"><br></div>
                         </td>
                     </tr>
                     <tr id="achRow2">
@@ -1191,16 +1191,16 @@
                             <div id="Antimatter Apocalypse" class="achievement achievementlocked" style="background-image: url(images/12.png)" ach-tooltip="获得超过10 QtVg (10e79)反物质。"><br></div>
                         </td>
                         <td>
-                            <div id="Boosting to the max" class="achievement achievementlocked" style="background-image: url(images/13.png)" ach-tooltip="Buy 10 Dimension Boosts."><br></div>
+                            <div id="Boosting to the max" class="achievement achievementlocked" style="background-image: url(images/13.png)" ach-tooltip="购买10次维度提升。"><br></div>
                         </td>
                         <td>
-                            <div id="You got past The Big Wall" class="achievement achievementlocked" style="background-image: url(images/14.png)" ach-tooltip="Buy an Antimatter Galaxy."><br></div>
+                            <div id="You got past The Big Wall" class="achievement achievementlocked" style="background-image: url(images/14.png)" ach-tooltip="购买一个反物质星系。"><br></div>
                         </td>
                         <td>
-                            <div id="Double Galaxy" class="achievement achievementlocked" style="background-image: url(images/15.png)" ach-tooltip="Buy 2 Antimatter Galaxies."><br></div>
+                            <div id="Double Galaxy" class="achievement achievementlocked" style="background-image: url(images/15.png)" ach-tooltip="购买2个反物质星系"><br></div>
                         </td>
                         <td>
-                            <div id="There's no point in doing that" class="achievement achievementlocked" style="background-image: url(images/16.png)" ach-tooltip="Buy a single First Dimension when you have over 1e150 of them. Reward: First Dimensions are 10% stronger."><br></div>
+                            <div id="There's no point in doing that" class="achievement achievementlocked" style="background-image: url(images/16.png)" ach-tooltip="当你拥有超过1e150第一维度时再买一个。 奖励: 第一维度加强10%。"><br></div>
                         </td>
                     </tr>
                     <tr id="achRow3">
