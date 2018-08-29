@@ -401,13 +401,13 @@ if (player.version < 5) {
 
 
   if (player.break == true) document.getElementById("break").textContent = "FIX INFINITY"
-  document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shortenDimensions(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+  document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>当前: "+shortenDimensions(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
 
-  document.getElementById("notation").textContent = "Notation: " + player.options.notation
+  document.getElementById("notation").textContent = "数据格式: " + player.options.notation
 
-  document.getElementById("floatingTextAnimBtn").textContent = "Floating text: " + ((player.options.animations.floatingText) ? "ON" : "OFF")
-  document.getElementById("bigCrunchAnimBtn").textContent = "Big crunch: " + ((player.options.animations.bigCrunch) ? "ON" : "OFF")
-  document.getElementById("tachyonParticleAnimBtn").textContent = "Tachyon particles: " + ((player.options.animations.tachyonParticles) ? "ON" : "OFF")
+  document.getElementById("floatingTextAnimBtn").textContent = "浮动文本: " + ((player.options.animations.floatingText) ? "开启" : "关闭")
+  document.getElementById("bigCrunchAnimBtn").textContent = "Big crunch: " + ((player.options.animations.bigCrunch) ? "开启" : "关闭")
+  document.getElementById("tachyonParticleAnimBtn").textContent = "超光速粒子: " + ((player.options.animations.tachyonParticles) ? "开启" : "关闭")
 
   if (player.infinitied == 0 && player.eternities == 0) document.getElementById("infinityPoints2").style.display = "none"
 
