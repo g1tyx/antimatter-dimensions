@@ -148,20 +148,20 @@ shortenMoney = function (money) {
 
 
 function timeDisplay(time) {
-  if (time <= 100) return (time/10).toFixed(3) + " seconds"
+  if (time <= 100) return (time/10).toFixed(3) + " 秒"
   time = Decimal.floor(time / 10)
 
 
 
   if (time >= 31536000) {
-      return Decimal.floor(time / 31536000) + " years, " + Decimal.floor((time % 31536000) / 86400) + " days, " + Decimal.floor((time % 86400) / 3600) + " hours, " + Decimal.floor((time % 3600) / 60) + " minutes, and " + Decimal.floor(time % 60) + " seconds"
+      return Decimal.floor(time / 31536000) + " 年, " + Decimal.floor((time % 31536000) / 86400) + " 天, " + Decimal.floor((time % 86400) / 3600) + " 小时, " + Decimal.floor((time % 3600) / 60) + " 分钟,  " + Decimal.floor(time % 60) + " 秒"
   } else if (time >= 86400) {
-      return Decimal.floor(time / 86400) + " days, " + Decimal.floor((time % 86400) / 3600) + " hours, " + Decimal.floor((time % 3600) / 60) + " minutes, and " + Decimal.floor(time % 60) + " seconds"
+      return Decimal.floor(time / 86400) + " 天, " + Decimal.floor((time % 86400) / 3600) + " 小时, " + Decimal.floor((time % 3600) / 60) + " 分钟, " + Decimal.floor(time % 60) + " 秒"
   } else if (time >= 3600) {
-      return Decimal.floor(time / 3600) + " hours, " + Decimal.floor((time % 3600) / 60) + " minutes, and " + Decimal.floor(time % 60) + " seconds"
+      return Decimal.floor(time / 3600) + " 小时, " + Decimal.floor((time % 3600) / 60) + " 分钟, " + Decimal.floor(time % 60) + " 秒"
   } else if (time >= 60) {
-      return Decimal.floor(time / 60) + " minutes, and " + Decimal.floor(time % 60) + " seconds"
-  } else return Decimal.floor(time % 60) + " seconds"
+      return Decimal.floor(time / 60) + " 分钟,  " + Decimal.floor(time % 60) + " 秒"
+  } else return Decimal.floor(time % 60) + " 秒"
 }
 
 function preformat(int) {
@@ -170,8 +170,8 @@ function preformat(int) {
 }
 
 function timeDisplayShort(time) {
-  if (time <= 100) return (time/10).toFixed(3) + " seconds"
-  if (time <= 600) return (time/10).toFixed(2) + " seconds"
+  if (time <= 100) return (time/10).toFixed(3) + " 秒"
+  if (time <= 600) return (time/10).toFixed(2) + " 秒"
   time = Decimal.floor(time / 10)
   return preformat(Decimal.floor((time) / 3600)) + ":" + preformat(Decimal.floor((time % 3600) / 60)) + ":" + preformat(Decimal.floor(time % 60))
 
