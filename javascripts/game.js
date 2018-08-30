@@ -2617,10 +2617,10 @@ function toggleBulk() {
 function toggleHotkeys() {
     if (player.options.hotkeys) {
         player.options.hotkeys = false
-        document.getElementById("hotkeys").textContent = "Enable hotkeys"
+        document.getElementById("hotkeys").textContent = "开启快捷键"
     } else {
         player.options.hotkeys = true
-        document.getElementById("hotkeys").textContent = "Disable hotkeys"
+        document.getElementById("hotkeys").textContent = "禁用快捷键"
     }
 }
 
@@ -5270,8 +5270,8 @@ function gameLoop(diff) {
 
     document.getElementById("ec10span").textContent = shortenMoney(ec10bonus) + "x"
     var scale1 = [2.82e-45,1e-42,7.23e-30,5e-21,9e-17,6.2e-11,5e-8,3.555e-6,7.5e-4,1,2.5e3,2.6006e6,3.3e8,5e12,4.5e17,1.08e21,1.53e24,1.41e27,5e32,8e36,1.7e45,1.7e48,3.3e55,3.3e61,5e68,1e73,3.4e80,1e113,Number.MAX_VALUE,new Decimal("1e65000")];
-    var scale2 = [" protons."," nucleui."," Hydrogen atoms."," viruses."," red blood cells."," grains of sand."," grains of rice."," teaspoons."," wine bottles."," fridge-freezers."," Olympic-sized swimming pools."," Great Pyramids of Giza."," Great Walls of China."," large asteroids.",
-                " dwarf planets."," Earths."," Jupiters."," Suns."," red giants."," hypergiant stars."," nebulas."," Oort clouds."," Local Bubbles."," galaxies."," Local Groups."," Sculptor Voids."," observable universes."," Dimensions.", " Infinity Dimensions.", " Time Dimensions."];
+    var scale2 = [" 质子"," 原子核"," 氢原子"," 病毒。"," 红细胞。"," 沙粒。"," 米粒。"," 茶匙。"," 酒瓶。"," 冰箱。"," 奥运规模的游泳池。"," 吉萨大金字塔"," 万里长城。"," 大型小行星",
+                " 矮行星。"," 地球。"," 木星。"," 太阳。"," 红巨星。"," 超巨星。"," 星云。"," 奥尔特云。"," 本星系泡。"," 星系。"," 本星系团。"," 玉夫座。"," 可观测宇宙。"," 维度。", " 无限维度。", " 时间维度。"];
     var id = 0;
     if (player.money.times(4.22419e-105).gt(2.82e-45)) {
         if (player.money.times(4.22419e-105).gt(scale1[scale1.length - 1])) id = scale1.length - 1;
@@ -5337,9 +5337,9 @@ function gameLoop(diff) {
 
     document.getElementById("newDimensionButton").textContent = "Get " + shortenCosts(getNewInfReq()) + " antimatter to unlock a new Dimension."
 
-    document.getElementById("sacrifice").setAttribute('ach-tooltip', "Boosts 8th Dimension by " + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x");
+    document.getElementById("sacrifice").setAttribute('ach-tooltip', "第八维度乘数乘以 " + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x");
 
-    document.getElementById("sacrifice").textContent = "Dimensional Sacrifice ("+formatValue(player.options.notation, calcSacrificeBoost(), 2, 2)+"x)"
+    document.getElementById("sacrifice").textContent = "维度献祭 ("+formatValue(player.options.notation, calcSacrificeBoost(), 2, 2)+"x)"
     if (isNaN(player.totalmoney)) player.totalmoney = new Decimal(10)
     if (player.timestudy.studies.includes(181)) player.infinityPoints = player.infinityPoints.plus(gainedInfinityPoints().times(diff/1000))
     if (player.dilation.upgrades.includes(10)) {
@@ -5434,7 +5434,7 @@ var sliderText = document.getElementById("updaterate");
 
 slider.oninput = function() {
     player.options.updateRate = parseInt(this.value);
-    sliderText.textContent = "Update rate: " + this.value + "ms"
+    sliderText.textContent = "刷新速度: " + this.value + "ms"
     if (player.options.updateRate === 200) giveAchievement("You should download some more RAM")
     clearInterval(gameLoopIntervalId);
     gameLoopIntervalId = setInterval(gameLoop, player.options.updateRate);
