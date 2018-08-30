@@ -28,7 +28,7 @@ newsArray = [//always true
 ["School starting up strikes fear in students universe-wide, as schools are no longer segregated between Matter and antimatter. Annihilation is prominent.", true, "a66"],
 ["Why does no one talk about the 0th dimension?", true, "a67"], ["The fatter catter satter on the antimatter.", true, "a68"], ["Who let the DOgs out?", true, "a69"], ["If you can't read this you disabled the news.", true, "a70"],
 ["Doesn't leave, just mutes the server so he doesn't receive notifications", true, "a71"], ["Most quotes found online are falsely atributed -Abraham Lincoln", true, "a72"], ["It should work now, but it doesn't -hevipelle", true, "a73"],
-["This game doesn't have any errors... they're alternative successes.", true, "a74"], ["A third type of matter has been discovered: null matter. It doesn't do anything and is basically useless. The scientists who discovered it were fired.", true, "a75"],
+["这个游戏没有任何错误…它们是另一种成功。", true, "a74"], ["A third type of matter has been discovered: null matter. It doesn't do anything and is basically useless. The scientists who discovered it were fired.", true, "a75"],
 ["Your Mother-in-Law keeps nagging you about all these antimatter colliders.", true, "a76"], ["If matter exists, then does antimatter not exist?", true, "a77"], ["Antimatter=Life. Not cobblestone, not dirt, nothing like that. Antimatter.", true, "a78"],
 ["Breaking News: Error Error Error", true, "a79"], ["How much antiwood could an antiwoodchuck chuck if an antiwoodchuck could chuck antiwood?", true, "a80"], ["Chaos isnt a pit, chaos is a matter", true, "a81"],
 ["That's because I'm a good game developer and pushed some code that totally works -hevipelle", true, "a82"], ["What's the matter with anti matter?", true, "a83"],

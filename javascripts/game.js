@@ -305,7 +305,38 @@ var player = {
 var defaultStart = $.extend(true, {}, player);
 
 
-
+//汉化
+function cntext(text){
+    var cntext="";
+    var temp=text;
+    if(temp=="First"){
+        cntext="第一"
+    }if(temp=="Second"){
+        cntext="第二"
+    }if(temp=="Third"){
+        cntext="第三"
+    }if(temp=="Fourth"){
+        cntext="第四"
+    }if(temp=="Fifth"){
+        cntext="第五"
+    }if(temp=="Sixth"){
+        cntext="第六"
+    }if(temp=="Seventh"){
+        cntext="第七"
+    }if(temp=="Eighth"){
+        cntext="第八"
+    }if(temp==""){
+        cntext=""
+    }if(temp==""){
+        cntext=""
+    }else if(temp==""){
+        cntext=""
+    }else{
+console.log("需汉化的英文："+text);
+        return text;
+    }
+    return cntext;
+}
 
 
 function setTheme(name) {
@@ -527,7 +558,7 @@ function updateDimensions() {
             if (!canBuyDimension(tier) && document.getElementById(name + "Row").style.display !== "table-row") {
                 break;
             }
-            document.getElementById(name + "D").childNodes[0].nodeValue = DISPLAY_NAMES[tier] + " Dimension x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 1, 1);
+            document.getElementById(name + "D").childNodes[0].nodeValue = cntext(DISPLAY_NAMES[tier]) + " 维度 x" + formatValue(player.options.notation, getDimensionFinalMultiplier(tier), 1, 1);
             document.getElementById(name + "Amount").textContent = getDimensionDescription(tier);
         }
 
@@ -547,9 +578,9 @@ function updateDimensions() {
 
         var shiftRequirement = getShiftRequirement(0);
         if (player.currentChallenge == "challenge4" ? shiftRequirement.tier < 6 : shiftRequirement.tier < 8) {
-            document.getElementById("resetLabel").textContent = '维度转换 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
+            document.getElementById("resetLabel").textContent = '维度转换 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + cntext(DISPLAY_NAMES[shiftRequirement.tier]) + " 维度"
         }
-        else document.getElementById("resetLabel").textContent = '维度提升 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + DISPLAY_NAMES[shiftRequirement.tier] + " 维度"
+        else document.getElementById("resetLabel").textContent = '维度提升 ('+ player.resets +'): 需要 ' + shiftRequirement.amount + " " + cntext(DISPLAY_NAMES[shiftRequirement.tier]) + " 维度"
 
         if (player.currentChallenge == "challenge4" ? player.resets > 2 : player.resets > 3) {
             document.getElementById("softReset").textContent = "重置游戏以获得加成"
@@ -566,7 +597,7 @@ function updateDimensions() {
         galString += player.galaxies;
         if (extraGals > 0) galString += " + "+extraGals;
         if (player.dilation.freeGalaxies > 0) galString += " + "+player.dilation.freeGalaxies;
-        galString += "): requires " + getGalaxyRequirement()
+        galString += "): 需要 " + getGalaxyRequirement()
         if (player.currentChallenge == "challenge4") galString +=  " 第六维度";
         else galString +=  " 第八维度";
         document.getElementById("secondResetLabel").textContent = galString;
@@ -574,7 +605,7 @@ function updateDimensions() {
 
     if (canBuyTickSpeed() || player.currentEternityChall == "eterc9") {
         var tickmult = getTickSpeedMultiplier()
-        if (tickmult < 1e-9) document.getElementById("tickLabel").textContent = "Divide the tick interval by " + shortenDimensions(1 / tickmult) + '.'
+        if (tickmult < 1e-9) document.getElementById("tickLabel").textContent = "把时钟时间间隔除以 " + shortenDimensions(1 / tickmult) + '.'
         else {
             var places = 0
             if (tickmult < 0.2) places = Math.floor(Math.log10(Math.round(1/tickmult)))
@@ -600,12 +631,12 @@ function updateDimensions() {
         document.getElementById("bestInfinity").textContent = "Your fastest Infinity is in " + timeDisplay(player.bestInfinityTime) + "."
         document.getElementById("thisInfinity").textContent = "You have spent " + timeDisplay(player.thisInfinityTime) + " in this Infinity."
         if (player.infinityPoints.equals(1)) {
-            document.getElementById("infinityPoints1").textContent = "You have 1 Infinity point."
-            document.getElementById("infinityPoints2").textContent = "You have 1 Infinity point."
+            document.getElementById("infinityPoints1").textContent = "您有1个无限点."
+            document.getElementById("infinityPoints2").textContent = "您有1个无限点"
         }
         else {
-            document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-            document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+            document.getElementById("infinityPoints1").innerHTML = "您有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点."
+            document.getElementById("infinityPoints2").innerHTML = "您有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点."
         }
         if (player.infinitied == 1) document.getElementById("infinitied").textContent = "You have infinitied 1 time."
         else document.getElementById("infinitied").textContent = "You have infinitied " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " times."
@@ -616,7 +647,7 @@ function updateDimensions() {
     if (document.getElementById("stats").style.display == "block" && document.getElementById("statistics").style.display == "block") {
         document.getElementById("totalmoney").textContent = '你累计制造了 ' + shortenMoney(player.totalmoney) + ' 反物质.'
         document.getElementById("totalresets").textContent = '你完成了 ' + player.resets + ' 维度提升/转变。'
-        document.getElementById("galaxies").textContent = 'You have ' + Math.round(player.galaxies) + ' Antimatter Galaxies.'
+        document.getElementById("galaxies").textContent = '您有 ' + Math.round(player.galaxies) + ' 反物质星系.'
         document.getElementById("totalTime").textContent = "你在本游戏玩了 " + timeDisplay(player.totalTimePlayed) + "."
 
         if (player.eternities == 0) {
@@ -5969,3 +6000,5 @@ setInterval( function() {
         ec10bonus = new Decimal(1)
     }
 }, 100)
+
+
