@@ -9,34 +9,34 @@
   游戏指南
   </h1>
   <div style="text-align: center">
-  How to Play – Antimatter Dimensions
+  游戏指南 – 反物质维度
   </div>
   <hr>
   <div style="text-align: center">
-  Antimatter Dimensions is an Idle Incremental game with multiple layers of unlocks, prestige, and achievements. The basic Goal is to reach infinity and receive an infinity point, which can be spent on various skills to increase your overall production.
+  反物质维度是一个放置增量游戏，有多层的解锁、重置以及成就。基本的目标是达到无限并获取无限点数，无限点数可以花在各种技能上，从而提高你的整体产量。
   </div>
   <hr>
   <div style="text-align: center">
-  You can choose whether or not you would like to see spoilers here. Setting this to "Avoid spoilers" will only show the content you have access to, as well as the next piece(s) of content you will unlock.
+  你可以在这里选择是否可以看到剧透部分。将此设为"回避剧透"将只会显示你已到达的内容,以及你接下来马上要解锁的内容。
   </div>
   <table style="margin: auto;">
     <tr>
       <td>
-          <button onclick='showspoilers()' class="storebtn" id="showspoilersbtn" style="margin-top: 5px;">View: <br> Avoid spoilers</button>
+          <button onclick='showspoilers()' class="storebtn" id="showspoilersbtn" style="margin-top: 5px;">查看: <br> 回避剧透</button>
       </td>
       <td>
-          <button class="storebtn" id="importbtn" style="margin-top: 5px;">Import your save</button>
+          <button class="storebtn" id="importbtn" style="margin-top: 5px;">导入存档</button>
       </td>
     </tr>
   </table>
   <hr>
-  <button onclick='changestate(1)' id='div1btn'  class="storebtn">Dimensions</button>
+  <button onclick='changestate(1)' id='div1btn'  class="storebtn">维度</button>
   <div style="text-align: left" id='div1' class='hidden'>
-  <b>Dimensions:</b>
+  <b>维度:</b>
   <br>
-  Dimensions are your production units in game.  The first Dimension produces your Antimatter.  Each consecutive dimension produces the previous one, allowing you to have steady growth. There are eight dimensions total.
+  维度是你在游戏中的生产单元。 第一个维度生产你的反物质。 每个高阶维度都会生产前一个维度，使你能够持续增长。总共有八个维度。
   <br>
-  <b>Dimension Multiplier:</b> Beside the dimension there is a multiplier (example: First Dimension x1.0). The base production of each dimension is multiplied by this number.  This multiplier increases by 2x(Base) for every 10 of that dimension purchased. Each time this occurs, the price of the dimension will increase.
+  <b>维度倍数:</b> Beside the dimension there is a multiplier (example: First Dimension x1.0). The base production of each dimension is multiplied by this number.  This multiplier increases by 2x(Base) for every 10 of that dimension purchased. Each time this occurs, the price of the dimension will increase.
   <br>
   <b>Accumulated Dimension Quantity:</b> The next column is your current amount of that dimension you own. This is a combination of how many you have purchased with antimatter, as well as produced from the higher dimension.
   <br>
@@ -55,17 +55,17 @@
     <b>Hotkeys: 1, 2, 3, 4, 5, 6, 7, 8</b> for buy until 10 []th dimension, <b>M</b> for Max all
   </div>
   <hr id='div1hr'>
-  <button onclick='changestate(2)' id='div2btn' class="storebtn">Ticks</button>
+  <button onclick='changestate(2)' id='div2btn' class="storebtn">时刻</button>
   <div style="text-align: left" id='div2' class='hidden'>
-  <b>Tick:</b> Production in the game happens on each “tick”.
+  <b>时刻:</b> 游戏中的生产发生在每个"时刻"。
   <br>
-  <b>Interval:</b> The length of time between ticks. This is lowered by purchasing tick interval reductions.
+  <b>间隔:</b> 每个时刻间的时间长度。这个可以通过购买减少时刻间隔来减少。
   <br>
-  <b>Cost:</b> The cost of antimatter for reducing the tick interval by the % displayed above (Without Galaxies your base tickspeed decrease is 11% per purchase)
+  <b>花费:</b> 花费反物质来按上面显示的百分比%减少时刻间隔。(如果没有反物质星系，每次购买你的基础时刻间隔减少11%)
   <br>
-  <b>Buy Max:</b> This will buy the maximum amount of tick interval decreases available with your current amount of Antimatter.
+  <b>购买最大:</b> 根据你当前的反物质来购买最大数量的减少时刻间隔。
   <br>
-  Note that the actual tickspeed time is fake and the game always runs at 20 ticks per second.
+  注意，实际上时刻间隔是虚构的，游戏的实际运行一直是每秒20时刻(根据你所设置的刷新速度变化)。
   </div>
   <hr id='div2hr'>
   <button onclick='changestate(3)' id='div3btn' class="storebtn">Dimension Shift/Boost</button>

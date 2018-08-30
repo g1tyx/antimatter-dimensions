@@ -15,8 +15,8 @@ function changestate(n) {
 if (localStorage.getItem("howToSpoilers") !== null) var spoilers = parseInt(localStorage.getItem("howToSpoilers"))
 else var spoilers = 0
 
-if (spoilers === 0) document.getElementById("showspoilersbtn").innerHTML = "View: <br> Avoid spoilers"
-else document.getElementById("showspoilersbtn").innerHTML= "View: <br> Show spoilers"
+if (spoilers === 0) document.getElementById("showspoilersbtn").innerHTML = "查看: <br> 回避剧透"
+else document.getElementById("showspoilersbtn").innerHTML= "查看: <br> 显示剧透"
 
 function save() {
 	localStorage.setItem("howToSpoilers", spoilers)
@@ -37,10 +37,10 @@ function load_game() {
 function showspoilers() {
 	if (spoilers === 0) {
 		spoilers = 1;
-		document.getElementById("showspoilersbtn").innerHTML= "View: <br> Show spoilers"
+		document.getElementById("showspoilersbtn").innerHTML= "查看: <br> 显示剧透"
 	} else {
 		spoilers = 0;
-		document.getElementById("showspoilersbtn").innerHTML = "View: <br> Avoid spoilers"
+		document.getElementById("showspoilersbtn").innerHTML = "查看: <br> 回避剧透"
 	}
 	save()
 	updateSpoilers();

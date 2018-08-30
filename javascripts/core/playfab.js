@@ -264,9 +264,9 @@ function playFabSaveCheck() {
 function toggleCloud() {
   if (player.options.cloud) {
     player.options.cloud = false
-    document.getElementById("cloud").innerHTML = "Automatic cloud saving/loading OFF"
+    document.getElementById("cloud").innerHTML = "自动云存档/读取 关闭"
   } else {
     player.options.cloud = true
-    document.getElementById("cloud").innerHTML = "Automatic cloud saving/loading ON"
+    document.getElementById("cloud").innerHTML = "自动云存档/读取 开启"
   }
 }
