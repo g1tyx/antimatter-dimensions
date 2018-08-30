@@ -597,18 +597,18 @@ function updateDimensions() {
         document.getElementById("infinitied").textContent = ""
         document.getElementById("thisInfinity").textContent = ""
     } else {
-        document.getElementById("bestInfinity").textContent = "Your fastest Infinity is in " + timeDisplay(player.bestInfinityTime) + "."
-        document.getElementById("thisInfinity").textContent = "You have spent " + timeDisplay(player.thisInfinityTime) + " in this Infinity."
+        document.getElementById("bestInfinity").textContent = "你最快到达无限的时间为 " + timeDisplay(player.bestInfinityTime) + "。"
+        document.getElementById("thisInfinity").textContent = "你在本次无限的时间已有 " + timeDisplay(player.thisInfinityTime) + "。"
         if (player.infinityPoints.equals(1)) {
-            document.getElementById("infinityPoints1").textContent = "You have 1 Infinity point."
-            document.getElementById("infinityPoints2").textContent = "You have 1 Infinity point."
+            document.getElementById("infinityPoints1").textContent = "你拥有 1 无限点数。"
+            document.getElementById("infinityPoints2").textContent = "你拥有 1 无限点数。"
         }
         else {
-            document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-            document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+            document.getElementById("infinityPoints1").innerHTML = "你拥有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
+            document.getElementById("infinityPoints2").innerHTML = "你拥有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
         }
-        if (player.infinitied == 1) document.getElementById("infinitied").textContent = "You have infinitied 1 time."
-        else document.getElementById("infinitied").textContent = "You have infinitied " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " times."
+        if (player.infinitied == 1) document.getElementById("infinitied").textContent = "你已到达无限 1 次。"
+        else document.getElementById("infinitied").textContent = "你已到达无限 " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " 次"
         if (player.infinitiedBank > 0) document.getElementById("infinitied").textContent = "You have infinitied " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " times this eternity."
 
     }
@@ -632,41 +632,41 @@ function updateDimensions() {
 
     if (document.getElementById("infinity").style.display == "block") {
         if (document.getElementById("preinf").style.display == "block") {
-            document.getElementById("infi11").innerHTML = "Normal dimensions gain a multiplier based on time played <br>Currently: " + (Math.pow(0.5 * player.totalTimePlayed / 600, 0.15)).toFixed(2) + "x<br>Cost: 1 IP"
-            document.getElementById("infi12").innerHTML = "First and Eighth Dimensions gain a multiplier based on infinitied stat<br>Currently: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>Cost: 1 IP"
-            document.getElementById("infi13").innerHTML = "Third and Sixth Dimensions gain a multiplier based on infinitied stat<br>Currently: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>Cost: 1 IP"
-            document.getElementById("infi22").innerHTML = "Second and seventh Dimensions gain a multiplier based on infinitied stat<br>Currently: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>Cost: 1 IP"
-            document.getElementById("infi23").innerHTML = "Fourth and Fifth Dimensions gain a multiplier based on infinitied stat<br>Currently: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>Cost: 1 IP"
-            document.getElementById("infi31").innerHTML = "Normal dimensions gain a multiplier based on time spent in current infinity<br>Currently: " + Decimal.max(Math.pow(player.thisInfinityTime / 2400, 0.25), 1).toFixed(2) + "x<br>Cost: 3 IP"
-            document.getElementById("infi32").innerHTML = "Multiplier for unspent Infinity Points on 1st Dimension<br>Currently: " + formatValue(player.options.notation, player.infinityPoints.dividedBy(2).pow(1.5).plus(1), 2, 2) + "x<br>Cost: 5 IP"
-            document.getElementById("infi34").innerHTML = "Infinity Point generation based on fastest infinity <br>Currently: "+shortenDimensions(player.infMult.times(kongIPMult))+" every " + timeDisplay(player.bestInfinityTime*10) + "<br>Cost: 10 IP"
+            document.getElementById("infi11").innerHTML = "根据总游戏时间令普通维度获取倍数 <br>当前: " + (Math.pow(0.5 * player.totalTimePlayed / 600, 0.15)).toFixed(2) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi12").innerHTML = "根据总无限点数令第一维度和第八维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi13").innerHTML = "根据总无限点数令第三维度和第六维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi22").innerHTML = "根据总无限点数令第二维度和第七维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi23").innerHTML = "根据总无限点数令第四维度和第五维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi31").innerHTML = "根据当前无限的游戏时间令普通维度获得倍数<br>当前: " + Decimal.max(Math.pow(player.thisInfinityTime / 2400, 0.25), 1).toFixed(2) + "x<br>花费: 3 无限点数"
+            document.getElementById("infi32").innerHTML = "根据未花费无限点数令第一维度获得倍数<br>当前: " + formatValue(player.options.notation, player.infinityPoints.dividedBy(2).pow(1.5).plus(1), 2, 2) + "x<br>花费: 5 无限点数"
+            document.getElementById("infi34").innerHTML = "根据到达无限的最快时间生产无限点数 <br>当前: 每 " + timeDisplay(player.bestInfinityTime*10) +"获得 "+shortenDimensions(player.infMult.times(kongIPMult))+ " 点<br>花费: 10 无限点数"
         }
         else if (document.getElementById("postinf").style.display == "block") {
-            document.getElementById("postinfi11").innerHTML = "Power up all dimensions based on total antimatter produced<br>Currently: "+ Math.pow(player.totalmoney.e+1, 0.5).toFixed(2)+"x<br>Cost: "+shortenCosts(1e4)+" IP"
-            document.getElementById("postinfi21").innerHTML = "Power up all dimensions based on current antimatter<br>Currently: "+ Math.pow(player.money.e+1, 0.5).toFixed(2)+"x<br>Cost: "+shortenCosts(5e4)+" IP"
-            document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>成本: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" IP"
+            document.getElementById("postinfi11").innerHTML = "Power up all dimensions based on total antimatter produced<br>当前: "+ Math.pow(player.totalmoney.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(1e4)+" 无限点数"
+            document.getElementById("postinfi21").innerHTML = "Power up all dimensions based on current antimatter<br>当前: "+ Math.pow(player.money.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(5e4)+" 无限点数"
+            document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>成本: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" 无限点数"
             if (player.tickSpeedMultDecrease <= 2) document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x"
-            document.getElementById("postinfi22").innerHTML = "Power up all dimensions based on achievements completed <br>Currently: "+achievementMult.toFixed(2)+"x<br>Cost: "+shortenCosts(1e6)+" IP"
-            document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>Currently: "+(1+Math.log10(getInfinitied()+1)*10).toFixed(2)+"x<br>Cost: "+shortenCosts(1e5)+" IP"
-            if (player.timestudy.studies.includes(31)) document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>Currently: "+shortenMoney(Math.pow((Math.log10(getInfinitied()+1)*10).toFixed(2), 4))+"x<br>Cost: "+shortenCosts(1e5)+" IP"
-            document.getElementById("postinfi41").innerHTML = "Makes galaxies 50% stronger <br>Cost: "+shortenCosts(5e11)+" IP"
-            document.getElementById("postinfi32").innerHTML = "Power up all dimensions based on slowest challenge run<br>Currently:"+Decimal.max(10*3000/worstChallengeTime, 1).toFixed(2)+"x<br>Cost: "+shortenCosts(1e7)+" IP"
-            document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>Cost: "+shortenCosts(player.dimensionMultDecreaseCost) +" IP"
+            document.getElementById("postinfi22").innerHTML = "Power up all dimensions based on achievements completed <br>当前: "+achievementMult.toFixed(2)+"x<br>花费: "+shortenCosts(1e6)+" 无限点数"
+            document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>当前: "+(1+Math.log10(getInfinitied()+1)*10).toFixed(2)+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
+            if (player.timestudy.studies.includes(31)) document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>当前: "+shortenMoney(Math.pow((Math.log10(getInfinitied()+1)*10).toFixed(2), 4))+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
+            document.getElementById("postinfi41").innerHTML = "Makes galaxies 50% stronger <br>花费: "+shortenCosts(5e11)+" 无限点数"
+            document.getElementById("postinfi32").innerHTML = "Power up all dimensions based on slowest challenge run<br>当前:"+Decimal.max(10*3000/worstChallengeTime, 1).toFixed(2)+"x<br>花费: "+shortenCosts(1e7)+" 无限点数"
+            document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>花费: "+shortenCosts(player.dimensionMultDecreaseCost) +" 无限点数"
 
-            document.getElementById("postinfi13").innerHTML = "You passively generate Infinitied stat based on your fastest infinity.<br>1 Infinity every "+timeDisplay(player.bestInfinityTime*5)+ " <br>Cost: "+shortenCosts(20e6)+" IP"
-            document.getElementById("postinfi23").innerHTML = "Option to bulk buy Dimension Boosts <br>Cost: "+shortenCosts(5e9)+" IP"
-            document.getElementById("postinfi33").innerHTML = "Autobuyers work twice as fast <br>Cost:"+shortenCosts(1e15)+" IP"
+            document.getElementById("postinfi13").innerHTML = "You passively generate Infinitied stat based on your fastest infinity.<br>1 Infinity every "+timeDisplay(player.bestInfinityTime*5)+ " <br>花费: "+shortenCosts(20e6)+" 无限点数"
+            document.getElementById("postinfi23").innerHTML = "Option to bulk buy Dimension Boosts <br>花费: "+shortenCosts(5e9)+" 无限点数"
+            document.getElementById("postinfi33").innerHTML = "Autobuyers work twice as fast <br>花费:"+shortenCosts(1e15)+" 无限点数"
             if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease.toFixed(1)+"x"
 
-            document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% > "+Math.max(Math.max(5, player.offlineProd + 5), Math.min(50, player.offlineProd + 5))+"% of your best IP/min from last 10 infinities, works offline<br>Currently: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +"IP/min<br> Cost: "+shortenCosts(player.offlineProdCost)+" IP"
-            if (player.offlineProd == 50) document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% of your best IP/min from last 10 infinities, works offline<br>Currently: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +" IP/min"
+            document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% > "+Math.max(Math.max(5, player.offlineProd + 5), Math.min(50, player.offlineProd + 5))+"% of your best IP/min from last 10 infinities, works offline<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +"IP/min<br> 花费: "+shortenCosts(player.offlineProdCost)+" 无限点数"
+            if (player.offlineProd == 50) document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% of your best IP/min from last 10 infinities, works offline<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +" IP/min"
         }
     }
 
     if (document.getElementById("eternityupgrades").style.display == "block" && document.getElementById("eternitystore").style.display == "block") {
-        document.getElementById("eter1").innerHTML = "Infinity Dimensions multiplier based on unspent EP (x+1)<br>Currently: "+shortenMoney(player.eternityPoints.plus(1))+"x<br>Cost: 5 EP"
-        document.getElementById("eter2").innerHTML = "Infinity Dimension multiplier based on eternities ((x/200)^log4(2x))<br>Currently: "+shortenMoney(Decimal.pow(Math.min(player.eternities, 100000)/200 + 1, Math.log(Math.min(player.eternities, 100000)*2+1)/Math.log(4)).times(new Decimal((player.eternities-100000)/200 + 1).times(Math.log((player.eternities- 100000)*2+1)/Math.log(4)).max(1)))+"x<br>Cost: 10 EP"
-        document.getElementById("eter3").innerHTML = "Infinity Dimensions multiplier based on sum of Infinity Challenge times<br>Currently: "+shortenMoney(Decimal.pow(2,300/Math.max(infchallengeTimes, player.achievements.includes("r112") ? 6.1 : 7.5)))+"x<br>Cost: "+shortenCosts(50e3)+" EP"
+        document.getElementById("eter1").innerHTML = "Infinity Dimensions multiplier based on unspent EP (x+1)<br>当前: "+shortenMoney(player.eternityPoints.plus(1))+"x<br>Cost: 5 EP"
+        document.getElementById("eter2").innerHTML = "Infinity Dimension multiplier based on eternities ((x/200)^log4(2x))<br>当前: "+shortenMoney(Decimal.pow(Math.min(player.eternities, 100000)/200 + 1, Math.log(Math.min(player.eternities, 100000)*2+1)/Math.log(4)).times(new Decimal((player.eternities-100000)/200 + 1).times(Math.log((player.eternities- 100000)*2+1)/Math.log(4)).max(1)))+"x<br>Cost: 10 EP"
+        document.getElementById("eter3").innerHTML = "Infinity Dimensions multiplier based on sum of Infinity Challenge times<br>当前: "+shortenMoney(Decimal.pow(2,300/Math.max(infchallengeTimes, player.achievements.includes("r112") ? 6.1 : 7.5)))+"x<br>Cost: "+shortenCosts(50e3)+" EP"
         document.getElementById("eter4").innerHTML = "Your achievement bonus affects Time Dimensions"+"<br>Cost: "+shortenCosts(1e16)+" EP"
         document.getElementById("eter5").innerHTML = "Time Dimensions are multiplied by your unspent time theorems"+"<br>Cost: "+shortenCosts(1e40)+" EP"
         document.getElementById("eter6").innerHTML = "Time Dimensions are multiplied by days played"+"<br>Cost: "+shortenCosts(1e50)+" EP"
@@ -750,7 +750,7 @@ function updateChallenges() {
 
         for (var i=0; i < player.challenges.length; i++) {
             document.getElementById(player.challenges[i]).className = "completedchallengesbtn";
-            document.getElementById(player.challenges[i]).textContent = "Completed"
+            document.getElementById(player.challenges[i]).textContent = "已完成"
         }
 
         if (player.currentChallenge != "") {
@@ -784,7 +784,7 @@ function updateEternityChallenges() {
             document.getElementById(property).className = "lockedchallengesbtn"
         }
         else {
-            document.getElementById(property).textContent = "Completed"
+            document.getElementById(property).textContent = "已完成"
             document.getElementById(property).className = "completedchallengesbtn"
         }
     }
@@ -1003,7 +1003,7 @@ document.getElementById("infiMult").onclick = function() {
         player.infMult = player.infMult.times(2);
         player.autoIP = player.autoIP.times(2);
         player.infMultCost = player.infMultCost.times(10)
-        document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shorten(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+        document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
         if (player.autobuyers[11].priority !== undefined && player.autobuyers[11].priority !== null && player.autoCrunchMode == "amount") player.autobuyers[11].priority = player.autobuyers[11].priority.times(2);
         if (player.autoCrunchMode == "amount") document.getElementById("priority12").value = formatValue("Scientific", player.autobuyers[11].priority, 2, 0);
     }
@@ -1184,7 +1184,7 @@ document.getElementById("offlineProd").onclick = function() {
 
 function updateInfCosts() {
 
-    document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shorten(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+    document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
     if (document.getElementById("replicantis").style.display == "block" && document.getElementById("infinity").style.display == "block") {
         if (player.replicanti.chance < 1) document.getElementById("replicantichance").innerHTML = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%<br>+"+1+"% Costs: "+shortenCosts(player.replicanti.chanceCost)+" IP"
         else document.getElementById("replicantichance").textContent = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%"
@@ -1509,10 +1509,10 @@ document.getElementById("buyerBtnInf").onclick = function () {
 toggleAutobuyerTarget = function(id) {
     if (player.autobuyers[id-1].target == id) {
         player.autobuyers[id-1].target = 10 + id
-        document.getElementById("toggleBtn" + id).textContent = "Buys until 10"
+        document.getElementById("toggleBtn" + id).textContent = "购买10次"
     } else {
         player.autobuyers[id-1].target = id
-        document.getElementById("toggleBtn" + id).textContent = "Buys singles"
+        document.getElementById("toggleBtn" + id).textContent = "购买单次"
     }
 }
 
@@ -2324,33 +2324,33 @@ function updateAutobuyers() {
     }
 
     if (player.infinityUpgrades.includes("autoBuyerUpgrade")) {
-        document.getElementById("interval1").textContent = "Current interval: " + (player.autobuyers[0].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval2").textContent = "Current interval: " + (player.autobuyers[1].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval3").textContent = "Current interval: " + (player.autobuyers[2].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval4").textContent = "Current interval: " + (player.autobuyers[3].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval5").textContent = "Current interval: " + (player.autobuyers[4].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval6").textContent = "Current interval: " + (player.autobuyers[5].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval7").textContent = "Current interval: " + (player.autobuyers[6].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("interval8").textContent = "Current interval: " + (player.autobuyers[7].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("intervalTickSpeed").textContent = "Current interval: " + (player.autobuyers[8].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("intervalDimBoost").textContent = "Current interval: " + (player.autobuyers[9].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("intervalGalaxies").textContent = "Current interval: " + (player.autobuyers[10].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("intervalInf").textContent = "Current interval: " + (player.autobuyers[11].interval/2000).toFixed(2) + " seconds"
-        document.getElementById("intervalSac").textContent = "Current interval: 0.05 seconds"
+        document.getElementById("interval1").textContent = "当前时间间隔: " + (player.autobuyers[0].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval2").textContent = "当前时间间隔: " + (player.autobuyers[1].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval3").textContent = "当前时间间隔: " + (player.autobuyers[2].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval4").textContent = "当前时间间隔: " + (player.autobuyers[3].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval5").textContent = "当前时间间隔: " + (player.autobuyers[4].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval6").textContent = "当前时间间隔: " + (player.autobuyers[5].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval7").textContent = "当前时间间隔: " + (player.autobuyers[6].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("interval8").textContent = "当前时间间隔: " + (player.autobuyers[7].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("intervalTickSpeed").textContent = "当前时间间隔: " + (player.autobuyers[8].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("intervalDimBoost").textContent = "当前时间间隔: " + (player.autobuyers[9].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("intervalGalaxies").textContent = "当前时间间隔: " + (player.autobuyers[10].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("intervalInf").textContent = "当前时间间隔: " + (player.autobuyers[11].interval/2000).toFixed(2) + " 秒"
+        document.getElementById("intervalSac").textContent = "当前时间间隔: 0.05 秒"
     } else {
-        document.getElementById("interval1").textContent = "Current interval: " + (player.autobuyers[0].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval2").textContent = "Current interval: " + (player.autobuyers[1].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval3").textContent = "Current interval: " + (player.autobuyers[2].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval4").textContent = "Current interval: " + (player.autobuyers[3].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval5").textContent = "Current interval: " + (player.autobuyers[4].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval6").textContent = "Current interval: " + (player.autobuyers[5].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval7").textContent = "Current interval: " + (player.autobuyers[6].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("interval8").textContent = "Current interval: " + (player.autobuyers[7].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("intervalTickSpeed").textContent = "Current interval: " + (player.autobuyers[8].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("intervalDimBoost").textContent = "Current interval: " + (player.autobuyers[9].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("intervalGalaxies").textContent = "Current interval: " + (player.autobuyers[10].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("intervalInf").textContent = "Current interval: " + (player.autobuyers[11].interval/1000).toFixed(2) + " seconds"
-        document.getElementById("intervalSac").textContent = "Current interval: 0.10 seconds"
+        document.getElementById("interval1").textContent = "当前时间间隔: " + (player.autobuyers[0].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval2").textContent = "当前时间间隔: " + (player.autobuyers[1].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval3").textContent = "当前时间间隔: " + (player.autobuyers[2].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval4").textContent = "当前时间间隔: " + (player.autobuyers[3].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval5").textContent = "当前时间间隔: " + (player.autobuyers[4].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval6").textContent = "当前时间间隔: " + (player.autobuyers[5].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval7").textContent = "当前时间间隔: " + (player.autobuyers[6].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("interval8").textContent = "当前时间间隔: " + (player.autobuyers[7].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("intervalTickSpeed").textContent = "当前时间间隔: " + (player.autobuyers[8].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("intervalDimBoost").textContent = "当前时间间隔: " + (player.autobuyers[9].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("intervalGalaxies").textContent = "当前时间间隔: " + (player.autobuyers[10].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("intervalInf").textContent = "当前时间间隔: " + (player.autobuyers[11].interval/1000).toFixed(2) + " 秒"
+        document.getElementById("intervalSac").textContent = "当前时间间隔: 0.10 秒"
     }
 
     var maxedAutobuy = 0;
@@ -2372,7 +2372,7 @@ function updateAutobuyers() {
             }
             maxedAutobuy++;
         }
-        else document.getElementById("buyerBtn" + tier).innerHTML = "40% smaller interval <br>Cost: " + shortenDimensions(player.autobuyers[tier-1].cost) + " IP"
+        else document.getElementById("buyerBtn" + tier).innerHTML = "时间间隔减少40% <br>花费: " + shortenDimensions(player.autobuyers[tier-1].cost) + " 无限点数"
         }
     }
 
@@ -2398,10 +2398,10 @@ function updateAutobuyers() {
     if (maxedAutobuy >= 12) giveAchievement("Definitely not worth it");
     if (e100autobuy >= 8) giveAchievement("Professional bodybuilder");
 
-    document.getElementById("buyerBtnTickSpeed").innerHTML = "40% smaller interval <br>Cost: " + player.autobuyers[8].cost + " IP"
-    document.getElementById("buyerBtnDimBoost").innerHTML = "40% smaller interval <br>Cost: " + player.autobuyers[9].cost + " IP"
-    document.getElementById("buyerBtnGalaxies").innerHTML = "40% smaller interval <br>Cost: " + player.autobuyers[10].cost + " IP"
-    document.getElementById("buyerBtnInf").innerHTML = "40% smaller interval <br>Cost: " + player.autobuyers[11].cost + " IP"
+    document.getElementById("buyerBtnTickSpeed").innerHTML = "时间间隔减少40% <br>花费: " + player.autobuyers[8].cost + " 无限点数"
+    document.getElementById("buyerBtnDimBoost").innerHTML = "时间间隔减少40% <br>花费: " + player.autobuyers[9].cost + " 无限点数"
+    document.getElementById("buyerBtnGalaxies").innerHTML = "时间间隔减少40% <br>花费: " + player.autobuyers[10].cost + " 无限点数"
+    document.getElementById("buyerBtnInf").innerHTML = "时间间隔减少40% <br>花费: " + player.autobuyers[11].cost + " 无限点数"
 
 
     for (var i=0; i<8; i++) {
@@ -2607,10 +2607,10 @@ function toggleBulk() {
 
     if (player.options.bulkOn) {
         player.options.bulkOn = false
-        document.getElementById("togglebulk").textContent = "Enable bulk buy"
+        document.getElementById("togglebulk").textContent = "启用批量购买"
     } else {
         player.options.bulkOn = true
-        document.getElementById("togglebulk").textContent = "Disable bulk buy"
+        document.getElementById("togglebulk").textContent = "禁用批量购买"
     }
 }
 
@@ -2672,15 +2672,15 @@ function updateLastTenRuns() {
     for (var i=0; i<10; i++) {
         var ippm = player.lastTenRuns[i][1].dividedBy(player.lastTenRuns[i][0]/600)
         if (ippm.gt(tempBest)) tempBest = ippm
-        var tempstring = shorten(ippm) + " IP/min"
-        if (ippm<1) tempstring = shorten(ippm*60) + " IP/hour"
-        document.getElementById("run"+(i+1)).textContent = "The infinity "+(i+1)+" infinities ago took " + timeDisplayShort(player.lastTenRuns[i][0]) + " and gave " + shortenDimensions(player.lastTenRuns[i][1]) +" IP. "+ tempstring
+        var tempstring = shorten(ippm) + " 无限点数/分钟"
+        if (ippm<1) tempstring = shorten(ippm*60) + " 无限点数/小时"
+        document.getElementById("run"+(i+1)).textContent = ""+(i+1)+"次前的无限花费了 " + timeDisplayShort(player.lastTenRuns[i][0]) + " 并获得 " + shortenDimensions(player.lastTenRuns[i][1]) +" 无限点数。 "+ tempstring
     }
 
     var ippm = tempIP.dividedBy(tempTime/600)
-    var tempstring = shorten(ippm) + " IP/min"
-    if (ippm<1) tempstring = shorten(ippm*60) + " IP/hour"
-    document.getElementById("averagerun").textContent = "Last 10 infinities average time: "+ timeDisplayShort(tempTime)+" Average IP gain: "+shortenDimensions(tempIP)+" IP. "+tempstring
+    var tempstring = shorten(ippm) + " 无限点数/分钟"
+    if (ippm<1) tempstring = shorten(ippm*60) + " 无限点数/小时"
+    document.getElementById("averagerun").textContent = "前10次无限的平均时间: "+ timeDisplayShort(tempTime)+" 平均无限点数获得: "+shortenDimensions(tempIP)+" 无限点数。 "+tempstring
 
     if (tempBest.gte(1e8)) giveAchievement("Oh hey, you're still here");
     if (tempBest.gte(1e300)) giveAchievement("MAXIMUM OVERDRIVE");
@@ -3401,14 +3401,14 @@ function eternity(force, auto) {
             kongregate.stats.submit('Eternities', player.eternities);
         } catch (err) {console.log("Couldn't load Kongregate API")}
         if (player.eternities > 2 && player.replicanti.galaxybuyer === undefined) player.replicanti.galaxybuyer = false
-        document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-        document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+        document.getElementById("infinityPoints1").innerHTML = "你拥有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
+        document.getElementById("infinityPoints2").innerHTML = "你拥有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
         if (player.eternities < 2) document.getElementById("break").textContent = "BREAK INFINITY"
         document.getElementById("replicantireset").innerHTML = "Reset replicanti amount, but get a free galaxy<br>"+player.replicanti.galaxies + " replicated galaxies created."
         document.getElementById("eternitybtn").style.display = player.infinityPoints.gte(player.eternityChallGoal) ? "inline-block" : "none"
         document.getElementById("eternityPoints2").style.display = "inline-block"
         document.getElementById("eternitystorebtn").style.display = "inline-block"
-        document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shorten(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+        document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
         updateEternityUpgrades()
         document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
         updateTickSpeed();
@@ -4194,14 +4194,14 @@ function startEternityChallenge(name, startgoal, goalIncrease) {
             kongregate.stats.submit('Eternities', player.eternities);
         } catch (err) {console.log("Couldn't load Kongregate API")}
         if (player.eternities > 2 && player.replicanti.galaxybuyer === undefined) player.replicanti.galaxybuyer = false
-        document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-        document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+        document.getElementById("infinityPoints1").innerHTML = "你拥有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
+        document.getElementById("infinityPoints2").innerHTML = "你拥有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
         if (player.eternities < 2) document.getElementById("break").textContent = "BREAK INFINITY"
         document.getElementById("replicantireset").innerHTML = "Reset replicanti amount, but get a free galaxy<br>"+player.replicanti.galaxies + " replicated galaxies created."
         document.getElementById("eternitybtn").style.display = player.infinityPoints.gte(player.eternityChallGoal) ? "inline-block" : "none"
         document.getElementById("eternityPoints2").style.display = "inline-block"
         document.getElementById("eternitystorebtn").style.display = "inline-block"
-        document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shorten(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+        document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
         updateEternityUpgrades()
         document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
         updateTickSpeed();
@@ -4873,7 +4873,7 @@ function gameLoop(diff) {
 
     if (nextAt[player.postChallUnlocked] === undefined) document.getElementById("nextchall").textContent = " "
     else if (!player.achievements.includes("r133")) {
-        document.getElementById("nextchall").textContent = "Next challenge unlocks at "+ shortenCosts(nextAt[player.postChallUnlocked]) + " antimatter."
+        document.getElementById("nextchall").textContent = "下一个挑战在 "+ shortenCosts(nextAt[player.postChallUnlocked]) + " 反物质解锁。"
         while (player.money.gte(nextAt[player.postChallUnlocked]) && player.challenges.includes("postc8") === false && player.postChallUnlocked != 8) {
             if (player.postChallUnlocked != 8) player.postChallUnlocked += 1
             if (player.eternities > 6) player.challenges.push("postc"+player.postChallUnlocked)
@@ -4943,7 +4943,7 @@ function gameLoop(diff) {
         if (dif > 0) {
             player.infMult = player.infMult.times(Decimal.pow(2, dif))
             player.infMultCost = player.infMultCost.times(Decimal.pow(10, dif))
-            document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>currently: "+shorten(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+            document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
             player.infinityPoints = player.infinityPoints.minus(player.infMultCost.dividedBy(10))
             if (player.autobuyers[11].priority !== undefined && player.autobuyers[11].priority !== null && player.autoCrunchMode == "amount") player.autobuyers[11].priority = player.autobuyers[11].priority.times(Decimal.pow(2, dif));
             if (player.autoCrunchMode == "amount") document.getElementById("priority12").value = player.autobuyers[11].priority
@@ -5351,8 +5351,8 @@ function gameLoop(diff) {
         }
     }
 
-    document.getElementById("infinityPoints1").innerHTML = "You have <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
-    document.getElementById("infinityPoints2").innerHTML = "You have <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> Infinity points."
+    document.getElementById("infinityPoints1").innerHTML = "你拥有 <span class=\"IPAmount1\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
+    document.getElementById("infinityPoints2").innerHTML = "你拥有 <span class=\"IPAmount2\">"+shortenDimensions(player.infinityPoints)+"</span> 无限点数。"
 
     player.lastUpdate = thisUpdate;
 }
@@ -5399,7 +5399,7 @@ function startInterval() {
 function enableChart() {
     if (document.getElementById("chartOnOff").checked) {
         player.options.chart.on = true;
-        if (player.options.chart.warning < 1) alert("Warning: the chart can cause performance issues. Please disable it if you're experiencing lag.")
+        if (player.options.chart.warning < 1) alert("警告:图表可能导致性能问题。如果你导致你游戏停滞，请禁用它。")
     } else {
         player.options.chart.on = false;
     }

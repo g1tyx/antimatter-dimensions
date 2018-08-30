@@ -401,7 +401,7 @@ if (player.version < 5) {
 
 
   if (player.break == true) document.getElementById("break").textContent = "FIX INFINITY"
-  document.getElementById("infiMult").innerHTML = "Multiply infinity points from all sources by 2 <br>当前: "+shortenDimensions(player.infMult.times(kongIPMult)) +"x<br>Cost: "+shortenCosts(player.infMultCost)+" IP"
+  document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shortenDimensions(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
 
   document.getElementById("notation").textContent = "数据格式: " + player.options.notation
 
@@ -790,10 +790,10 @@ function transformSaveToDecimal() {
 function loadAutoBuyerSettings() {
   for (var i=0; i<9; i++) {
       document.getElementById("priority" + (i+1)).selectedIndex = player.autobuyers[i].priority-1
-      if (i == 8 && player.autobuyers[i].target == 10) document.getElementById("toggleBtnTickSpeed").textContent = "Buys max"
-      else if (i == 8 && player.autobuyers[i].target !== 10) document.getElementById("toggleBtnTickSpeed").textContent = "Buys singles"
-      else if (player.autobuyers[i].target > 10) document.getElementById("toggleBtn" + (i+1)).textContent = "Buys until 10"
-      else document.getElementById("toggleBtn" + (i+1)).textContent = "Buys singles"
+      if (i == 8 && player.autobuyers[i].target == 10) document.getElementById("toggleBtnTickSpeed").textContent = "购买最大"
+      else if (i == 8 && player.autobuyers[i].target !== 10) document.getElementById("toggleBtnTickSpeed").textContent = "购买单次"
+      else if (player.autobuyers[i].target > 10) document.getElementById("toggleBtn" + (i+1)).textContent = "购买10次"
+      else document.getElementById("toggleBtn" + (i+1)).textContent = "购买单次"
 
   }
   document.getElementById("priority10").value = player.autobuyers[9].priority

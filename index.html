@@ -60,7 +60,7 @@
         </tr>
         <p></p>
         <div style="position:absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; width: 360px; top: 19px">
-            <button id="bigcrunch" style="font-family: Typewriter; font-size: 50px; width: 360px; height: 100px;" class="tabbtn">Big Crunch</button>
+            <button id="bigcrunch" style="font-family: Typewriter; font-size: 50px; width: 360px; height: 100px;" class="tabbtn">大坍缩</button>
         </div>
         <div>
             <button id="dimensionsbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">维度</button>
@@ -73,7 +73,7 @@
             <button id="shopbtn" style="font-family: Typewriter; font-size: 20px" class="tabbtn">Shop</button>
         </div>
         <div id="emptiness" class="tab" style="font-size: 150%">
-            <br> The world has collapsed on itself due to excess of antimatter.
+            <br> 由于过量的反物质，世界已经崩溃了。
             <br>
             <br>
         </div>
@@ -578,10 +578,10 @@
         <div id="dimensions" class="tab">
             <table class="table" align="center" style="margin: auto" id="dimTabButtons">
                 <tr>
-                    <td id="dtabbtn"><button class="secondarytabbtn" onclick="showDimTab('antimatterdimensions')">Dimensions</button></td>
-                    <td id="idtabbtn"><button class="secondarytabbtn" onclick="showDimTab('infinitydimensions')">Infinity Dimensions</button></td>
-                    <td id="tdtabbtn"><button class="secondarytabbtn" onclick="showDimTab('timedimensions')">Time Dimensions</button></td>
-                    <td id="prodtabbtn"><button class="secondarytabbtn" onclick="showDimTab('production')">Production</button></td>
+                    <td id="dtabbtn"><button class="secondarytabbtn" onclick="showDimTab('antimatterdimensions')">维度</button></td>
+                    <td id="idtabbtn"><button class="secondarytabbtn" onclick="showDimTab('infinitydimensions')">无限维度</button></td>
+                    <td id="tdtabbtn"><button class="secondarytabbtn" onclick="showDimTab('timedimensions')">时间维度</button></td>
+                    <td id="prodtabbtn"><button class="secondarytabbtn" onclick="showDimTab('production')">生产图表</button></td>
                 </tr>
             </table>
             <div id="antimatterdimensions" class="dimtab">
@@ -949,16 +949,16 @@
                         </table>
             </div>
             <div id="production" class="dimtab">
-                <b>seconds of history:</b>
+                <b>图表记录秒数:</b>
                 <input type="number" value="10" onchange="updateChartValues()" id="chartDurationInput"></input>
-                <b>update rate (in ms):</b>
+                <b>刷新速率 (单位 ms):</b>
                 <input type="number" value="1000" onchange="updateChartValues()" id="chartUpdateRateInput"></input>
-                <b>enabled:</b>
+                <b>开启:</b>
                 <input id="chartOnOff" type="checkbox" onchange="enableChart()"></input>
                 <b>dips:</b>
                 <input id="chartDipsOnOff" type="checkbox" onchange="enableChartDips()"></input>
                 <canvas id="normalDimChart" width="1500" height="500" style="user-select: none;"></canvas>
-                <b>Exponents of antimatter per second</b>
+                <b>每秒反物质的指数</b>
             </div>
             <div id="footercontainer">
 
@@ -1595,11 +1595,11 @@
 
         <div id="challenges" class="tab">
             <br>
-            <button class="storebtn" style="font-size: 100%; width:200px" onclick="exitChallenge()">Exit Challenge</button><br><br>
+            <button class="storebtn" style="font-size: 100%; width:200px" onclick="exitChallenge()">退出挑战</button><br><br>
             <table class="table" align="center" style="margin: auto; display: none" id="challTabButtons">
                 <tr>
-                    <td><button class="secondarytabbtn" onclick="showChallengesTab('challenges')">Challenges</button></td>
-                    <td><button class="secondarytabbtn" onclick="showChallengesTab('breakchallenges')">Infinity Challenges</button></td>
+                    <td><button class="secondarytabbtn" onclick="showChallengesTab('challenges')">挑战</button></td>
+                    <td><button class="secondarytabbtn" onclick="showChallengesTab('breakchallenges')">无限挑战</button></td>
                     <td><button id="eterctabbtn" class="secondarytabbtn" onclick="showChallengesTab('eternitychallenges')">Eternity Challenges</button></td>
                 </tr>
             </table>
@@ -1609,57 +1609,27 @@
                     <tr>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Reach infinity for the first time.</span>
+                                <span style="font-size: 110%">首次到达无限。</span>
                                 <br>
                                 <br>
                                 <div class="outer">
-                                    <button id="challenge1" class="challengesbtn">Start</button>
+                                    <button id="challenge1" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: First Dimension autobuyer</span>
+                                    <span>奖励: 第一维度自动购买</span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Buying anything halts your production, gradually coming back over 3 minutes.</span>
+                                <span style="font-size: 110%">购买任何东西都会使生产停止，然后在3分钟内逐渐恢复。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge2" class="challengesbtn">Start</button>
+                                    <button id="challenge2" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Second Dimension autobuyer</span>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class= "challengediv">
-                                <span style="font-size: 110%">First dimension is heavily weakened but gets an exponentially increasing bonus that resets on reset.</span>
-                                <br>
-                                <br>
-
-                                <div class="outer">
-
-                                    <button id="challenge3" class="challengesbtn">Start</button>
-                                    <br>
-                                    <span>Reward: Third Dimension autobuyer</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class= "challengediv">
-                                <span style="font-size: 110%">Buying a dimension automatically erases all lower tier dimensions, like a sacrifice without the boost.</span>
-                                <br>
-                                <br>
-
-                                <div class="outer">
-
-                                    <button id="challenge8" class="challengesbtn">Start</button>
-                                    <br>
-                                    <span>Reward: Fourth Dimension autobuyer</span>
+                                    <span>奖励: 第二维度自动购买</span>
                                 </div>
                             </div>
                         </td>
@@ -1667,59 +1637,29 @@
                     <tr>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Tickspeed starts at 7%.</span>
+                                <span style="font-size: 110%">第一维度被严重削弱，但是会获得一个随时间指数型增长的加成，游戏重置后也重置。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge6" class="challengesbtn">Start</button>
+                                    <button id="challenge3" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Fifth Dimension autobuyer</span>
+                                    <span>奖励: 第三维度自动购买</span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Each dimension costs the dimension 2 before it, with modified prices</span>
+                                <span style="font-size: 110%">购买一个维度会自动删除所有较低层次的维度，类似没有提升的维度献祭。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge10" class="challengesbtn">Start</button>
+                                    <button id="challenge8" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Sixth Dimension autobuyer</span>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class= "challengediv">
-                                <span style="font-size: 110%">Multiplier per 10 dimensions is random from 0.30 and 10</span>
-                                <br>
-                                <br>
-
-                                <div class="outer">
-
-                                    <button id="challenge9" class="challengesbtn">Start</button>
-                                    <br>
-                                    <span>Reward: Seventh Dimension autobuyer</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class= "challengediv">
-                                <span style="font-size: 110%">Dimension Boost and galaxies are useless, sacrifice resets everything but is immensely more powerful</span>
-                                <br>
-                                <br>
-
-                                <div class="outer">
-
-                                    <button id="challenge11" class="challengesbtn">Start</button>
-                                    <br>
-                                    <span>Reward: Eighth Dimension autobuyer</span>
+                                    <span>奖励: 第四维度自动购买</span>
                                 </div>
                             </div>
                         </td>
@@ -1727,29 +1667,29 @@
                     <tr>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Whenever you buy 10 of a dimension or tickspeed, everything else of equal cost will increase to its next cost step.</span>
+                                <span style="font-size: 110%">开始时，时刻间隔减少为7%。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge5" class="challengesbtn">Start</button>
+                                    <button id="challenge6" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Tickspeed autobuyer</span>
+                                    <span>奖励: 第五维度自动购买</span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">There are only 6 dimensions, with dimension boost and antimatter galaxy costs modified.</span>
+                                <span style="font-size: 110%">每个维度都要花费低2阶的维度，并修改了价格。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge4" class="challengesbtn">Start</button>
+                                    <button id="challenge10" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Automated Dimension Boosts</span>
+                                    <span>奖励: 第六维度自动购买</span>
                                 </div>
                             </div>
                         </td>
@@ -1757,29 +1697,89 @@
                     <tr>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">There's normal matter which rises. If it exceeds your antimatter, it will dimension boost without giving the bonus.</span>
+                                <span style="font-size: 110%">每买10次维度的倍数加成在0.3~10之间取随机值。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge12" class="challengesbtn">Start</button>
+                                    <button id="challenge9" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Automated Galaxies</span>
+                                    <span>奖励: 第七维度自动购买</span>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class= "challengediv">
-                                <span style="font-size: 110%">Each dimension produces the dimension 2 below it; first dimensions produce reduced antimatter.</span>
+                                <span style="font-size: 110%">维度提升以及星系没有作用，维度献祭将重置一切，但加成变得非常大。</span>
                                 <br>
                                 <br>
 
                                 <div class="outer">
 
-                                    <button id="challenge7" class="challengesbtn">Start</button>
+                                    <button id="challenge11" class="challengesbtn">开始</button>
                                     <br>
-                                    <span>Reward: Automated Big Crunches</span>
+                                    <span>奖励: 第八维度自动购买</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class= "challengediv">
+                                <span style="font-size: 110%">只要你购买10次维度或是时刻间隔，其他花费相同的升级项的价格将会跳跃到下一次升级的价格。</span>
+                                <br>
+                                <br>
+
+                                <div class="outer">
+
+                                    <button id="challenge5" class="challengesbtn">开始</button>
+                                    <br>
+                                    <span>奖励: 自动升级时间间隔</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class= "challengediv">
+                                <span style="font-size: 110%">只有六个维度，并对维度提升以及反物质星系的价格进行调整。</span>
+                                <br>
+                                <br>
+
+                                <div class="outer">
+
+                                    <button id="challenge4" class="challengesbtn">开始</button>
+                                    <br>
+                                    <span>奖励: 自动维度提升</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class= "challengediv">
+                                <span style="font-size: 110%">正物质在不断增长。如果它超过了你的反物质，将会维度提升，但不产生任何加成。</span>
+                                <br>
+                                <br>
+
+                                <div class="outer">
+
+                                    <button id="challenge12" class="challengesbtn">开始</button>
+                                    <br>
+                                    <span>奖励: 自动购买星系</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class= "challengediv">
+                                <span style="font-size: 110%">每个维度都会生产低两阶的维度；第一维度生产反物质。</span>
+                                <br>
+                                <br>
+
+                                <div class="outer">
+
+                                    <button id="challenge7" class="challengesbtn">开始</button>
+                                    <br>
+                                    <span>奖励: 自动大坍缩</span>
                                 </div>
                             </div>
                         </td>
@@ -2116,9 +2116,9 @@
             <div id="infinityPoints1" style="color: black; font-size: 15px; width: 40%; margin: 0 auto">You have made x Infinity points.</div>
             <br>
             <tr>
-                <td><button class="secondarytabbtn" onclick="showInfTab('preinf')">Upgrades</button><td>
-                <td><button class="secondarytabbtn" onclick="showInfTab('autobuyers')">Autobuyers</button><td>
-                <td><button id="postinfbtn" class="secondarytabbtn" onclick="showInfTab('postinf')" >Break Infinity</button><td>
+                <td><button class="secondarytabbtn" onclick="showInfTab('preinf')">升级</button><td>
+                <td><button class="secondarytabbtn" onclick="showInfTab('autobuyers')">自动购买</button><td>
+                <td><button id="postinfbtn" class="secondarytabbtn" onclick="showInfTab('postinf')" >突破无限</button><td>
                 <td><button id="replicantitabbtn" class="secondarytabbtn" onclick="showInfTab('replicantis')">Replicantis</button><td>
             </tr>
             <div id="preinf" class="inftab">
@@ -2129,13 +2129,13 @@
                         <button id="infi11" class="infinistorebtn1">Production increase over time <br>currently:</button>
                     </td>
                     <td>
-                        <button id="infi21" class="infinistorebtn2">Increase the multiplier for buying 10 Dimensions <br>2x -> 2.2x<br>Cost: 1 IP</button>
+                        <button id="infi21" class="infinistorebtn2">每买10个维度的倍数增加 <br>2x -> 2.2x<br>花费: 1 无限点数</button>
                     </td>
                     <td>
                         <button id="infi31" class="infinistorebtn3">Production increase over time in current infinity<br>Cost: 3 IP</button>
                     </td>
                     <td>
-                        <button id="infi41" class="infinistorebtn4">You start with the 5th dimension unlocked<br>Cost: 20 IP</button>
+                        <button id="infi41" class="infinistorebtn4">开始时已解锁第五维度<br>花费: 20 无限点数</button>
                     </td>
                 </tr>
                 <tr>
@@ -2149,7 +2149,7 @@
                         <button id="infi32" class="infinistorebtn3">Bonus per unspent Infinity Point <br>xx</button>
                     </td>
                     <td>
-                        <button id="infi42" class="infinistorebtn4">You start with the 6th dimension unlocked<br>Cost: 40 IP</button>
+                        <button id="infi42" class="infinistorebtn4">开始时已解锁第四维度<br>花费: 40 无限点数</button>
                     </td>
                 </tr>
                 <tr>
@@ -2160,24 +2160,24 @@
                         <button id="infi23" class="infinistorebtn2">Fourth and Fifth Dimension power <br>xx</button>
                     </td>
                     <td>
-                        <button id="infi33" class="infinistorebtn3">Increase Dimension Boost multiplier <br>2x -> 2.5x<br>Cost: 7 IP</button>
+                        <button id="infi33" class="infinistorebtn3">维度提升倍数增加 <br>2x -> 2.5x<br>花费: 7 无限点数</button>
                     </td>
                     <td>
-                        <button id="infi43" class="infinistorebtn4">You start with the 7th dimension unlocked<br>Cost: 80 IP</button>
+                        <button id="infi43" class="infinistorebtn4">开始时已解锁第七维度<br>花费: 80 无限点数</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button id="infi14" class="infinistorebtn1">Decrease the number of Dimensions needed for Dimensional Boosts and galaxies by 9<br>Cost: 1 IP</button>
+                        <button id="infi14" class="infinistorebtn1">维度提升以及反物质星系的维度需求减少9<br>花费: 1 无限点数</button>
                     </td>
                     <td>
-                        <button id="infi24" class="infinistorebtn2">Antimatter Galaxies are twice as effective<br>Cost: 2 IP</button>
+                        <button id="infi24" class="infinistorebtn2">反物质星系的效果翻倍<br>花费: 2 无限点数</button>
                     </td>
                     <td>
                         <button id="infi34" class="infinistorebtn3">Infinity Point generation (based on fastest infinity) <br>xx</button>
                     </td>
                     <td>
-                        <button id="infi44" class="infinistorebtn4">You start with the 8th dimension unlocked, and a Galaxy<br>Cost: 500 IP</button>
+                        <button id="infi44" class="infinistorebtn4">开始时已解锁第八维度, 并拥有一个星系<br>花费: 500 无限点数</button>
                     </td>
                 </tr>
                 <tr>
@@ -2207,8 +2207,8 @@
         <div id="autobuyers" class="inftab">
             <br>
             <table class="table" style="margin: 0 auto">
-                <button class="storebtn" id="toggleautobuyers" style="font-size: 100%; width: 150px; height: 40px; margin: 3px" onclick="toggleAutoBuyers()">Enable/disable autobuyers</button>
-                <button class="storebtn" id="togglebulk" style="font-size: 100%; width: 150px; height: 40px;margin: 3px" onclick="toggleBulk()">Disable bulk buy                     </button>
+                <button class="storebtn" id="toggleautobuyers" style="font-size: 100%; width: 150px; height: 40px; margin: 3px" onclick="toggleAutoBuyers()">启用/禁用 自动购买</button>
+                <button class="storebtn" id="togglebulk" style="font-size: 100%; width: 150px; height: 40px;margin: 3px" onclick="toggleBulk()">禁用批量购买                     </button>
                 <button class="storebtn" id="togglecrunchmode" style="font-size: 100%; width: 150px; height: 40px;margin: 3px; display: none" onclick="toggleCrunchMode()">Auto crunch mode: amount</button>
                 <br>
                 <div class="autoBuyerDiv" id="autoBuyerEter">
@@ -2222,7 +2222,7 @@
                 <tr>
                         <td>
                             <div class="autoBuyerDiv" id="autoBuyerDimBoost" style="font-size: 11px;">
-                                <div>Automatic DimBoosts</div>
+                                <div>自动维度提升</div>
                                 <button class="autobuyerbtn" id="buyerBtnDimBoost">46% smaller interval<br>Cost: 2 points</button>
                                 <div style="font-size: 80%"id="intervalDimBoost">Current interval: 30 seconds</div>
                                 <span style="font-size: 80%">Max 8ths used on reset:</span>
@@ -2236,16 +2236,16 @@
                                     <input type="text" onchange="updatePriorities()" id="bulkDimboost"></input>
                                 </div>
                                 <br>
-                                <span style="font-size: 80%">Is active</span>
+                                <span style="font-size: 80%">启用</span>
                                 <input type="checkbox" onchange="updateAutobuyers()"   id="10ison"></input>
                             </div>
                         </td>
                         <td>
                             <div class="autoBuyerDiv" id="autoBuyerGalaxies">
-                                <div>Automatic Galaxies</div>
+                                <div>自动购买星系</div>
                                 <button class="autobuyerbtn" id="buyerBtnGalaxies">46% smaller interval<br>Cost: 2 points</button>
                                 <div style="font-size: 80%"id="intervalGalaxies">Current interval: 30 seconds</div>
-                                <span>Max Galaxies:</span>
+                                <span>最大星系数:</span>
                                 <input type="text" onchange="updatePriorities()" id="priority11"></input>
                                 <br>
                                 <div id="galaxybulk" style="display: none">
@@ -2253,19 +2253,19 @@
                                     <input type="text" onchange="updatePriorities()" id="bulkgalaxy"></input>
                                 </div>
                                 <br>
-                                <span style="font-size: 80%">Is active</span>
+                                <span style="font-size: 80%">启用</span>
                                 <input type="checkbox" onchange="updateAutobuyers()"   id="11ison"></input>
                             </div>
                         </td>
                         <td>
                             <div class="autoBuyerDiv" id="autoBuyerInf">
-                                <div>Automatic Big Crunch</div>
+                                <div>自动大坍缩</div>
                                 <button class="autobuyerbtn" id="buyerBtnInf">46% smaller interval<br>Cost: 2 points</button>
                                 <div style="font-size: 80%"id="intervalInf">Current interval: 60 seconds</div>
                                 <div id="iplimit"><span id="limittext">Amount of IP to wait until reset:</span>
                                 <input type="text" onchange="updatePriorities()" id="priority12"></input></div>
                                 <br>
-                                <span style="font-size: 80%">Is active</span>
+                                <span style="font-size: 80%">启用</span>
                                 <input type="checkbox" onchange="updateAutobuyers()"   id="12ison"></input>
                             </div>
                         </td>
@@ -2276,11 +2276,11 @@
                 <tr>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer1">
-                            <div>1st Dimension Autobuyer</div>
+                            <div>第一维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn1">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn1">Buys singles</button>
                             <div style="font-size: 80%"id="interval1">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority1">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2293,17 +2293,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="1ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer2">
-                            <div>2nd Dimension Autobuyer</div>
+                            <div>第二维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn2">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn2">Buys singles</button>
                             <div style="font-size: 80%"id="interval2">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority2">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2316,17 +2316,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="2ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer3">
-                            <div>3rd Dimension Autobuyer</div>
+                            <div>第三维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn3">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn3">Buys singles</button>
                             <div style="font-size: 80%"id="interval3">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority3">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2339,7 +2339,7 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="3ison"></input>
                         </div>
                     </td>
@@ -2347,11 +2347,11 @@
                 <tr>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer4">
-                            <div>4th Dimension Autobuyer</div>
+                            <div>第四维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn4">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn4">Buys singles</button>
                             <div style="font-size: 80%"id="interval4">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority4">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2364,17 +2364,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="4ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer5">
-                            <div>5th Dimension Autobuyer</div>
+                            <div>第五维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn5">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn5">Buys singles</button>
                             <div style="font-size: 80%"id="interval5">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority5">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2387,17 +2387,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="5ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer6">
-                            <div>6th Dimension Autobuyer</div>
+                            <div>第六维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn6">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn6">Buys singles</button>
                             <div style="font-size: 80%"id="interval6">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority6">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2410,7 +2410,7 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="6ison"></input>
                         </div>
                     </td>
@@ -2418,11 +2418,11 @@
                 <tr>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer7">
-                            <div>7th Dimension Autobuyer</div>
+                            <div>第七维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn7">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn7">Buys singles</button>
                             <div style="font-size: 80%"id="interval7">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority7">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2435,17 +2435,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="7ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyer8">
-                            <div>8th Dimension Autobuyer</div>
+                            <div>第八维度自动购买</div>
                             <button class="autobuyerbtn" id="buyerBtn8">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtn8">Buys singles</button>
                             <div style="font-size: 80%"id="interval8">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority8">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2458,17 +2458,17 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="8ison"></input>
                         </div>
                     </td>
                     <td>
                         <div class="autoBuyerDiv" id="autoBuyerTickSpeed">
-                            <div>Tickspeed Autobuyer</div>
+                            <div>自动升级时间间隔</div>
                             <button class="autobuyerbtn" id="buyerBtnTickSpeed">46% smaller interval<br>Cost: 2 points</button>
                             <button class="autobuyerbtn" id="toggleBtnTickSpeed">Buys singles</button>
                             <div style="font-size: 80%"id="intervalTickSpeed">Current interval: 5 seconds<br></div>
-                            <span>Priority:</span>
+                            <span>优先级:</span>
                             <select onchange="updatePriorities()" id="priority9">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -2481,19 +2481,19 @@
                             <option value="9">9</option>
                             </select>
                             <br>
-                            <span style="font-size: 80%">Is active</span>
+                            <span style="font-size: 80%">启用</span>
                             <input type="checkbox" onchange="updateAutobuyers()"   id="9ison"></input>
                         </div>
                     </td>
                 </tr>
             </table>
             <div class="autoBuyerDiv" id="autoBuyerSac">
-                <div>Automatic Sacrifice</div>
+                <div>自动献祭</div>
                 <div id="intervalSac" style="font-size: 80%">Current interval: 0.10 seconds</div>
                 <div id="iplimit"><span>Sacrifice when the multiplier is over:</span>
                 <input type="text" onchange="updatePriorities()" id="prioritySac"></input></div>
                 <br>
-                <span style="font-size: 80%">Is active</span>
+                <span style="font-size: 80%">启用</span>
                 <input type="checkbox" onchange="updateAutobuyers()" id="13ison"></input>
             </div>
 
@@ -2516,7 +2516,7 @@
         </div>
         <div id="postinf" class="inftab" align="center">
             <br>
-            <div id="abletobreak">You need to get Automated Big Crunch interval to 0.1 to be able to break infinity</div>
+            <div id="abletobreak">你需要将自动大坍缩的间隔减少到0.1才能够突破无限</div>
                 <br>
                 <table id="postinftable" class="table" style="margin: 0 auto">
                     <tr>
