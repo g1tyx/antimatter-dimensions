@@ -2211,7 +2211,7 @@ function sacrifice(auto = false) {
 
 document.getElementById("sacrifice").onclick = function () {
     if (!document.getElementById("confirmation").checked) {
-        if (!confirm("Dimensional Sacrifice will remove all of your first to seventh dimensions (with the cost and multiplier unchanged) for a boost to Eighth Dimension. It will take time to regain production.")) {
+        if (!confirm("维度献祭将移除所有第一到第七维度（成本和倍数保持不变），以提升到第八维度。 重新获得生产需要时间。")) {
             return false;
         }
     }
