@@ -2079,34 +2079,34 @@ document.getElementById("notation").onclick = function () {
     player.options.scientific = !player.options.scientific;
     if (player.options.notation === "Infinity") {
         player.options.notation = "Scientific";
-        document.getElementById("notation").textContent = ("Notation: Scientific")
+        document.getElementById("notation").textContent = ("数字格式: 科学格式")
     } else if (player.options.notation === "Scientific") {
         player.options.notation = "Engineering";
-        document.getElementById("notation").textContent = ("Notation: Engineering")
+        document.getElementById("notation").textContent = ("数字格式: 工程格式")
     } else if (player.options.notation === "Engineering") {
         player.options.notation = "Letters";
-        document.getElementById("notation").textContent = ("Notation: Letters")
+        document.getElementById("notation").textContent = ("数字格式: 字母格式")
     } else if (player.options.notation === "Letters") {
         player.options.notation = "Standard";
-        document.getElementById("notation").textContent = ("Notation: Standard")
+        document.getElementById("notation").textContent = ("数字格式: 标准格式")
     } else if (player.options.notation === "Standard") {
         player.options.notation = "Emojis";
-        document.getElementById("notation").textContent = ("Notation: Cancer")
+        document.getElementById("notation").textContent = ("数字格式: Cancer")
     } else if (player.options.notation === "Emojis") {
         player.options.notation = "Mixed scientific";
-        document.getElementById("notation").textContent = ("Notation: Mixed scientific")
+        document.getElementById("notation").textContent = ("数字格式: 混合科学格式")
     } else if (player.options.notation === "Mixed scientific") {
         player.options.notation = "Mixed engineering";
-        document.getElementById("notation").textContent = ("Notation: Mixed engineering")
+        document.getElementById("notation").textContent = ("数字格式: 混合工程格式")
     } else if (player.options.notation === "Mixed engineering") {
         player.options.notation = "Logarithm";
-        document.getElementById("notation").textContent = ("Notation: Logarithm")
+        document.getElementById("notation").textContent = ("数字格式: 对数格式")
     } else if (player.options.notation === "Logarithm") {
         player.options.notation = "Brackets";
-        document.getElementById("notation").textContent = ("Notation: Brackets")
+        document.getElementById("notation").textContent = ("数字格式: 括号格式")
     } else if (player.options.notation === "Brackets") {
       player.options.notation = "Infinity";
-      document.getElementById("notation").textContent = ("Notation: Infinity")
+      document.getElementById("notation").textContent = ("数字格式: 无限格式")
     }
 
     updateLastTenRuns();
