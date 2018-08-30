@@ -64,7 +64,7 @@ newsArray = [//always true
 ["1e420 blaze it.", true, "a125"],
 ["This game doesn't have any bugs, you're just doing it wrong.", true, "a126"],
 ["Antimatter_Dimensions.mp1.79e308", true, "a127"],
-["https://www.youtube.com/watch?v=dQw4w9WgXcQ", true, "a128"],
+["更多好玩放置游戏请访问：https://likexia.gitee.io/game/", true, "a128"],
 ["Click this to unlock a secret achievement.", true, "a129"],
 ["Warning - We have just been informed that there is a chance of infection with a mind-virus of the Basilisk type, similar to the infamous winking parrot. This particular example is known as 'Fractal Cancer Type III'. This is believed to cause a 'crashing' of the mind, similar to a computer crash, due to the mathematical complexity of the image causing mathematical ideas that the mind can't comprehend, a Gondelian shock input eventually leading to crashing through Gondelian spoilers. All who have researched it have eventually died the same way, so it is impossible to tell exactly, but this is the common belief. Regardless, with the introduction of 'cancer' mode, as well as reports of it's spontaneous appearance, sufficient repetition of this mode's appearance may lead to  an image forming in the mind similar to 'Fractal Cancer Type III'. With this in mind, we have some suggestions if you find yourself plagued with it. First, refresh immediately and see if that fixes the issue. If not, navigate to options, and change the theme from cancer to literally anything else. And above all else, Godspeed. We can't afford to lose anymore viewers.", true, "a130"],
 ["If I have bad English, I'll study English until I have good English.", true, "a131"],
