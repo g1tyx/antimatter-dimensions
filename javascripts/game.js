@@ -633,10 +633,10 @@ function updateDimensions() {
     if (document.getElementById("infinity").style.display == "block") {
         if (document.getElementById("preinf").style.display == "block") {
             document.getElementById("infi11").innerHTML = "根据总游戏时间令普通维度获取倍数 <br>当前: " + (Math.pow(0.5 * player.totalTimePlayed / 600, 0.15)).toFixed(2) + "x<br>花费: 1 无限点数"
-            document.getElementById("infi12").innerHTML = "根据总无限点数令第一维度和第八维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
-            document.getElementById("infi13").innerHTML = "根据总无限点数令第三维度和第六维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
-            document.getElementById("infi22").innerHTML = "根据总无限点数令第二维度和第七维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
-            document.getElementById("infi23").innerHTML = "根据总无限点数令第四维度和第五维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi12").innerHTML = "根据到达无限次数令第一维度和第八维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi13").innerHTML = "根据到达无限次数令第三维度和第六维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi22").innerHTML = "根据到达无限次数令第二维度和第七维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
+            document.getElementById("infi23").innerHTML = "根据到达无限次数令第四维度和第五维度获得倍数<br>当前: " + formatValue(player.options.notation, dimMults(), 1, 1) + "x<br>花费: 1 无限点数"
             document.getElementById("infi31").innerHTML = "根据当前无限的游戏时间令普通维度获得倍数<br>当前: " + Decimal.max(Math.pow(player.thisInfinityTime / 2400, 0.25), 1).toFixed(2) + "x<br>花费: 3 无限点数"
             document.getElementById("infi32").innerHTML = "根据未花费无限点数令第一维度获得倍数<br>当前: " + formatValue(player.options.notation, player.infinityPoints.dividedBy(2).pow(1.5).plus(1), 2, 2) + "x<br>花费: 5 无限点数"
             document.getElementById("infi34").innerHTML = "根据到达无限的最快时间生产无限点数 <br>当前: 每 " + timeDisplay(player.bestInfinityTime*10) +"获得 "+shortenDimensions(player.infMult.times(kongIPMult))+ " 点<br>花费: 10 无限点数"
@@ -2047,15 +2047,15 @@ function setAchieveTooltip() {
     apocAchieve.setAttribute('ach-tooltip', "拥有超过 " + formatValue(player.options.notation, 1e80, 0, 0) + " 反物质。");
     noPointAchieve.setAttribute('ach-tooltip', "当你拥有超过 " + formatValue(player.options.notation, 1e150, 0, 0) + " 个第一维度时，再买一个。 奖励: 第一维度增强10%。");
     forgotAchieve.setAttribute('ach-tooltip', "使任意维度倍数超过 " + formatValue(player.options.notation, 1e31, 0, 0)) + "。 奖励: 第一维度增强5%。";
-    sanic.setAttribute('ach-tooltip', "Have antimatter/sec exceed your current antimatter above " + formatValue(player.options.notation, 1e63, 0, 0));
-    potato.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e29, 0, 0) + " ticks per second. Reward: Reduces starting tick interval by 2%.");
-    potato2.setAttribute('ach-tooltip', "Get more than " + formatValue(player.options.notation, 1e58, 0, 0) + " ticks per second. Reward: Reduces starting tick interval by 2%.");
-    potato3.setAttribute('ach-tooltip', "Get more than "+shortenCosts(new Decimal("1e8296262"))+" ticks per second.")
-    dimensional.setAttribute('ach-tooltip', "Reach " + formatValue(player.options.notation, 1e12, 0, 0) + " of all dimensions except 8th.");
-    IPBelongs.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e150)+" IP. Reward: Additional 4x multiplier to IP.")
-    reference.setAttribute('ach-tooltip', "Get a x"+shortenDimensions(Number.MAX_VALUE)+" multiplier in a single sacrifice. Reward: Sacrifices are stronger.")
-    blink.setAttribute('ach-tooltip', "Get to Infinity in under 200 milliseconds. Reward: Start with " + formatValue(player.options.notation, 1e25, 0, 0) + " antimatter and all dimensions are stronger in first 300ms of Infinity.");
-    spare.setAttribute('ach-tooltip', "Reach " +formatValue(player.options.notation, new Decimal("1e35000"), 0, 0)+" antimatter. Reward: Dimensions are more powerful the more unspent antimatter you have.");
+    sanic.setAttribute('ach-tooltip', "每秒反物质产量超出你拥有的反物质 " + formatValue(player.options.notation, 1e63, 0, 0));
+    potato.setAttribute('ach-tooltip', "每秒时刻超过" + formatValue(player.options.notation, 1e29, 0, 0) + "。 奖励: 时刻间隔减少2%。");
+    potato2.setAttribute('ach-tooltip', "每秒时刻超过" + formatValue(player.options.notation, 1e58, 0, 0) + "。 奖励: 时刻间隔减少2%。");
+    potato3.setAttribute('ach-tooltip', "每秒时刻超过"+shortenCosts(new Decimal("1e8296262"))+"。")
+    dimensional.setAttribute('ach-tooltip', "除第八维度外所有维度拥有 " + formatValue(player.options.notation, 1e12, 0, 0) + " 。");
+    IPBelongs.setAttribute('ach-tooltip', "一次大坍缩获得 "+shortenCosts(1e150)+" 无限点数。 奖励: 无限点数倍数额外x4。")
+    reference.setAttribute('ach-tooltip', "一次维度献祭获得 x"+shortenDimensions(Number.MAX_VALUE)+" 的乘数。 奖励: 增强维度献祭效果。")
+    blink.setAttribute('ach-tooltip', "200ms内到达无限。 奖励: 开始时拥有 " + formatValue(player.options.notation, 1e25, 0, 0) + " 反物质，并且在一轮的前300ms所有维度增强。");
+    spare.setAttribute('ach-tooltip', "拥有 " +formatValue(player.options.notation, new Decimal("1e35000"), 0, 0)+" 反物质。 奖励: 未使用的反物质越多，维度就越强。");
     //exist.setAttribute('ach-tooltip', "Reach " + formatValue(player.options.notation, 9.9999e9999, 0, 0) + " antimatter. Reward: Dimensions are more powerful the more unspent antimatter you have."); (i like the 9 9s thing and no one will see it with a formatted value)
     //exist2.setAttribute('ach-tooltip', "Reach " + formatValue(player.options.notation, 1e35000, 0, 0) + " antimatter. Reward: Dimensions are more powerful the more unspent antimatter you have.")
     speed.setAttribute('ach-tooltip', "Big Crunch for "+shortenCosts(1e200)+" IP in 2 seconds or less. Reward: All dimensions are significantly stronger in first 5 seconds of infinity.")
