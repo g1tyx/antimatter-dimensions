@@ -642,24 +642,24 @@ function updateDimensions() {
             document.getElementById("infi34").innerHTML = "根据到达无限的最快时间生产无限点数 <br>当前: 每 " + timeDisplay(player.bestInfinityTime*10) +"获得 "+shortenDimensions(player.infMult.times(kongIPMult))+ " 点<br>花费: 10 无限点数"
         }
         else if (document.getElementById("postinf").style.display == "block") {
-            document.getElementById("postinfi11").innerHTML = "Power up all dimensions based on total antimatter produced<br>当前: "+ Math.pow(player.totalmoney.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(1e4)+" 无限点数"
-            document.getElementById("postinfi21").innerHTML = "Power up all dimensions based on current antimatter<br>当前: "+ Math.pow(player.money.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(5e4)+" 无限点数"
-            document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>成本: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" 无限点数"
-            if (player.tickSpeedMultDecrease <= 2) document.getElementById("postinfi31").innerHTML = "Tickspeed cost multiplier increase <br>"+player.tickSpeedMultDecrease+"x"
-            document.getElementById("postinfi22").innerHTML = "Power up all dimensions based on achievements completed <br>当前: "+achievementMult.toFixed(2)+"x<br>花费: "+shortenCosts(1e6)+" 无限点数"
-            document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>当前: "+(1+Math.log10(getInfinitied()+1)*10).toFixed(2)+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
-            if (player.timestudy.studies.includes(31)) document.getElementById("postinfi12").innerHTML = "Power up all dimensions based on amount infinitied <br>当前: "+shortenMoney(Math.pow((Math.log10(getInfinitied()+1)*10).toFixed(2), 4))+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
-            document.getElementById("postinfi41").innerHTML = "Makes galaxies 50% stronger <br>花费: "+shortenCosts(5e11)+" 无限点数"
-            document.getElementById("postinfi32").innerHTML = "Power up all dimensions based on slowest challenge run<br>当前:"+Decimal.max(10*3000/worstChallengeTime, 1).toFixed(2)+"x<br>花费: "+shortenCosts(1e7)+" 无限点数"
-            document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>花费: "+shortenCosts(player.dimensionMultDecreaseCost) +" 无限点数"
+            document.getElementById("postinfi11").innerHTML = "根据总共生产的反物质来增强所有维度。<br>当前: "+ Math.pow(player.totalmoney.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(1e4)+" 无限点数"
+            document.getElementById("postinfi21").innerHTML = "根据当前拥有的反物质来增强所有维度。<br>当前: "+ Math.pow(player.money.e+1, 0.5).toFixed(2)+"x<br>花费: "+shortenCosts(5e4)+" 无限点数"
+            document.getElementById("postinfi31").innerHTML = "时刻间隔的成本倍数增加值 <br>"+player.tickSpeedMultDecrease+"x -> "+(player.tickSpeedMultDecrease-1)+"x<br>花费: "+shortenDimensions(player.tickSpeedMultDecreaseCost) +" 无限点数"
+            if (player.tickSpeedMultDecrease <= 2) document.getElementById("postinfi31").innerHTML = "时刻间隔的成本倍数增加值 <br>"+player.tickSpeedMultDecrease+"x"
+            document.getElementById("postinfi22").innerHTML = "根据完成的成就来增强所有维度 <br>当前: "+achievementMult.toFixed(2)+"x<br>花费: "+shortenCosts(1e6)+" 无限点数"
+            document.getElementById("postinfi12").innerHTML = "根据到达无限的次数增强所有维度 <br>当前: "+(1+Math.log10(getInfinitied()+1)*10).toFixed(2)+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
+            if (player.timestudy.studies.includes(31)) document.getElementById("postinfi12").innerHTML = "根据到达无限的次数增强所有维度 <br>当前: "+shortenMoney(Math.pow((Math.log10(getInfinitied()+1)*10).toFixed(2), 4))+"x<br>花费: "+shortenCosts(1e5)+" 无限点数"
+            document.getElementById("postinfi41").innerHTML = "星系效果增加50% <br>花费: "+shortenCosts(5e11)+" 无限点数"
+            document.getElementById("postinfi32").innerHTML = "根据最慢的完成挑战时间增强所有维度<br>当前:"+Decimal.max(10*3000/worstChallengeTime, 1).toFixed(2)+"x<br>花费: "+shortenCosts(1e7)+" 无限点数"
+            document.getElementById("postinfi42").innerHTML = "维度的成本倍数增加值 <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>花费: "+shortenCosts(player.dimensionMultDecreaseCost) +" 无限点数"
 
-            document.getElementById("postinfi13").innerHTML = "You passively generate Infinitied stat based on your fastest infinity.<br>1 Infinity every "+timeDisplay(player.bestInfinityTime*5)+ " <br>花费: "+shortenCosts(20e6)+" 无限点数"
-            document.getElementById("postinfi23").innerHTML = "Option to bulk buy Dimension Boosts <br>花费: "+shortenCosts(5e9)+" 无限点数"
-            document.getElementById("postinfi33").innerHTML = "Autobuyers work twice as fast <br>花费:"+shortenCosts(1e15)+" 无限点数"
+            document.getElementById("postinfi13").innerHTML = "根据你最快到达无限的时间生产无限次数<br>每 "+timeDisplay(player.bestInfinityTime*5)+ "获得一点 <br>花费: "+shortenCosts(20e6)+" 无限点数"
+            document.getElementById("postinfi23").innerHTML = "可以选择批量购买维度提升 <br>花费: "+shortenCosts(5e9)+" 无限点数"
+            document.getElementById("postinfi33").innerHTML = "自动购买速度翻倍 <br>花费:"+shortenCosts(1e15)+" 无限点数"
             if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease.toFixed(1)+"x"
 
-            document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% > "+Math.max(Math.max(5, player.offlineProd + 5), Math.min(50, player.offlineProd + 5))+"% of your best IP/min from last 10 infinities, works offline<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +"IP/min<br> 花费: "+shortenCosts(player.offlineProdCost)+" 无限点数"
-            if (player.offlineProd == 50) document.getElementById("offlineProd").innerHTML = "Generates "+player.offlineProd+"% of your best IP/min from last 10 infinities, works offline<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +" IP/min"
+            document.getElementById("offlineProd").innerHTML = "自动生产你过去10次无限中，最高的无限点数/分钟的 "+player.offlineProd+"% > "+Math.max(Math.max(5, player.offlineProd + 5), Math.min(50, player.offlineProd + 5))+"% ,离线后仍然生效<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +"无限点数/分钟<br> 花费: "+shortenCosts(player.offlineProdCost)+" 无限点数"
+            if (player.offlineProd == 50) document.getElementById("offlineProd").innerHTML = "自动生产你过去10次无限中，最高的无限点数/分钟的 "+player.offlineProd+"%，离线后仍然生效。<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +" 无限点数/分钟"
         }
     }
 
@@ -1977,10 +1977,10 @@ function breakInfinity() {
     if (player.autobuyers[11]%1 === 0 || player.autobuyers[11].interval>100) return false
     if (player.break && !player.currentChallenge.includes("post")) {
         player.break = false
-        document.getElementById("break").textContent = "BREAK INFINITY"
+        document.getElementById("break").textContent = "突破无限"
     } else {
         player.break = true
-        document.getElementById("break").textContent = "FIX INFINITY"
+        document.getElementById("break").textContent = "修复无限"
         giveAchievement("Limit Break")
     }
 }
@@ -4868,7 +4868,7 @@ function gameLoop(diff) {
 
     var currentIPmin = gainedInfinityPoints().dividedBy(player.thisInfinityTime/600)
     if (currentIPmin.gt(IPminpeak)) IPminpeak = currentIPmin
-    if (IPminpeak.lte("1e100000")) document.getElementById("postInfinityButton").innerHTML = "<b>Big Crunch for "+shortenDimensions(gainedInfinityPoints())+" Infinity Points.</b><br>"+shortenDimensions(currentIPmin) + " IP/min"+"<br>Peaked at "+shortenDimensions(IPminpeak)+" IP/min"
+    if (IPminpeak.lte("1e100000")) document.getElementById("postInfinityButton").innerHTML = "<b>大坍缩来获得 "+shortenDimensions(gainedInfinityPoints())+" 无限点数。</b><br>"+shortenDimensions(currentIPmin) + " 无限点数/分钟"+"<br>最高值为 "+shortenDimensions(IPminpeak)+" 无限点数/分钟"
     else document.getElementById("postInfinityButton").innerHTML = "<b>Big Crunch for "+shortenDimensions(gainedInfinityPoints())+" Infinity Points.</b>"
 
     if (nextAt[player.postChallUnlocked] === undefined) document.getElementById("nextchall").textContent = " "
@@ -5335,7 +5335,7 @@ function gameLoop(diff) {
         infdimpurchasewhileloop = 1;
     }
 
-    document.getElementById("newDimensionButton").textContent = "Get " + shortenCosts(getNewInfReq()) + " antimatter to unlock a new Dimension."
+    document.getElementById("newDimensionButton").textContent = "拥有 " + shortenCosts(getNewInfReq()) + " 反物质来解锁新的维度。"
 
     document.getElementById("sacrifice").setAttribute('ach-tooltip', "第八维度乘数乘以 " + formatValue(player.options.notation, calcSacrificeBoost(), 2, 2) + "x");
 

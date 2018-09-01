@@ -36,23 +36,23 @@
   <br>
   维度是你在游戏中的生产单元。 第一个维度生产你的反物质。 每个高阶维度都会生产前一个维度，使你能够持续增长。总共有八个维度。
   <br>
-  <b>维度倍数:</b> Beside the dimension there is a multiplier (example: First Dimension x1.0). The base production of each dimension is multiplied by this number.  This multiplier increases by 2x(Base) for every 10 of that dimension purchased. Each time this occurs, the price of the dimension will increase.
+  <b>维度倍数:</b> 在维度后面的是一个倍数 (举例: 第一维度 x1.0)。 每个维度的基础产量都要乘以这个数字。每买10个这个维度，它的倍数都会x2(开始时)。每买10次倍数增加后，这个维度的价格将会上升。
   <br>
-  <b>Accumulated Dimension Quantity:</b> The next column is your current amount of that dimension you own. This is a combination of how many you have purchased with antimatter, as well as produced from the higher dimension.
+  <b>累计维度数量:</b> 下一列就是你当前拥有这个维度的数量。这个数值包括你用反物质购买的维度，也包括高阶维度所生产的。
   <br>
-  <b>Purchased Dimensions Quantity:</b>  Next to each accumulated quantity of owned dimensions, the amount of that dimension purchased toward the next multiplier upgrade is displayed in brackets.  If you have (4) next to your accumulated dimension quaintly, you will need 6 more of that dimension for the next multiplier increase.
+  <b>购买维度数量:</b>  累计拥有维度数量之后，紧接着就是括号中的向着下一个倍数升级购买的次数。如果数值为(4)，意味着再买6个这个维度就能到达下一个倍数加成。
   <br>
-  <b>Dimension Growth Percent:</b>  This number represents the amount of growth that dimensions experiences per second. +100% means the dimension is doubling each second.  This allows you to judge overall growth.
+  <b>维度增长百分比:</b>  这个数字表示这个维度每秒的增长率。+100%意味着每秒这个维度数量翻倍。这个数值可以帮助你判断全局增长。
   <br>
-  <b>Cost & until 10:</b> You can buy a single quantity of each dimension with antimatter when the cost button is highlighted.  Alternatively, if the Until 10 buttons is highlighted, you can buy whatever quantity gets you to that dimensions next dimension multiplier.
+  <b>成本 & 直到 10:</b> 当 成本 按钮高亮时，你可以购买单个数量的维度。此外，如果 直到10 按钮高亮，你可以购买让这个维度到达下一个维度倍数的数量。
   <br>
-  <b>Max all:</b> Max all will buy max tickspeed (see below), then will buy until 10 of 8th dimension until it can't anymore, then 7th, and so on.
+  <b>全部最大:</b> 全部最大将会购买最大的时间间隔(见下文)，然后将购买第八维度的直到10，直到无法购买，然后购买维度7的直到10，然后继续下去。
   <br>
-  <b>Dimension base prices:</b> 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24
+  <b>维度基础价格:</b> 10, 100, 10000, 1e6, 1e9, 1e13, 1e18, 1e24
   <br>
-  <b>Base per 10 bought dimension price increases:</b>1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15
+  <b>每买10个维度的价格基础增长倍数:</b>1000, 10000, 1e5, 1e6, 1e8, 1e10, 1e12, 1e15
       <br>
-    <b>Hotkeys: 1, 2, 3, 4, 5, 6, 7, 8</b> for buy until 10 []th dimension, <b>M</b> for Max all
+    <b>快捷键: 1, 2, 3, 4, 5, 6, 7, 8</b> 来购买直到 10 的第[]个维度, <b>M</b> 来购买全部最大
   </div>
   <hr id='div1hr'>
   <button onclick='changestate(2)' id='div2btn' class="storebtn">时刻</button>
@@ -68,7 +68,7 @@
   注意，实际上时刻间隔是虚构的，游戏的实际运行一直是每秒20时刻(根据你所设置的刷新速度变化)。
   </div>
   <hr id='div2hr'>
-  <button onclick='changestate(3)' id='div3btn' class="storebtn">Dimension Shift/Boost</button>
+  <button onclick='changestate(3)' id='div3btn' class="storebtn">维度转换/提升</button>
   <div style="text-align: left" id='div3' class='hidden'>
   <b>Dimension Shift:</b> This resets your current game, but unlocks another dimension for your next run. Each one requires 20 (base) of your highest unlocked dimension.
   <br>
@@ -79,7 +79,7 @@
     <b>Hotkey: D</b>
   </div>
   <hr id='div3hr'>
-  <button onclick='changestate(4)' id='div4btn' class="storebtn">Antimatter Galaxies</button>
+  <button onclick='changestate(4)' id='div4btn' class="storebtn">反物质星系</button>
   <div style="text-align: left" id='div4' class='hidden'>
   Purchasing an Antimatter Galaxy will reset your game back to the point where only 4 Dimensions are available, but will increase the effect of your tick speed interval reduction by 2%.
   <br>
@@ -92,7 +92,7 @@
     <b>Hotkey: G</b>
   </div>
   <hr id='div4hr'>
-  <button onclick='changestate(5)' id='div5btn' class="storebtn">Dimensional Sacrifice</button>
+  <button onclick='changestate(5)' id='div5btn' class="storebtn">维度献祭</button>
   <div style="text-align: left" id='div5' class='hidden'>
   You unlock Dimensional Sacrifice after your first dimensional boost.
   <br>
@@ -113,7 +113,7 @@
     <b>Hotkey: S</b>
   </div>
   <hr id='div5hr'>
-  <button onclick='changestate(6)' id='div6btn' class="storebtn">Infinity</button>
+  <button onclick='changestate(6)' id='div6btn' class="storebtn">无限</button>
   <div style="text-align: left" id='div6' class='hidden'>
   Once you have too much Antimatter for the world to handle (2^1024, or 1.7976931348623159e308) you’ll reach infinity and be able to perform a “Big Crunch”.
   <br>
@@ -124,14 +124,14 @@
   <b>When should I try to reach Infinity?</b> It's recommend to get 2 galaxies before attempting to reach it. On the way there, you should dimension boost as many times as you can.
   </div>
   <hr id='div6hr'>
-  <button onclick='changestate(7)' id='div7btn' class="storebtn">Achievements</button>
+  <button onclick='changestate(7)' id='div7btn' class="storebtn">成就</button>
   <div style="text-align: left" id='div7' class='hidden'>
   Each achievement has conditions that must be met before they are earned.  Some are very simple, and some are significantly trickier.  You may have to infinity or start a challenge before attempting some of the harder ones.
   <br>
   You will recieve a x1.5 multiplier to all dimensions for each completed row. In addition, some achievements have their own rewards.
   </div>
   <hr id='div7hr'>
-  <button onclick='changestate(8)' id='div8btn' class="storebtn">Challenges</button>
+  <button onclick='changestate(8)' id='div8btn' class="storebtn">挑战</button>
   <div style="text-align: left" id='div8' class='hidden'>
   Challenges are unlocked after first infinity; they change in-game mechanics in different ways to create more difficult infinity circumstances.
   <br>
@@ -140,7 +140,7 @@
   The rightmost row of Infinity Upgrades does not work in challenges.
   </div>
   <hr id='div8hr'>
-  <button onclick='changestate(9)' id='div9btn' class="storebtn">Autobuyers</button>
+  <button onclick='changestate(9)' id='div9btn' class="storebtn">自动购买</button>
   <div style="text-align: left" id='div9' class='hidden'>
   <b>Autobuyers:</b>
   <br>
@@ -170,7 +170,7 @@
     <b>Hotkey: A</b> (for toggle all autobuyers)
   </div>
   <hr id='div9hr'>
-  <button onclick='changestate(10)' id='div10btn' class="storebtn">Breaking Infinity</button>
+  <button onclick='changestate(10)' id='div10btn' class="storebtn">突破无限</button>
   <div style="text-align: left" id='div10' class='hidden'>
   Originally Antimatter Dimensions was restricted by "Infinity". Since a significant update, you can now "Break Infinity" once your Big Crunch autobuyer has been maxed. This opens up a selection of new upgrades as well as the ability to gain more than 1 infinity point per run.
   <br>
@@ -179,7 +179,7 @@
   <b>IP Gain Formula:</b>10^(log(current antimatter)/n-0.75)*bonuses, where n is 308 at default, 307.8 with the "This achievement doesn't exist II" achievement, or 290 with the relevant timestudy.
   </div>
   <hr id='div10hr'>
-  <button onclick='changestate(11)' id='div11btn' class="storebtn">Infinity Dimensions</button>
+  <button onclick='changestate(11)' id='div11btn' class="storebtn">无限维度</button>
   <div style="text-align: left" id='div11' class='hidden'>
   <b>Unlocking Infinity Dimensions:</b>Infinity Dimensions are unlocked by reaching a certain amount of antimatter.
   <br>
@@ -190,7 +190,7 @@
   Infinity Power gives a boost to all dimensions equal to (power^7).
   </div>
   <hr id='div11hr'>
-  <button onclick='changestate(12)' id='div12btn' class="storebtn">Infinity Challenges</button>
+  <button onclick='changestate(12)' id='div12btn' class="storebtn">无限挑战</button>
   <div style="text-align: left" id='div12' class='hidden'>
   Infinity Challenges are like regular challenges, but they have higher end goals and are generally harder than regular challenges (but have a different kind of reward).
   <br>

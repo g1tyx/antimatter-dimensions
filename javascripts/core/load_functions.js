@@ -400,7 +400,7 @@ if (player.version < 5) {
   else document.getElementById("quickReset").style.display = "none";
 
 
-  if (player.break == true) document.getElementById("break").textContent = "FIX INFINITY"
+  if (player.break == true) document.getElementById("break").textContent = "修复无限"
   document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shortenDimensions(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
 
   document.getElementById("notation").textContent = "数据格式: " + player.options.notation
