@@ -708,7 +708,7 @@ function updateCosts() {
 
     for (var i=1; i<=8; i++) {
 
-        document.getElementById("infMax"+i).textContent = "成本: " + shortenCosts(player["infinityDimension"+i].cost) + " IP"
+        document.getElementById("infMax"+i).textContent = "成本: " + shortenCosts(player["infinityDimension"+i].cost) + " 无限点数"
     }
 
     for (var i=1; i<=8; i++) {
@@ -4353,7 +4353,7 @@ function updateInfPower() {
     if (player.currentEternityChall == "eterc9") document.getElementById("infDimMultAmount").textContent = shortenMoney((Decimal.pow(Math.max(player.infinityPower.log2(), 1), 4)).max(1))
     else document.getElementById("infDimMultAmount").textContent = shortenMoney(player.infinityPower.pow(7))
     if (player.currentEternityChall == "eterc7") document.getElementById("infPowPerSec").textContent = "You are getting " +shortenDimensions(DimensionProduction(1))+" Seventh Dimensions per second."
-    else document.getElementById("infPowPerSec").textContent = "You are getting " +shortenDimensions(DimensionProduction(1))+" Infinity Power per second."
+    else document.getElementById("infPowPerSec").textContent = "你每秒获得 " +shortenDimensions(DimensionProduction(1))+" 无限力量。"
 }
 
 function updateTimeShards() {
