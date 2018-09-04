@@ -3438,7 +3438,7 @@ function exitChallenge() {
 }
 
 function startChallenge(name, target) {
-  if(player.options.challConf || name == "" ? true : (name.includes("post")) ? confirm("You will start over with just your infinity upgrades, and achievements. You need to reach a set goal with special conditions. NOTE: The rightmost infinity upgrade column doesn't work on challenges.") : confirm("You will start over with just your infinity upgrades, and achievements. You need to reach infinity with special conditions. NOTE: The rightmost infinity upgrade column doesn't work on challenges.")) {
+  if(player.options.challConf || name == "" ? true : (name.includes("post")) ? confirm("你将以无限的升级和成就重新开始。你需要在特殊情况下达到既定目标。注意:最右边的“无限升级”栏不适用于挑战。") : confirm("你将以无限的升级和成就重新开始。你需要在特殊条件下达到无限。注意:最右边的“无限升级”栏不适用于挑战。")) {
     if (player.currentChallenge != "") document.getElementById(player.currentChallenge).textContent = "Start"
     player = {
         money: new Decimal(10),
