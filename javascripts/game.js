@@ -1167,8 +1167,8 @@ document.getElementById("postinfi42").onclick = function() {
         player.infinityPoints = player.infinityPoints.minus(player.dimensionMultDecreaseCost)
         player.dimensionMultDecreaseCost *= 5000
         player.dimensionMultDecrease--;
-        document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>Cost: "+shortenCosts(player.dimensionMultDecreaseCost) +" IP"
-        if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease.toFixed(1)+"x"
+        document.getElementById("postinfi42").innerHTML = "维度成本增加倍数 <br>"+player.dimensionMultDecrease+"x -> "+(player.dimensionMultDecrease-1)+"x<br>Cost: "+shortenCosts(player.dimensionMultDecreaseCost) +" IP"
+        if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "维度成本增加倍数<br>"+player.dimensionMultDecrease.toFixed(1)+"x"
     }
 }
 
@@ -1186,23 +1186,23 @@ function updateInfCosts() {
 
     document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
     if (document.getElementById("replicantis").style.display == "block" && document.getElementById("infinity").style.display == "block") {
-        if (player.replicanti.chance < 1) document.getElementById("replicantichance").innerHTML = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%<br>+"+1+"% Costs: "+shortenCosts(player.replicanti.chanceCost)+" IP"
-        else document.getElementById("replicantichance").textContent = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%"
+        if (player.replicanti.chance < 1) document.getElementById("replicantichance").innerHTML = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%<br>+"+1+"% Costs: "+shortenCosts(player.replicanti.chanceCost)+" 无限点"
+        else document.getElementById("replicantichance").textContent = "复制几率: "+Math.round(player.replicanti.chance*100)+"%"
         let replGalOver = 0
         if (player.timestudy.studies.includes(131)) replGalOver += Math.floor(player.replicanti.gal / 2)
         if (player.timestudy.studies.includes(233)) {
-            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "Max Replicanti galaxies: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 Costs: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" IP"
-            else document.getElementById("replicantimax").innerHTML = "Max Replicanti galaxies: "+player.replicanti.gal+"<br>+1 Costs: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" IP"
+            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点"
+            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点"
         } else {
-            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "Max Replicanti galaxies: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 Costs: "+shortenCosts(player.replicanti.galCost)+" IP"
-            else document.getElementById("replicantimax").innerHTML = "Max Replicanti galaxies: "+player.replicanti.gal+"<br>+1 Costs: "+shortenCosts(player.replicanti.galCost)+" IP"
+            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" IP"
+            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" 无限点"
         }
-        document.getElementById("replicantiunlock").innerHTML = "Unlock Replicantis<br>Cost: "+shortenCosts(1e140)+" IP"
+        document.getElementById("replicantiunlock").innerHTML = "解锁复制品<br>成本: "+shortenCosts(1e140)+" 无限点"
         let extraGals = 0
         if (player.timestudy.studies.includes(225)) extraGals += Math.floor(player.replicanti.amount.e / 1000)
         if (player.timestudy.studies.includes(226)) extraGals += Math.floor(player.replicanti.gal / 15)
-        if (extraGals !== 0) document.getElementById("replicantireset").innerHTML = "Reset replicanti amount, but get a free galaxy<br>"+player.replicanti.galaxies + "+"+extraGals+ " replicated galaxies created."
-        else document.getElementById("replicantireset").innerHTML = (player.replicanti.galaxies !== 1) ? "Reset replicanti amount, but get a free galaxy<br>"+player.replicanti.galaxies + " replicated galaxies created." : "Reset replicanti amount, but get a free galaxy<br>"+player.replicanti.galaxies + " replicated galaxy created."
+        if (extraGals !== 0) document.getElementById("replicantireset").innerHTML = "重置复制品数量，但得到一个免费的星系<br>"+player.replicanti.galaxies + "+"+extraGals+ " 复制星系被创建。"
+        else document.getElementById("replicantireset").innerHTML = (player.replicanti.galaxies !== 1) ? "重置复制品数量，但得到一个免费的星系<br>"+player.replicanti.galaxies + " 复制品星系被创建." : "重置复制品数量，但得到一个免费的星系<br>"+player.replicanti.galaxies + " 复制品星系被创建."
 
         document.getElementById("replicantichance").className = (player.infinityPoints.gte(player.replicanti.chanceCost) && player.replicanti.chance < 1) ? "storebtn" : "unavailablebtn"
         document.getElementById("replicantiinterval").className = (player.infinityPoints.gte(player.replicanti.intervalCost) && ((player.replicanti.interval !== 50) || player.timestudy.studies.includes(22)) && (player.replicanti.interval !== 1)) ? "storebtn" : "unavailablebtn"
