@@ -111,10 +111,10 @@ function updateSpoilers() {
 }
 
 document.getElementById("importbtn").onclick = function () {
-    var save_data = prompt("Input your save.");
+    var save_data = prompt("粘贴你的存档以导入.");
 	save_data = JSON.parse(atob(save_data), function(k, v) { return (v === Infinity) ? "Infinity" : v; });
 	if (!save_data) {
-		alert('could not load the save..');
+		alert('无法加载该存档..');
 		return;
 	}
 	player = save_data;
