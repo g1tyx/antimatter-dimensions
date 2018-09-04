@@ -145,50 +145,50 @@
   <div style="text-align: left" id='div9' class='hidden'>
   <b>自动购买:</b>
   <br>
-  Autobuyers (awarded by completing challenges) allow the automatic purchase of dimensions, dimension shifts/boosts, galaxies, tickspeed interval decreases, Big Crunches, and Dimensional Sacrifice (later). They are located under the infinty tab in "Autobuyers".
+  自动购买(通过完成挑战获得)让你能够自动购买维度、维度转换/提升、星系、减少时间间隔、大坍缩，以及维度献祭(之后)。它们位于无限页面下的“自动购买”中。
   <br><br>
-  <b>Priority:</b> Priorities tell the game which autobuyer will buy if two are affordable in the same tick. Priority 1 is bought 1st, Priority 2 is bought 2nd, etc. Two equal priorities will pick their buying order randomly. <!-- While you cannot set these, big crunch has a priority of 0, galaxies have a priority of 10, dimboosts 11, and sacrifice (once unlocked) 11. -->
+  <b>优先级:</b> 优先级使游戏在同一时刻可购买两个事物的时候可分辨出先购买哪一个。优先级1就是第一批购买，优先级2就是第二批购买，以此类推。两个相同的优先级会随机挑选一个购买。<!-- While you cannot set these, big crunch has a priority of 0, galaxies have a priority of 10, dimboosts 11, and sacrifice (once unlocked) 11. -->
   <br>
-  <b>Autobuyer Speed:</b>The cooloff period before the autobuyer makes another puchase. This rounds up to the nearest 100ms, so 200ms and 101ms are the same speed.
+  <b>自动购买速度:</b>自动购买在两次购买间的冷却时间。这个是每100ms判定一次的，所以200ms和101ms也是同样的速度。
   <br>
-  <b>Bulk Buy:</b> Once the Speed of an Autobuyer is maxed, all future upgrades will double the amount the autobuyer purchases per tick. This can be disabled.
+  <b>批量购买:</b> 当一个自动购买的速度已经升到最大，所有未来的升级都会使每次自动购买的数量翻倍。这个功能可以关闭。
   <br>
-  <b>Dimension Autobuyer Buy Quantity:</b> Autobuyers for dimensions can be set to buy a single, or until 10, on each cooldown. Bulk buy does not work when the autobuyer is set to singles.
+  <b>维度自动购买 购买数量:</b> 维度的自动购买可以设置购买单次，或是购买到10.在设置为购买单次时批量购买不起作用。
   <br>
-  <b>Tickspeed Autobuyer Buy Quantity:</b> The tickspeed autobuyer can be set to buy a single or the max available on each cooldown.
+  <b>自动升级时间间隔 购买数量:</b> 自动升级时间间隔也可以设置一次购买购买单次或是购买最大。
   <br>
-  <b>Automatic Dimboost Customization:</b> With the Dimboost autobuyer you can set the max amount of 8th dimensions to use for the autobuyer, the amount of galaxies before dimboosts are always autopurchased, and (when unlocked) the ability to buy dimboosts in bulk (at a fixed amount).
+  <b>定制自动维度提升:</b> 你可以设置一个最大数量的第八维度，在拥有这么多第八维度前总是维度提升；也可以设置一个星系数量，在拥有这么多星系后总是维度提升，并且(在解锁后)能拥有批量购买维度提升的能力(批量购买固定的数量)。
   <br>
-  <b>Max Galaxies:</b> The highest amount of galaxies the galaxies autobuyer will buy.
+  <b>最大星系数:</b> 自动购买星系可买的最大星系数量。
   <br>
-  <b>IP on crunch:</b> Once you break Infinity, you can set how many IP you would like to wait for before crunching. It accepts e notation (12.34e5 is 1234000).
+  <b>坍缩时无限点数:</b> 当你突破无限后，你可以设置在可获得多少无限点数时坍缩。支持用e的计数法 (12.34e5 就是 1234000).
   <br>
-  <b>Sacrifice Autobuyer:</b> This autobuyer has a maxed timer from the start. You can set how much multiplier it waits for before sacrificing. It accepts e notation.
+  <b>自动献祭:</b> 这个自动购买开始就有最快的速度。你可以设置在可获得多少倍数时献祭。支持使用e的计数法。
   <br>
-  The double autobuyer tick speed upgrade will have all autobuyers buy twice as fast.<br>
-    <b>Toggle All Autobuyers:</b> This button will turn all of your autobuyers on or off. <!--say how it decides which?-->
+  自动购买速度翻倍的升级会使所有自动购买购买的速度变为原来两倍。<br>
+    <b>禁用/启用自动购买:</b> 这个按钮会把所有自动购买开启或是关闭。 <!--say how it decides which?-->
       <br>
-    <b>Hotkey: A</b> (for toggle all autobuyers)
+    <b>快捷键: A</b> (禁用/启用自动购买)
   </div>
   <hr id='div9hr'>
   <button onclick='changestate(10)' id='div10btn' class="storebtn">突破无限</button>
   <div style="text-align: left" id='div10' class='hidden'>
-  Originally Antimatter Dimensions was restricted by "Infinity". Since a significant update, you can now "Break Infinity" once your Big Crunch autobuyer has been maxed. This opens up a selection of new upgrades as well as the ability to gain more than 1 infinity point per run.
+  开始时反物质维度会受到"无限"的限制。自一个重要的更新后，你在自动大坍缩升满后可以“打破无限”。这开启了一些新的可选升级，你每一轮也可以获得超过1的无限点数。
   <br>
-  <b>Fixing Infinity:</b>You can revert the breaking at anytime by clicking fix infinity.
+  <b>修复无限:</b>通过点击修复无限，你可以随时从突破无限转换回去。
   <br>
-  <b>IP Gain Formula:</b>10^(log(current antimatter)/n-0.75)*bonuses, where n is 308 at default, 307.8 with the "This achievement doesn't exist II" achievement, or 290 with the relevant timestudy.
+  <b>无限点数获取公式:</b>10^(log(当前反物质)/n-0.75)*加成, n默认为308, 完成"This achievement doesn't exist II"(十排第三个)会变为307.8， or 290 with the relevant timestudy.
   </div>
   <hr id='div10hr'>
   <button onclick='changestate(11)' id='div11btn' class="storebtn">无限维度</button>
   <div style="text-align: left" id='div11' class='hidden'>
-  <b>Unlocking Infinity Dimensions:</b>Infinity Dimensions are unlocked by reaching a certain amount of antimatter.
+  <b>解锁无限维度:</b>拥有一定数量的反物质可以开启无限维度。
   <br>
-  <b>Infinity Dimension Cost:</b>Infinity dimensions are only purchasable in sets of 10, and cost Infinity points.
+  <b>无限维度花费:</b>无限纬度每次只能购买10个，并且花费无限点数。
   <br>
-  <b>Infinity Dimension Production:</b>Similar to the original dimensions, each infinity dimension produces the dimension above it. Dimension 3 produce 2, 2 produces 1.  Instead of antimatter, Infinity Dimension produces Infinity power, which translates to an overall multiplier on all original dimensions.
+  <b>无限维度生产:</b>和普通维度类似，每一个无限维度都会生产低一阶的无限维度。维度3生产2,2生产1。无限维度不生产反物质，而是生产无限力量，无限力量可以给所有普通维度一个倍数加成。
   <br>
-  Infinity Power gives a boost to all dimensions equal to (power^7).
+  无限力量给所有维度的倍数加成为 (无限力量^7).
   </div>
   <hr id='div11hr'>
   <button onclick='changestate(12)' id='div12btn' class="storebtn">无限挑战</button>

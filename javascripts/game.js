@@ -1380,7 +1380,7 @@ function toggleCrunchMode() {
     } else {
         player.autoCrunchMode = "amount"
         document.getElementById("togglecrunchmode").textContent = "Auto crunch mode: amount"
-        document.getElementById("limittext").textContent = "Amount of IP to wait until reset:"
+        document.getElementById("limittext").textContent = "等到可获得这么多无限点数再坍缩:"
     }
 }
 
@@ -1509,7 +1509,7 @@ document.getElementById("buyerBtnInf").onclick = function () {
 toggleAutobuyerTarget = function(id) {
     if (player.autobuyers[id-1].target == id) {
         player.autobuyers[id-1].target = 10 + id
-        document.getElementById("toggleBtn" + id).textContent = "购买10次"
+        document.getElementById("toggleBtn" + id).textContent = "购买到10"
     } else {
         player.autobuyers[id-1].target = id
         document.getElementById("toggleBtn" + id).textContent = "购买单次"
@@ -1551,10 +1551,10 @@ document.getElementById("toggleBtn8").onclick = function () {
 document.getElementById("toggleBtnTickSpeed").onclick = function () {
     if (player.autobuyers[8].target == 1) {
         player.autobuyers[8].target = 10
-        document.getElementById("toggleBtnTickSpeed").textContent = "Buys max"
+        document.getElementById("toggleBtnTickSpeed").textContent = "购买最大"
     } else {
         player.autobuyers[8].target = 1
-        document.getElementById("toggleBtnTickSpeed").textContent = "Buys singles"
+        document.getElementById("toggleBtnTickSpeed").textContent = "购买单次"
     }
 }
 
@@ -2359,16 +2359,16 @@ function updateAutobuyers() {
     document.getElementById("toggleBtn" + tier).style.display = "inline-block";
         if (player.autobuyers[tier-1].bulk >= 1e100) {
         player.autobuyers[tier-1].bulk = 1e100;
-        document.getElementById("buyerBtn" + tier).textContent = shortenDimensions(player.autobuyers[tier-1].bulk)+"x bulk purchase";
+        document.getElementById("buyerBtn" + tier).textContent = shortenDimensions(player.autobuyers[tier-1].bulk)+"x 批量购买";
         e100autobuy++;
         }
         else {
         if (player.autobuyers[tier-1].interval <= 100) {
             if (player.autobuyers[tier-1].bulk * 2 >= 1e100) {
-                document.getElementById("buyerBtn" + tier).innerHTML = shortenDimensions(1e100)+"x bulk purchase<br>Cost: " + shortenDimensions(player.autobuyers[tier-1].cost) + " IP";
+                document.getElementById("buyerBtn" + tier).innerHTML = shortenDimensions(1e100)+"x 批量购买<br>花费: " + shortenDimensions(player.autobuyers[tier-1].cost) + " 无限点数";
             }
             else {
-                document.getElementById("buyerBtn" + tier).innerHTML = shortenDimensions(player.autobuyers[tier-1].bulk*2)+"x bulk purchase<br>Cost: " + shortenDimensions(player.autobuyers[tier-1].cost) + " IP";
+                document.getElementById("buyerBtn" + tier).innerHTML = shortenDimensions(player.autobuyers[tier-1].bulk*2)+"x 批量购买<br>花费: " + shortenDimensions(player.autobuyers[tier-1].cost) + " 无限点数";
             }
             maxedAutobuy++;
         }
@@ -2632,29 +2632,29 @@ function toggleHotkeys() {
 
 
 function updateChallengeTimes() {
-document.getElementById("challengetime2").textContent = "Challenge  " + 2 + " time record: " + timeDisplayShort(player.challengeTimes[0])
-    document.getElementById("challengetime3").textContent = "Challenge  " + 3 + " time record: " + timeDisplayShort(player.challengeTimes[1])
-    document.getElementById("challengetime4").textContent = "Challenge  " + 4 + " time record: " + timeDisplayShort(player.challengeTimes[6])
-    document.getElementById("challengetime5").textContent = "Challenge  " + 5 + " time record: " + timeDisplayShort(player.challengeTimes[4])
-    document.getElementById("challengetime6").textContent = "Challenge  " + 6 + " time record: " + timeDisplayShort(player.challengeTimes[8])
-    document.getElementById("challengetime7").textContent = "Challenge  " + 7 + " time record: " + timeDisplayShort(player.challengeTimes[7])
-    document.getElementById("challengetime8").textContent = "Challenge  " + 8 + " time record: " + timeDisplayShort(player.challengeTimes[9])
-    document.getElementById("challengetime9").textContent = "Challenge  " + 9 + " time record: " + timeDisplayShort(player.challengeTimes[3])
-    document.getElementById("challengetime10").textContent = "Challenge " + 10 + " time record: " + timeDisplayShort(player.challengeTimes[2])
-    document.getElementById("challengetime11").textContent = "Challenge " + 11 + " time record: " + timeDisplayShort(player.challengeTimes[10])
-    document.getElementById("challengetime12").textContent = "Challenge " + 12 + " time record: " + timeDisplayShort(player.challengeTimes[5])
+document.getElementById("challengetime2").textContent = "挑战 " + 2 + " 时间记录: " + timeDisplayShort(player.challengeTimes[0])
+    document.getElementById("challengetime3").textContent = "挑战 " + 3 + " 时间记录: " + timeDisplayShort(player.challengeTimes[1])
+    document.getElementById("challengetime4").textContent = "挑战 " + 4 + " 时间记录: " + timeDisplayShort(player.challengeTimes[6])
+    document.getElementById("challengetime5").textContent = "挑战 " + 5 + " 时间记录: " + timeDisplayShort(player.challengeTimes[4])
+    document.getElementById("challengetime6").textContent = "挑战 " + 6 + " 时间记录: " + timeDisplayShort(player.challengeTimes[8])
+    document.getElementById("challengetime7").textContent = "挑战 " + 7 + " 时间记录: " + timeDisplayShort(player.challengeTimes[7])
+    document.getElementById("challengetime8").textContent = "挑战 " + 8 + " 时间记录: " + timeDisplayShort(player.challengeTimes[9])
+    document.getElementById("challengetime9").textContent = "挑战 " + 9 + " 时间记录: " + timeDisplayShort(player.challengeTimes[3])
+    document.getElementById("challengetime10").textContent = "挑战" + 10 + " 时间记录: " + timeDisplayShort(player.challengeTimes[2])
+    document.getElementById("challengetime11").textContent = "挑战" + 11 + " 时间记录: " + timeDisplayShort(player.challengeTimes[10])
+    document.getElementById("challengetime12").textContent = "挑战" + 12 + " 时间记录: " + timeDisplayShort(player.challengeTimes[5])
 	var temp = 0
 	for (var i=0; i<11; i++) {
 		temp += player.challengeTimes[i]
 	}
-	document.getElementById("challengetimesum").textContent = "Sum of challenge time records is " + timeDisplayShort(temp)
+	document.getElementById("challengetimesum").textContent = "挑战通过时间总和为 " + timeDisplayShort(temp)
 
 	temp = 0
     for (var i=0; i<8; i++) {
-        document.getElementById("infchallengetime"+(i+1)).textContent = "Infinity Challenge " + (i+1) + " time record: " + timeDisplayShort(player.infchallengeTimes[i])
+        document.getElementById("infchallengetime"+(i+1)).textContent = "无限挑战 " + (i+1) + " 时间记录: " + timeDisplayShort(player.infchallengeTimes[i])
 		temp += player.infchallengeTimes[i]
     }
-	document.getElementById("infchallengetimesum").textContent = "Sum of infinity challenge time records is " + timeDisplayShort(temp)
+	document.getElementById("infchallengetimesum").textContent = "无限挑战通过时间总和为 " + timeDisplayShort(temp)
     updateWorstChallengeTime();
 }
 
@@ -4519,7 +4519,7 @@ setInterval(function() {
     if (getTickSpeedMultiplier() < 0.001) giveAchievement("Do you even bend time bro?")
 
     if (player.eternities > 9) document.getElementById("bulklabel").textContent = "Buy max dimboosts every X seconds:"
-    else document.getElementById("bulklabel").textContent = "Bulk DimBoost Amount:"
+    else document.getElementById("bulklabel").textContent = "批量购买维度提升数量:"
 
     if (player.eternities > 10) {
         for (var i=1;i<player.eternities-9 && i < 9; i++) {
