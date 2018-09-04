@@ -4873,7 +4873,7 @@ function gameLoop(diff) {
 
     if (nextAt[player.postChallUnlocked] === undefined) document.getElementById("nextchall").textContent = " "
     else if (!player.achievements.includes("r133")) {
-        document.getElementById("nextchall").textContent = "下一个挑战在 "+ shortenCosts(nextAt[player.postChallUnlocked]) + " 反物质解锁。"
+        document.getElementById("nextchall").textContent = "下一个挑战在 "+ cnwd(shortenCosts(nextAt[player.postChallUnlocked])) + " 反物质解锁。"
         while (player.money.gte(nextAt[player.postChallUnlocked]) && player.challenges.includes("postc8") === false && player.postChallUnlocked != 8) {
             if (player.postChallUnlocked != 8) player.postChallUnlocked += 1
             if (player.eternities > 6) player.challenges.push("postc"+player.postChallUnlocked)
@@ -5989,8 +5989,8 @@ setInterval( function() {
         cnwd = "第七";   
     } else if (temp=="Eighth"){
         cnwd = "第八";   
-    } else if (temp==""){
-        cnwd = "";   
+    } else if (temp=="Infinite"){
+        cnwd = "无限";   
     } else if (temp==""){
         cnwd = "";   
     } else {
