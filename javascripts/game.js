@@ -4496,7 +4496,7 @@ setInterval(function() {
 
     if (player.eternities !== 0)document.getElementById("eternitystorebtn").style.display = "inline-block"
     for (var i=1; i <=8; i++) {
-        document.getElementById("postc"+i+"goal").textContent = "Goal: "+shortenCosts(goals[i-1])
+        document.getElementById("postc"+i+"goal").textContent = "目标: "+shortenCosts(goals[i-1])
     }
 
     if (player.replicanti.galaxybuyer !== undefined) document.getElementById("replicantiresettoggle").style.display = "inline-block"
@@ -4576,40 +4576,40 @@ setInterval(function() {
         while (upgradeReplicantiGalaxy()) continue
     }
 
-    document.getElementById("eterc1goal").textContent = "Goal: "+shortenCosts(new Decimal("1e1800").times(new Decimal("1e200").pow(ECTimesCompleted("eterc1"))).max(new Decimal("1e1800"))) + " IP"
+    document.getElementById("eterc1goal").textContent = "目标: "+shortenCosts(new Decimal("1e1800").times(new Decimal("1e200").pow(ECTimesCompleted("eterc1"))).max(new Decimal("1e1800"))) + " 无限点数"
     document.getElementById("eterc1completed").textContent = "Completed "+ECTimesCompleted("eterc1")+" times."
 
-    document.getElementById("eterc2goal").textContent = "Goal: "+shortenCosts(new Decimal("1e975").times(new Decimal("1e175").pow(ECTimesCompleted("eterc2"))).max(new Decimal("1e975"))) + " IP"
+    document.getElementById("eterc2goal").textContent = "目标: "+shortenCosts(new Decimal("1e975").times(new Decimal("1e175").pow(ECTimesCompleted("eterc2"))).max(new Decimal("1e975"))) + " 无限点数"
     document.getElementById("eterc2completed").textContent = "Completed "+ECTimesCompleted("eterc2")+" times."
 
-    document.getElementById("eterc3goal").textContent = "Goal: "+shortenCosts(new Decimal("1e600").times(new Decimal("1e75").pow(ECTimesCompleted("eterc3"))).max(new Decimal("1e575"))) + " IP"
+    document.getElementById("eterc3goal").textContent = "目标: "+shortenCosts(new Decimal("1e600").times(new Decimal("1e75").pow(ECTimesCompleted("eterc3"))).max(new Decimal("1e575"))) + " 无限点数"
     document.getElementById("eterc3completed").textContent = "Completed "+ECTimesCompleted("eterc3")+" times."
 
-    document.getElementById("eterc4goal").textContent = "Goal: "+shortenCosts(new Decimal("1e2750").times(new Decimal("1e550").pow(ECTimesCompleted("eterc4"))).max(new Decimal("1e2750"))) + " IP in "+Math.max((16 - (ECTimesCompleted("eterc4")*4)), 0)+" infinities or less."
+    document.getElementById("eterc4goal").textContent = "目标: "+shortenCosts(new Decimal("1e2750").times(new Decimal("1e550").pow(ECTimesCompleted("eterc4"))).max(new Decimal("1e2750"))) + " IP in "+Math.max((16 - (ECTimesCompleted("eterc4")*4)), 0)+" infinities or less."
     document.getElementById("eterc4completed").textContent = "Completed "+ECTimesCompleted("eterc4")+" times."
 
-    document.getElementById("eterc5goal").textContent = "Goal: "+shortenCosts(new Decimal("1e750").times(new Decimal("1e400").pow(ECTimesCompleted("eterc5"))).max(new Decimal("1e750"))) + " IP"
+    document.getElementById("eterc5goal").textContent = "目标: "+shortenCosts(new Decimal("1e750").times(new Decimal("1e400").pow(ECTimesCompleted("eterc5"))).max(new Decimal("1e750"))) + " 无限点数"
     document.getElementById("eterc5completed").textContent = "Completed "+ECTimesCompleted("eterc5")+" times."
 
-    document.getElementById("eterc6goal").textContent = "Goal: "+shortenCosts(new Decimal("1e850").times(new Decimal("1e250").pow(ECTimesCompleted("eterc6"))).max(new Decimal("1e850"))) + " IP"
+    document.getElementById("eterc6goal").textContent = "目标: "+shortenCosts(new Decimal("1e850").times(new Decimal("1e250").pow(ECTimesCompleted("eterc6"))).max(new Decimal("1e850"))) + " 无限点数"
     document.getElementById("eterc6completed").textContent = "Completed "+ECTimesCompleted("eterc6")+" times."
 
-    document.getElementById("eterc7goal").textContent = "Goal: "+shortenCosts(new Decimal("1e2000").times(new Decimal("1e530").pow(ECTimesCompleted("eterc7"))).max(new Decimal("1e2000"))) + " IP"
+    document.getElementById("eterc7goal").textContent = "目标: "+shortenCosts(new Decimal("1e2000").times(new Decimal("1e530").pow(ECTimesCompleted("eterc7"))).max(new Decimal("1e2000"))) + " 无限点数"
     document.getElementById("eterc7completed").textContent = "Completed "+ECTimesCompleted("eterc7")+" times."
 
-    document.getElementById("eterc8goal").textContent = "Goal: "+shortenCosts(new Decimal("1e1300").times(new Decimal("1e900").pow(ECTimesCompleted("eterc8"))).max(new Decimal("1e1300"))) + " IP"
+    document.getElementById("eterc8goal").textContent = "目标: "+shortenCosts(new Decimal("1e1300").times(new Decimal("1e900").pow(ECTimesCompleted("eterc8"))).max(new Decimal("1e1300"))) + " 无限点数"
     document.getElementById("eterc8completed").textContent = "Completed "+ECTimesCompleted("eterc8")+" times."
 
-    document.getElementById("eterc9goal").textContent = "Goal: "+shortenCosts(new Decimal("1e1750").times(new Decimal("1e250").pow(ECTimesCompleted("eterc9"))).max(new Decimal("1e1750"))) + " IP"
+    document.getElementById("eterc9goal").textContent = "目标: "+shortenCosts(new Decimal("1e1750").times(new Decimal("1e250").pow(ECTimesCompleted("eterc9"))).max(new Decimal("1e1750"))) + " 无限点数"
     document.getElementById("eterc9completed").textContent = "Completed "+ECTimesCompleted("eterc9")+" times."
 
-    document.getElementById("eterc10goal").textContent = "Goal: "+shortenCosts(new Decimal("1e3000").times(new Decimal("1e300").pow(ECTimesCompleted("eterc10"))).max(new Decimal("1e3000"))) + " IP"
+    document.getElementById("eterc10goal").textContent = "目标: "+shortenCosts(new Decimal("1e3000").times(new Decimal("1e300").pow(ECTimesCompleted("eterc10"))).max(new Decimal("1e3000"))) + " 无限点数"
     document.getElementById("eterc10completed").textContent = "Completed "+ECTimesCompleted("eterc10")+" times."
 
-    document.getElementById("eterc11goal").textContent = "Goal: "+shortenCosts(new Decimal("1e500").times(new Decimal("1e200").pow(ECTimesCompleted("eterc11"))).max(new Decimal("1e500"))) + " IP"
+    document.getElementById("eterc11goal").textContent = "目标: "+shortenCosts(new Decimal("1e500").times(new Decimal("1e200").pow(ECTimesCompleted("eterc11"))).max(new Decimal("1e500"))) + " 无限点数"
     document.getElementById("eterc11completed").textContent = "Completed "+ECTimesCompleted("eterc11")+" times."
 
-    document.getElementById("eterc12goal").textContent = "Goal: "+shortenCosts(new Decimal("1e110000").times(new Decimal("1e12000").pow(ECTimesCompleted("eterc12"))).max(new Decimal("1e110000"))) + " IP in "+(Math.max(10 - ECTimesCompleted("eterc12")*2, 1)/10) + ((ECTimesCompleted("eterc12") === 0) ? " second or less." :" seconds or less." )
+    document.getElementById("eterc12goal").textContent = "目标: "+shortenCosts(new Decimal("1e110000").times(new Decimal("1e12000").pow(ECTimesCompleted("eterc12"))).max(new Decimal("1e110000"))) + " IP in "+(Math.max(10 - ECTimesCompleted("eterc12")*2, 1)/10) + ((ECTimesCompleted("eterc12") === 0) ? " second or less." :" seconds or less." )
     document.getElementById("eterc12completed").textContent = "Completed "+ECTimesCompleted("eterc12")+" times."
     updateECUnlockButtons()
 
