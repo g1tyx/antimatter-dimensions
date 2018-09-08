@@ -1186,18 +1186,18 @@ function updateInfCosts() {
 
     document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
     if (document.getElementById("replicantis").style.display == "block" && document.getElementById("infinity").style.display == "block") {
-        if (player.replicanti.chance < 1) document.getElementById("replicantichance").innerHTML = "Replicate chance: "+Math.round(player.replicanti.chance*100)+"%<br>+"+1+"% Costs: "+shortenCosts(player.replicanti.chanceCost)+" 无限点"
-        else document.getElementById("replicantichance").textContent = "复制几率: "+Math.round(player.replicanti.chance*100)+"%"
+        if (player.replicanti.chance < 1) document.getElementById("replicantichance").innerHTML = "复制概率: "+Math.round(player.replicanti.chance*100)+"%<br>+"+1+"% 成本: "+shortenCosts(player.replicanti.chanceCost)+" 无限点数"
+        else document.getElementById("replicantichance").textContent = "复制概率: "+Math.round(player.replicanti.chance*100)+"%"
         let replGalOver = 0
         if (player.timestudy.studies.includes(131)) replGalOver += Math.floor(player.replicanti.gal / 2)
         if (player.timestudy.studies.includes(233)) {
-            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点"
-            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点"
+            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点数"
+            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost.dividedBy(player.replicanti.amount.pow(0.3)))+" 无限点数"
         } else {
-            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" IP"
-            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" 无限点"
+            if (replGalOver !== 0) document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"+"+replGalOver+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" 无限点数"
+            else document.getElementById("replicantimax").innerHTML = "最大复制品星系: "+player.replicanti.gal+"<br>+1 成本: "+shortenCosts(player.replicanti.galCost)+" 无限点数"
         }
-        document.getElementById("replicantiunlock").innerHTML = "解锁复制品<br>成本: "+shortenCosts(1e140)+" 无限点"
+        document.getElementById("replicantiunlock").innerHTML = "解锁复制品<br>成本: "+shortenCosts(1e140)+" 无限点数"
         let extraGals = 0
         if (player.timestudy.studies.includes(225)) extraGals += Math.floor(player.replicanti.amount.e / 1000)
         if (player.timestudy.studies.includes(226)) extraGals += Math.floor(player.replicanti.gal / 15)
@@ -4934,8 +4934,8 @@ function gameLoop(diff) {
     if (player.replicanti.galaxybuyer && player.replicanti.amount.gte(Number.MAX_VALUE) && !player.timestudy.studies.includes(131)) {
         document.getElementById("replicantireset").click()
     }
-    if (player.timestudy.studies.includes(22) ? player.replicanti.interval !== 1 : (player.replicanti.interval !== 50)) document.getElementById("replicantiinterval").innerHTML = "Interval: "+(interval).toFixed(3)+"ms<br>-> "+Math.max(interval*0.9).toFixed(3)+" Costs: "+shortenCosts(player.replicanti.intervalCost)+" IP"
-    else document.getElementById("replicantiinterval").textContent = "Interval: "+(interval).toFixed(3)+"ms"
+    if (player.timestudy.studies.includes(22) ? player.replicanti.interval !== 1 : (player.replicanti.interval !== 50)) document.getElementById("replicantiinterval").innerHTML = "时间间隔: "+(interval).toFixed(3)+"ms<br>-> "+Math.max(interval*0.9).toFixed(3)+" 成本: "+shortenCosts(player.replicanti.intervalCost)+" 无限点数"
+    else document.getElementById("replicantiinterval").textContent = "时间间隔: "+(interval).toFixed(3)+"ms"
 
 
     if (player.infMultBuyer) {
@@ -4952,7 +4952,7 @@ function gameLoop(diff) {
 
 
     var estimate = Math.max((Math.log(Number.MAX_VALUE) - current) / est, 0)
-    document.getElementById("replicantiapprox").textContent ="Approximately "+ timeDisplay(estimate*10) + " Until Infinite Replicanti"
+    document.getElementById("replicantiapprox").textContent ="大约在 "+ timeDisplay(estimate*10) + " 后复制品数量达到无限"
 
     document.getElementById("replicantiamount").textContent = shortenDimensions(player.replicanti.amount)
     var replmult = Decimal.pow(Decimal.log2(Decimal.max(player.replicanti.amount, 1)), 2)

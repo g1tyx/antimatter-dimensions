@@ -184,7 +184,7 @@
   <div style="text-align: left" id='div11' class='hidden'>
   <b>解锁无限维度:</b>拥有一定数量的反物质可以开启无限维度。
   <br>
-  <b>无限维度花费:</b>无限纬度每次只能购买10个，并且花费无限点数。
+  <b>无限维度花费:</b>无限维度每次只能购买10个，并且花费无限点数。
   <br>
   <b>无限维度生产:</b>和普通维度类似，每一个无限维度都会生产低一阶的无限维度。维度3生产2,2生产1。无限维度不生产反物质，而是生产无限力量，无限力量可以给所有普通维度一个倍数加成。
   <br>
@@ -200,18 +200,18 @@
   <hr id='div12hr'>
   <button onclick='changestate(13)' id='div13btn' class="storebtn">复制品</button>
   <div style="text-align: left" id='div13' class='hidden'>
-  Each replicanti has an upgradable chance to update every replicanti tick. You will gain a bonus to infinity dimensions based on much replicanti you have.
+  每个复制品在每个复制品时刻都有可能复制自身，这个复制概率是可提升的。你可以基于拥有的复制品数量获得对无限维度的加成。
   <br>
-  When replicanti reach infinity, you can buy a galaxy. This will not increase the cost of normal galaxies. The amount of replicanti galaxies you can have is capped (upgradable). Once you reach infinity replicanti, they will not continue growing.
+  当复制品数量到达无限时，你可以购买一个星系。这不会增加普通星系的成本。你可以拥有的复制品星系的数量是有上限的(上限可以提升)。一旦复制品数量达到无限，它们就不会再增长。
   <br>
-  When offline, in an inactive tab, lagging, or a tickspeed under 50ms, replicanti get calculated with an approximation. This can cause wildly varying results, especially at extremely low numbers (1-5).
+  当离线时、或页面因最小化等处于不活跃状态、或延迟、或刷新速率小于50ms，复制品会有一个近似计算时间。这个可以导致很大程度上不同的结果，特别是在极低的数字(1-5)。
   <br>
-  When at low values (100-1000) (when none of the conditions above are true), there may be some minor variances in the expected amount of replicanti gain.
-  <br><b>Formulas:
-  <br>Infinity Dimension power increase:</b> log2(replicanti)^2, plus replicanti^0.032 if you have the relevant time study, times 5^galaxies if you have that time study.
-  <br><b>Chance upgrade cost:</b>x(1e15) per upgrade
-  <br><b>Speed upgrade cost:</b>x(1e10) per upgrade
-  <br><b>Galaxy upgrade cost:</b>1e(170+n*25+n^2*5)
+  在复制品数量低(100-1000)时(以上条件均不存在时)，复制的期望值可能会有一些小的偏差。
+  <br><b>公式:
+  <br>无限维度倍数增长:</b> log2(复制品数)^2, 如果你有相关时间研究，就加上 复制品数^0.032 , 如果你有相关时间研究，就再乘以 5^星系数量。
+  <br><b>复制概率升级成本:</b>x(1e15) 每次升级
+  <br><b>时间间隔升级成本:</b>x(1e10) 每次升级
+  <br><b>最大星系升级成本:</b>1e(170+n*25+n^2*5)
   </div>
   <hr id='div13hr'>
   <button onclick='changestate(14)' id='div14btn' class="storebtn">永恒</button>
