@@ -68,11 +68,11 @@ function updateTheoremButtons() {
   document.getElementById("theoremam").className = player.money.gte(player.timestudy.amcost) ? "timetheorembtn" : "timetheorembtnlocked"
   document.getElementById("theoremip").className = player.infinityPoints.gte(player.timestudy.ipcost) ? "timetheorembtn" : "timetheorembtnlocked"
   document.getElementById("theoremep").className = player.eternityPoints.gte(player.timestudy.epcost) ? "timetheorembtn" : "timetheorembtnlocked"
-  document.getElementById("theoremep").innerHTML = "Buy Time Theorems <br>Cost: "+shortenDimensions(player.timestudy.epcost)+" EP"
-  document.getElementById("theoremip").innerHTML = "Buy Time Theorems <br>Cost: "+shortenCosts(player.timestudy.ipcost)+" IP"
-  document.getElementById("theoremam").innerHTML = "Buy Time Theorems <br>Cost: "+shortenCosts(player.timestudy.amcost)
-  if (player.timestudy.theorem>99999) document.getElementById("timetheorems").innerHTML = "You have <span style='display:inline' class=\"TheoremAmount\">"+shortenMoney(player.timestudy.theorem)+"</span> Time "+"Theorems."
-  else document.getElementById("timetheorems").innerHTML = "You have <span style='display:inline' class=\"TheoremAmount\">"+player.timestudy.theorem.toFixed(0)+"</span> Time "+ (player.timestudy.theorem == 1 ? "Theorem." : "Theorems.")
+  document.getElementById("theoremep").innerHTML = "购买时间定律 <br>成本: "+shortenDimensions(player.timestudy.epcost)+" 永恒点数"
+  document.getElementById("theoremip").innerHTML = "购买时间定律 <br>成本: "+shortenCosts(player.timestudy.ipcost)+" 无限点数"
+  document.getElementById("theoremam").innerHTML = "购买时间定律 <br>成本: "+shortenCosts(player.timestudy.amcost)+" 反物质"
+  if (player.timestudy.theorem>99999) document.getElementById("timetheorems").innerHTML = "你拥有 <span style='display:inline' class=\"TheoremAmount\">"+shortenMoney(player.timestudy.theorem)+"</span> 时间定律。 "+""
+  else document.getElementById("timetheorems").innerHTML = "你拥有 <span style='display:inline' class=\"TheoremAmount\">"+player.timestudy.theorem.toFixed(0)+"</span> 时间定律。 "+ (player.timestudy.theorem == 1 ? "" : "")
 }
 
 function buyTimeStudy(name, cost, check) {
@@ -113,7 +113,7 @@ function buyDilationStudy(name, cost) {
     if (player.timestudy.theorem >= cost && canBuyDilationStudy(name) && !player.dilation.studies.includes(name)) {
         if (name === 1) {
             showEternityTab("dilation")
-            document.getElementById("dilstudy1").innerHTML = "Unlock time dilation<span>Cost: 5000 Time Theorems"
+            document.getElementById("dilstudy1").innerHTML = "解锁时间膨胀<span>成本: 5000 时间定律"
         }
         player.dilation.studies.push(name)
         player.timestudy.theorem -= cost

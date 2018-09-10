@@ -609,7 +609,7 @@ function updateDimensions() {
         }
         if (player.infinitied == 1) document.getElementById("infinitied").textContent = "你已到达无限 1 次。"
         else document.getElementById("infinitied").textContent = "你已到达无限 " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " 次"
-        if (player.infinitiedBank > 0) document.getElementById("infinitied").textContent = "You have infinitied " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " times this eternity."
+        if (player.infinitiedBank > 0) document.getElementById("infinitied").textContent = "本轮永恒你已到达无限 " + player.infinitied.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " 次。"
 
     }
 
@@ -664,12 +664,12 @@ function updateDimensions() {
     }
 
     if (document.getElementById("eternityupgrades").style.display == "block" && document.getElementById("eternitystore").style.display == "block") {
-        document.getElementById("eter1").innerHTML = "Infinity Dimensions multiplier based on unspent EP (x+1)<br>当前: "+shortenMoney(player.eternityPoints.plus(1))+"x<br>Cost: 5 EP"
-        document.getElementById("eter2").innerHTML = "Infinity Dimension multiplier based on eternities ((x/200)^log4(2x))<br>当前: "+shortenMoney(Decimal.pow(Math.min(player.eternities, 100000)/200 + 1, Math.log(Math.min(player.eternities, 100000)*2+1)/Math.log(4)).times(new Decimal((player.eternities-100000)/200 + 1).times(Math.log((player.eternities- 100000)*2+1)/Math.log(4)).max(1)))+"x<br>Cost: 10 EP"
-        document.getElementById("eter3").innerHTML = "Infinity Dimensions multiplier based on sum of Infinity Challenge times<br>当前: "+shortenMoney(Decimal.pow(2,300/Math.max(infchallengeTimes, player.achievements.includes("r112") ? 6.1 : 7.5)))+"x<br>Cost: "+shortenCosts(50e3)+" EP"
-        document.getElementById("eter4").innerHTML = "Your achievement bonus affects Time Dimensions"+"<br>Cost: "+shortenCosts(1e16)+" EP"
-        document.getElementById("eter5").innerHTML = "Time Dimensions are multiplied by your unspent time theorems"+"<br>Cost: "+shortenCosts(1e40)+" EP"
-        document.getElementById("eter6").innerHTML = "Time Dimensions are multiplied by days played"+"<br>Cost: "+shortenCosts(1e50)+" EP"
+        document.getElementById("eter1").innerHTML = "基于未分配的永恒点数给予无限维度倍数 (x+1)<br>当前: "+shortenMoney(player.eternityPoints.plus(1))+"x<br>成本: 5 永恒点数"
+        document.getElementById("eter2").innerHTML = "基于永恒次数给予无限维度倍数 ((x/200)^log4(2x))<br>当前: "+shortenMoney(Decimal.pow(Math.min(player.eternities, 100000)/200 + 1, Math.log(Math.min(player.eternities, 100000)*2+1)/Math.log(4)).times(new Decimal((player.eternities-100000)/200 + 1).times(Math.log((player.eternities- 100000)*2+1)/Math.log(4)).max(1)))+"x<br>成本: 10 永恒点数"
+        document.getElementById("eter3").innerHTML = "基于无限挑战总时间给予无限维度倍数<br>当前: "+shortenMoney(Decimal.pow(2,300/Math.max(infchallengeTimes, player.achievements.includes("r112") ? 6.1 : 7.5)))+"x<br>成本: "+shortenCosts(50e3)+" 永恒点数"
+        document.getElementById("eter4").innerHTML = "你的成就加成对时间维度同样生效"+"<br>成本: "+shortenCosts(1e16)+" 永恒点数"
+        document.getElementById("eter5").innerHTML = "时间维度的倍数乘以你未花费的时间定律"+"<br>成本: "+shortenCosts(1e40)+" 永恒点数"
+        document.getElementById("eter6").innerHTML = "时间维度的倍数乘以你玩的天数"+"<br>成本: "+shortenCosts(1e50)+" 永恒点数"
     }
 
     if (document.getElementById("dilation").style.display == "block") {
@@ -713,7 +713,7 @@ function updateCosts() {
 
     for (var i=1; i<=8; i++) {
 
-        document.getElementById("timeMax"+i).textContent = "成本: " + shortenDimensions(player["timeDimension"+i].cost) + " EP"
+        document.getElementById("timeMax"+i).textContent = "成本: " + shortenDimensions(player["timeDimension"+i].cost) + " 永恒点数"
     }
 }
 
@@ -1041,7 +1041,7 @@ function buyEPMult() {
         else if (player.epmultCost.gte(Number.MAX_VALUE)) player.epmultCost = Decimal.pow(500, count).times(500)
         else if (player.epmultCost.gte(new Decimal("1e100"))) player.epmultCost = Decimal.pow(100, count).times(500)
         else player.epmultCost = Decimal.pow(50, count).times(500)
-        document.getElementById("epmult").innerHTML = "You gain 5 times more EP<p>Currently: "+shortenDimensions(player.epmult)+"x<p>Cost: "+shortenDimensions(player.epmultCost)+" EP"
+        document.getElementById("epmult").innerHTML = "你获取的永恒点数倍数乘5<p>当前: "+shortenDimensions(player.epmult)+"x<p>成本: "+shortenDimensions(player.epmultCost)+" 永恒点数"
         updateEternityUpgrades()
     }
 }
@@ -1213,54 +1213,54 @@ function updateInfCosts() {
 
     if (document.getElementById("timestudies").style.display == "block" && document.getElementById("eternitystore").style.display == "block") {
         document.getElementById("11desc").textContent = "Currently: "+shortenMoney(Decimal.fromMantissaExponent(10 -player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).mantissa, Math.abs(player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).e)).min("1e2500").max(1))+"x"
-        document.getElementById("32desc").textContent = "You gain "+Math.max(player.resets, 1)+"x more infinitied stat (based on dimension boosts)"
-        document.getElementById("51desc").textContent = "You gain "+shortenCosts(1e15)+"x more IP"
-        document.getElementById("71desc").textContent = "Currently: "+shortenMoney(calcTotalSacrificeBoost().pow(0.25).max(1).min("1e210000"))+"x"
-        document.getElementById("72desc").textContent = "Currently: "+shortenMoney(calcTotalSacrificeBoost().pow(0.04).max(1).min("1e30000"))+"x"
-        document.getElementById("73desc").textContent = "Currently: "+shortenMoney(calcTotalSacrificeBoost().pow(0.005).max(1).min("1e1300"))+"x"
-        document.getElementById("82desc").textContent = "Currently: "+shortenMoney(Decimal.pow(1.0000109, Decimal.pow(player.resets, 2)))+"x"
-        document.getElementById("91desc").textContent = "Currently: "+shortenMoney(Decimal.pow(10, Math.min(player.thisEternity, 18000)/60))+"x"
-        document.getElementById("92desc").textContent = "Currently: "+shortenMoney(Decimal.pow(2, 600/Math.max(player.bestEternity, 20)))+"x"
-        document.getElementById("93desc").textContent = "Currently: "+shortenMoney(Decimal.pow(player.totalTickGained, 0.25))+"x"
-        document.getElementById("121desc").textContent = "Currently: "+((253 - averageEp.dividedBy(player.epmult).dividedBy(10).min(248).max(3))/5).toFixed(1)+"x"
-        document.getElementById("123desc").textContent = "Currently: "+Math.sqrt(1.39*player.thisEternity/10).toFixed(1)+"x"
-        document.getElementById("141desc").textContent = "Currently: "+shortenMoney(new Decimal(1e45).dividedBy(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125))).max(1))+"x"
+        document.getElementById("32desc").textContent = "你获取无限次数多 "+Math.max(player.resets, 1)+"x 倍 (基于维度提升次数)"
+        document.getElementById("51desc").textContent = "你获取无限点数多 "+shortenCosts(1e15)+"x 倍"
+        document.getElementById("71desc").textContent = "当前: "+shortenMoney(calcTotalSacrificeBoost().pow(0.25).max(1).min("1e210000"))+"x"
+        document.getElementById("72desc").textContent = "当前: "+shortenMoney(calcTotalSacrificeBoost().pow(0.04).max(1).min("1e30000"))+"x"
+        document.getElementById("73desc").textContent = "当前: "+shortenMoney(calcTotalSacrificeBoost().pow(0.005).max(1).min("1e1300"))+"x"
+        document.getElementById("82desc").textContent = "当前: "+shortenMoney(Decimal.pow(1.0000109, Decimal.pow(player.resets, 2)))+"x"
+        document.getElementById("91desc").textContent = "当前: "+shortenMoney(Decimal.pow(10, Math.min(player.thisEternity, 18000)/60))+"x"
+        document.getElementById("92desc").textContent = "当前: "+shortenMoney(Decimal.pow(2, 600/Math.max(player.bestEternity, 20)))+"x"
+        document.getElementById("93desc").textContent = "当前: "+shortenMoney(Decimal.pow(player.totalTickGained, 0.25))+"x"
+        document.getElementById("121desc").textContent = "当前: "+((253 - averageEp.dividedBy(player.epmult).dividedBy(10).min(248).max(3))/5).toFixed(1)+"x"
+        document.getElementById("123desc").textContent = "当前: "+Math.sqrt(1.39*player.thisEternity/10).toFixed(1)+"x"
+        document.getElementById("141desc").textContent = "当前: "+shortenMoney(new Decimal(1e45).dividedBy(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125))).max(1))+"x"
         document.getElementById("142desc").textContent = "You gain "+shortenCosts(1e25)+"x more IP"
-        document.getElementById("143desc").textContent = "Currently: "+shortenMoney(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125)))+"x"
-        document.getElementById("151desc").textContent = shortenCosts(1e4)+"x multiplier on all Time dimensions"
-        document.getElementById("161desc").textContent = shortenCosts(new Decimal("1e616"))+"x multiplier on all normal dimensions"
-        document.getElementById("162desc").textContent = shortenCosts(1e11)+"x multiplier on all Infinity dimensions"
-        document.getElementById("192desc").textContent = "You can get beyond "+shortenMoney(Number.MAX_VALUE)+" replicantis, but the interval is increased the more you have"
-        document.getElementById("193desc").textContent = "Currently: "+shortenMoney(Decimal.pow(1.03, player.eternities).min("1e13000"))+"x"
-        document.getElementById("212desc").textContent = "Currently: "+((Math.pow(player.timeShards.max(2).log2(), 0.005)-1)*100).toFixed(2)+"%"
-        document.getElementById("214desc").textContent = "Currently: "+shortenMoney(((calcTotalSacrificeBoost().pow(8)).min("1e46000").times(calcTotalSacrificeBoost().pow(1.1)).div(calcTotalSacrificeBoost())).max(1).min(new Decimal("1e125000")))+"x"
+        document.getElementById("143desc").textContent = "当前: "+shortenMoney(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125)))+"x"
+        document.getElementById("151desc").textContent = "所有时间维度倍数乘以 "+shortenCosts(1e4)+"x "
+        document.getElementById("161desc").textContent = "所有普通维度倍数乘以 "+shortenCosts(new Decimal("1e616"))+"x"
+        document.getElementById("162desc").textContent = "所有无限维度倍数乘以 "+shortenCosts(1e11)+"x "
+        document.getElementById("192desc").textContent = "你可以拥有超过 "+shortenMoney(Number.MAX_VALUE)+" 的复制品，但是时间间隔随着数量增长"
+        document.getElementById("193desc").textContent = "当前: "+shortenMoney(Decimal.pow(1.03, player.eternities).min("1e13000"))+"x"
+        document.getElementById("212desc").textContent = "当前: "+((Math.pow(player.timeShards.max(2).log2(), 0.005)-1)*100).toFixed(2)+"%"
+        document.getElementById("214desc").textContent = "当前: "+shortenMoney(((calcTotalSacrificeBoost().pow(8)).min("1e46000").times(calcTotalSacrificeBoost().pow(1.1)).div(calcTotalSacrificeBoost())).max(1).min(new Decimal("1e125000")))+"x"
 
-        if (player.etercreq !== 1) document.getElementById("ec1unl").innerHTML = "Eternity Challenge 1<span>Requirement: "+(ECTimesCompleted("eterc1")+1)*20000+" Eternities<span>Cost: 30 Time Theorems"
-        else document.getElementById("ec1unl").innerHTML = "Eternity Challenge 1<span>Cost: 30 Time Theorems"
-        if (player.etercreq !== 2) document.getElementById("ec2unl").innerHTML = "Eternity Challenge 2<span>Requirement: "+(1300+(ECTimesCompleted("eterc2")*150))+" Tickspeed upgrades gained from time dimensions<span>Cost: 35 Time Theorems"
-        else document.getElementById("ec2unl").innerHTML = "Eternity Challenge 2<span>Cost: 35 Time Theorems"
-        if (player.etercreq !== 3) document.getElementById("ec3unl").innerHTML = "Eternity Challenge 3<span>Requirement: "+(17300+(ECTimesCompleted("eterc3")*1250))+" 8th dimensions<span>Cost: 40 Time Theorems"
-        else document.getElementById("ec3unl").innerHTML = "Eternity Challenge 3<span>Cost: 40 Time Theorems"
-        if (player.etercreq !== 4) document.getElementById("ec4unl").innerHTML = "Eternity Challenge 4<span>Requirement: "+(1e8 + (ECTimesCompleted("eterc4")*5e7)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" infinities<span>Cost: 70 Time Theorems"
-        else document.getElementById("ec4unl").innerHTML = "Eternity Challenge 4<span>Cost: 70 Time Theorems"
-        if (player.etercreq !== 5) document.getElementById("ec5unl").innerHTML = "Eternity Challenge 5<span>Requirement: "+(160+(ECTimesCompleted("eterc5")*14))+" galaxies<span>Cost: 130 Time Theorems"
-        else document.getElementById("ec5unl").innerHTML = "Eternity Challenge 5<span>Cost: 130 Time Theorems"
-        if (player.etercreq !== 6) document.getElementById("ec6unl").innerHTML = "Eternity Challenge 6<span>Requirement: "+(40+(ECTimesCompleted("eterc6")*5))+" replicanti galaxies<span>Cost: 85 Time Theorems"
-        else document.getElementById("ec6unl").innerHTML = "Eternity Challenge 6<span>Cost: 85 Time Theorems"
-        if (player.etercreq !== 7) document.getElementById("ec7unl").innerHTML = "Eternity Challenge 7<span>Requirement: "+shortenCosts(new Decimal("1e500000").times(new Decimal("1e300000").pow(ECTimesCompleted("eterc7"))))+" antimatter <span>Cost: 115 Time Theorems"
-        else document.getElementById("ec7unl").innerHTML = "Eternity Challenge 7<span>Cost: 115 Time Theorems"
-        if (player.etercreq !== 8) document.getElementById("ec8unl").innerHTML = "Eternity Challenge 8<span>Requirement: "+shortenCosts(new Decimal("1e4000").times(new Decimal("1e1000").pow(ECTimesCompleted("eterc8"))))+" IP <span>Cost: 115 Time Theorems"
-        else document.getElementById("ec8unl").innerHTML = "Eternity Challenge 8<span>Cost: 115 Time Theorems"
-        if (player.etercreq !== 9) document.getElementById("ec9unl").innerHTML = "Eternity Challenge 9<span>Requirement: "+shortenCosts(new Decimal("1e17500").times(new Decimal("1e2000").pow(ECTimesCompleted("eterc9"))))+" infinity power<span>Cost: 415 Time Theorems"
-        else document.getElementById("ec9unl").innerHTML = "Eternity Challenge 9<span>Cost: 415 Time Theorems"
-        if (player.etercreq !== 10) document.getElementById("ec10unl").innerHTML = "Eternity Challenge 10<span>Requirement: "+shortenCosts(new Decimal("1e100").times(new Decimal("1e20").pow(ECTimesCompleted("eterc10"))))+" EP<span>Cost: 550 Time Theorems"
-        else document.getElementById("ec10unl").innerHTML = "Eternity Challenge 10<span>Cost: 550 Time Theorems"
+        if (player.etercreq !== 1) document.getElementById("ec1unl").innerHTML = "永恒挑战 1<span>需要: "+(ECTimesCompleted("eterc1")+1)*20000+" 永恒<span>成本: 30 时间定律"
+        else document.getElementById("ec1unl").innerHTML = "永恒挑战 1<span>成本: 30 时间定律"
+        if (player.etercreq !== 2) document.getElementById("ec2unl").innerHTML = "永恒挑战 2<span>需要: "+(1300+(ECTimesCompleted("eterc2")*150))+" 从时间维度获得的时刻间隔减少升级<span>成本: 35 时间定律"
+        else document.getElementById("ec2unl").innerHTML = "永恒挑战 2<span>成本: 35 时间定律"
+        if (player.etercreq !== 3) document.getElementById("ec3unl").innerHTML = "永恒挑战 3<span>需要: "+(17300+(ECTimesCompleted("eterc3")*1250))+" 第八维度<span>成本: 40 时间定律"
+        else document.getElementById("ec3unl").innerHTML = "永恒挑战 3<span>成本: 40 时间定律"
+        if (player.etercreq !== 4) document.getElementById("ec4unl").innerHTML = "永恒挑战 4<span>需要: "+(1e8 + (ECTimesCompleted("eterc4")*5e7)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" 无限次数<span>成本: 70 时间定律"
+        else document.getElementById("ec4unl").innerHTML = "永恒挑战 4<span>成本: 70 时间定律"
+        if (player.etercreq !== 5) document.getElementById("ec5unl").innerHTML = "永恒挑战 5<span>需要: "+(160+(ECTimesCompleted("eterc5")*14))+" 星系<span>成本: 130 时间定律"
+        else document.getElementById("ec5unl").innerHTML = "永恒挑战 5<span>成本: 130 时间定律"
+        if (player.etercreq !== 6) document.getElementById("ec6unl").innerHTML = "永恒挑战 6<span>需要: "+(40+(ECTimesCompleted("eterc6")*5))+" 复制品星系<span>成本: 85 时间定律"
+        else document.getElementById("ec6unl").innerHTML = "永恒挑战 6<span>成本: 85 时间定律"
+        if (player.etercreq !== 7) document.getElementById("ec7unl").innerHTML = "永恒挑战 7<span>需要: "+shortenCosts(new Decimal("1e500000").times(new Decimal("1e300000").pow(ECTimesCompleted("eterc7"))))+" 反物质 <span>成本: 115 时间定律"
+        else document.getElementById("ec7unl").innerHTML = "永恒挑战 7<span>成本: 115 时间定律"
+        if (player.etercreq !== 8) document.getElementById("ec8unl").innerHTML = "永恒挑战 8<span>需要: "+shortenCosts(new Decimal("1e4000").times(new Decimal("1e1000").pow(ECTimesCompleted("eterc8"))))+" 无限点数 <span>成本: 115 时间定律"
+        else document.getElementById("ec8unl").innerHTML = "永恒挑战 8<span>成本: 115 时间定律"
+        if (player.etercreq !== 9) document.getElementById("ec9unl").innerHTML = "永恒挑战 9<span>需要: "+shortenCosts(new Decimal("1e17500").times(new Decimal("1e2000").pow(ECTimesCompleted("eterc9"))))+" 无限力量<span>成本: 415 时间定律"
+        else document.getElementById("ec9unl").innerHTML = "永恒挑战 9<span>成本: 415 时间定律"
+        if (player.etercreq !== 10) document.getElementById("ec10unl").innerHTML = "永恒挑战 10<span>需要: "+shortenCosts(new Decimal("1e100").times(new Decimal("1e20").pow(ECTimesCompleted("eterc10"))))+" 永恒点数<span>成本: 550 时间定律"
+        else document.getElementById("ec10unl").innerHTML = "永恒挑战 10<span>成本: 550 时间定律"
 
-        document.getElementById("ec11unl").innerHTML = "Eternity Challenge 11<span>Requirement: Use only the Normal Dimension path<span>Cost: 1 Time Theorem"
-        document.getElementById("ec12unl").innerHTML = "Eternity Challenge 12<span>Requirement: Use only the Time Dimension path<span>Cost: 1 Time Theorem"
+        document.getElementById("ec11unl").innerHTML = "永恒挑战 11<span>需要: 只使用普通维度路线<span>成本: 1 时间定律"
+        document.getElementById("ec12unl").innerHTML = "永恒挑战 12<span>需要: 只使用时间维度路线<span>成本: 1 时间定律"
 
-        if (player.dilation.studies.includes(1)) document.getElementById("dilstudy1").innerHTML = "Unlock time dilation<span>Cost: 5000 Time Theorems"
-        else document.getElementById("dilstudy1").innerHTML = "Unlock time dilation<span>Requirement: 5 EC11 and EC12 completions and 13000 total theorems<span>Cost: 5000 Time Theorems"
+        if (player.dilation.studies.includes(1)) document.getElementById("dilstudy1").innerHTML = "解锁时间膨胀<span>成本: 5000 时间定律"
+        else document.getElementById("dilstudy1").innerHTML = "解锁时间膨胀<span>需要: 完成5次永恒挑战11以及12，总共拥有13000时间定律<span>成本: 5000 时间定律"
     }
 }
 
@@ -2063,11 +2063,11 @@ function setAchieveTooltip() {
     overdrive.setAttribute('ach-tooltip', "大坍缩并超过 " + shortenCosts(1e300) + " 无限点数/分钟。 奖励：无限点数倍数额外x4。")
     minute.setAttribute('ach-tooltip', "拥有 " + shortenCosts(1e260) + " 无限力量。 奖励: 无限力量获取翻倍。")
     infiniteIP.setAttribute('ach-tooltip', "拥有 "+shortenCosts(new Decimal("1e30008"))+" 无限点数。")
-    over9000.setAttribute('ach-tooltip', "Get a total sacrifice multiplier of "+shortenCosts(new Decimal("1e9000"))+". Reward: Sacrifice doesn't reset your dimensions.")
+    over9000.setAttribute('ach-tooltip', "总共获得 "+shortenCosts(new Decimal("1e9000"))+"的维度献祭倍数。 奖励：维度献祭不会重置你的维度数量。")
     dawg.setAttribute('ach-tooltip', "你过去的10次无限，每一个都比前一次获得无限点数高 "+shortenMoney(Number.MAX_VALUE)+" 倍。 奖励：维度提升以及购买星系反物质不会重置")
-    eatass.setAttribute('ach-tooltip', "Reach "+shortenCosts(1e100)+" IP without any infinities or first dimensions. Reward: IP multiplier based on time spent this infinity.")
-    layer.setAttribute('ach-tooltip', "Reach "+shortenMoney(Number.MAX_VALUE)+" EP.")
-    fkoff.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e22000"))+" IP without any time studies. Reward: Time dimensions are multiplied by the number of studies you have.")
+    eatass.setAttribute('ach-tooltip', "拥有 "+shortenCosts(1e100)+" 无限点数并没有到达永恒，也没有第一维度。奖励：基于本次无限花费的时间给予无限点数倍数。")
+    layer.setAttribute('ach-tooltip', "拥有 "+shortenMoney(Number.MAX_VALUE)+" 永恒点数。")
+    fkoff.setAttribute('ach-tooltip', "拥有 "+shortenCosts(new Decimal("1e22000"))+" 无限点数，并没有任何时间研究。奖励：时间维度的倍数乘以你拥有的时间研究的数量。")
     minaj.setAttribute('ach-tooltip', "Have 180 times more non-bonus replicanti galaxies than normal galaxies. Reward: Replicanti galaxies divide your replicanti by "+shortenMoney(Number.MAX_VALUE)+" instead of resetting them to 1.")
     infstuff.setAttribute('ach-tooltip', "Reach "+shortenCosts(new Decimal("1e140000"))+" IP without buying IDs or IP multipliers. Reward: You start eternities with all Infinity Challenges unlocked and completed.")
     when.setAttribute('ach-tooltip', "Reach "+shortenCosts( new Decimal("1e20000"))+" replicanti. Reward: You gain replicanti 2 times faster under "+shortenMoney(Number.MAX_VALUE)+" replicanti.")
@@ -4256,7 +4256,7 @@ function unlockDilation() {
     document.getElementById("dilationunlock").className = "dilationupgbought"
     updateTimeStudyButtons()
     showEternityTab("dilation")
-    document.getElementById("dilationunlock").innerHTML = "Unlock time dilation<span>Cost: 5000 Time Theorems"
+    document.getElementById("dilationunlock").innerHTML = "解锁时间膨胀<span>成本: 5000 时间定律"
 }
 
 
@@ -5345,8 +5345,8 @@ function gameLoop(diff) {
     if (player.dilation.upgrades.includes(10)) {
         player.timestudy.theorem += parseFloat(player.dilation.tachyonParticles.div(20000).times(diff/10).toString())
         if (document.getElementById("timestudies").style.display != "none" && document.getElementById("eternitystore").style.display != "none") {
-            if (player.timestudy.theorem>99999) document.getElementById("timetheorems").innerHTML = "You have <span style='display:inline' class=\"TheoremAmount\">"+shortenMoney(player.timestudy.theorem)+"</span> Time "+"Theorems."
-            else document.getElementById("timetheorems").innerHTML = "You have <span style='display:inline' class=\"TheoremAmount\">"+player.timestudy.theorem.toFixed(0)+"</span> Time "+ (player.timestudy.theorem == 1 ? "Theorem." : "Theorems.")
+            if (player.timestudy.theorem>99999) document.getElementById("timetheorems").innerHTML = "你拥有 <span style='display:inline' class=\"TheoremAmount\">"+shortenMoney(player.timestudy.theorem)+"</span> 时间定律。 "+""
+            else document.getElementById("timetheorems").innerHTML = "你拥有 <span style='display:inline' class=\"TheoremAmount\">"+player.timestudy.theorem.toFixed(0)+"</span> 时间定律。 "+ (player.timestudy.theorem == 1 ? "" : "")
             updateTimeStudyButtons()
         }
     }
