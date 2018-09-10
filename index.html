@@ -101,19 +101,19 @@
         <div id="eternitystore" class="tab" style="font-size: 15px; margin: 0 auto; display: none" align="center">
             <table class="table" align="center" style="margin: auto">
                 <tr>
-                    <td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">Time studies</button></td>
-                    <td><button class="secondarytabbtn" onclick="showEternityTab('eternityupgrades')">Eternity upgrades</button></td>
-                    <td><button class="secondarytabbtn" onclick="showEternityTab('milestones')">Eternity milestones</button></td>
-                    <td><button class="secondarytabbtn" onclick="showEternityTab('dilation')" id="dilationTabbtn">Time dilation</button></td>
+                    <td><button class="secondarytabbtn" onclick="showEternityTab('timestudies')">时间研究</button></td>
+                    <td><button class="secondarytabbtn" onclick="showEternityTab('eternityupgrades')">永恒升级</button></td>
+                    <td><button class="secondarytabbtn" onclick="showEternityTab('milestones')">永恒里程碑</button></td>
+                    <td><button class="secondarytabbtn" onclick="showEternityTab('dilation')" id="dilationTabbtn">时间膨胀</button></td>
                 </tr>
             </table>
             <div class="eternitytab" id="timestudies" style="font-size: 15px">
                 <div style="display: none;"><textarea id="treeExportOutput" style="color:black; width: 200px; height: 55px;"></textarea></div>
                 <canvas id="studyTreeCanvas"></canvas>
                 <tr>
-                    <td><button class="storebtn" onclick="exportStudyTree()" style="width:150px; height: 40px; font-size: 10px; margin: auto">Export tree</button><td>
-                    <td><button class="storebtn" onclick="respecToggle()" id="respec" style="width:150px; height: 40px; font-size: 10px; margin: auto">Respec time studies on next Eternity</button><td>
-                    <td><button class="storebtn" onclick="importStudyTree()" style="width:150px; height: 40px; font-size: 10px; margin: auto">Import tree</button><td>
+                    <td><button class="storebtn" onclick="exportStudyTree()" style="width:150px; height: 40px; font-size: 10px; margin: auto">导出升级树</button><td>
+                    <td><button class="storebtn" onclick="respecToggle()" id="respec" style="width:150px; height: 40px; font-size: 10px; margin: auto">下一轮永恒重置时间研究</button><td>
+                    <td><button class="storebtn" onclick="importStudyTree()" style="width:150px; height: 40px; font-size: 10px; margin: auto">导入升级树</button><td>
                 </tr>
                 <table class="table" id="studytable">
                     <tr>
@@ -853,11 +853,11 @@
             <div id="timedimensions" class="dimtab">
                     <div>
                         <p id="totaltickgained">You've gained 0 tickspeed upgrades.</p>
-                            <p>You have <span id="timeShardAmount" style="font-size:35px; color: black">0</span> time shards. Next tickspeed upgrade at <span id="tickThreshold" style="font-size:35px; color: black">0</span></p>
+                            <p>你拥有 <span id="timeShardAmount" style="font-size:35px; color: black">0</span> 时间碎片。 下一次时刻间隔减少升级在 <span id="tickThreshold" style="font-size:35px; color: black">0</span></p>
                         </div>
 
                         <div id="timeShardsPerSec">You are getting 0 Timeshards per second.</div>
-                        <button id="maxTimeDimensions" class="storebtn" style="font-size: 12px" onclick="buyMaxTimeDimensions()">Max all</Button>
+                        <button id="maxTimeDimensions" class="storebtn" style="font-size: 12px" onclick="buyMaxTimeDimensions()">全部最大</Button>
                         <table class="table" >
                             <tr style="font-size: 17px" id="timeRow1">
                                 <td id="timeD1" width="43%">
@@ -1043,9 +1043,9 @@
             <tr>
                 <td><button class="secondarytabbtn" onclick="showStatsTab('stats')">统计</button><td>
                 <td><button class="secondarytabbtn" onclick="showStatsTab('challengetimes')" id="challengetimesbtn" style="display:none" >挑战纪录</button><td>
-                <td><button class="secondarytabbtn" onclick="showStatsTab('infchallengetimes')" id="infchallengesbtn" style="display:none">InfChallenge records</button><td>
+                <td><button class="secondarytabbtn" onclick="showStatsTab('infchallengetimes')" id="infchallengesbtn" style="display:none">无限挑战记录</button><td>
                 <td><button class="secondarytabbtn" onclick="showStatsTab('lasttenruns')" id="pastinfs" style="display:none">过去的无限</button><td>
-                <td><button class="secondarytabbtn" onclick="showStatsTab('lastteneternities')" id="pasteternities" >Past Eternities</button><td>
+                <td><button class="secondarytabbtn" onclick="showStatsTab('lastteneternities')" id="pasteternities" >过去的永恒</button><td>
             </tr>
             <div id="stats" class="statstab">
                 <br>

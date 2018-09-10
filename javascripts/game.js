@@ -624,9 +624,9 @@ function updateDimensions() {
             document.getElementById("besteternity").textContent = ""
             document.getElementById("thiseternity").textContent = ""
         } else {
-            document.getElementById("eternitied").textContent = "You have Eternitied " + player.eternities.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " times."
-            document.getElementById("besteternity").textContent = "You have spent "+timeDisplay(player.thisEternity)+" in this Eternity."
-            document.getElementById("thiseternity").textContent = "Your fastest Eternity is in "+timeDisplay(player.bestEternity)+"."
+            document.getElementById("eternitied").textContent = "你已到达永恒 " + player.eternities.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " 次。"
+            document.getElementById("besteternity").textContent = "你在本次永恒已经花费了 "+timeDisplay(player.thisEternity)+"。"
+            document.getElementById("thiseternity").textContent = "你的最快一轮永恒时间为 "+timeDisplay(player.bestEternity)+"。"
         }
     }
 
@@ -2702,16 +2702,16 @@ function updateLastTenEternities() {
     for (var i=0; i<10; i++) {
         var eppm = player.lastTenEternities[i][1].dividedBy(player.lastTenEternities[i][0]/600)
         if (eppm.gt(tempBest)) tempBest = eppm
-        var tempstring = shorten(eppm) + " EP/min"
-        if (eppm<1) tempstring = shorten(eppm*60) + " EP/hour"
-        document.getElementById("eternityrun"+(i+1)).textContent = "The Eternity "+(i+1)+" eternities ago took " + timeDisplayShort(player.lastTenEternities[i][0]) + " and gave " + shortenDimensions(player.lastTenEternities[i][1]) +" EP. "+ tempstring
+        var tempstring = shorten(eppm) + " 永恒点数/分钟"
+        if (eppm<1) tempstring = shorten(eppm*60) + " 永恒点数/小时"
+        document.getElementById("eternityrun"+(i+1)).textContent = ""+(i+1)+" 次前的永恒花费了 " + timeDisplayShort(player.lastTenEternities[i][0]) + " 并且获得了 " + shortenDimensions(player.lastTenEternities[i][1]) +" 永恒点数。 "+ tempstring
     }
 
     var eppm = tempEP.dividedBy(tempTime/600)
-    var tempstring = shorten(eppm) + " EP/min"
+    var tempstring = shorten(eppm) + " 永恒点数/分钟"
     averageEp = tempEP
-    if (eppm<1) tempstring = shorten(eppm*60) + " EP/hour"
-    document.getElementById("averageEternityRun").textContent = "Last 10 eternities average time: "+ timeDisplayShort(tempTime)+" Average EP gain: "+shortenDimensions(tempEP)+" EP. "+tempstring
+    if (eppm<1) tempstring = shorten(eppm*60) + " 永恒点数/小时"
+    document.getElementById("averageEternityRun").textContent = "前十次永恒的平均时间: "+ timeDisplayShort(tempTime)+" 平均永恒点数获得: "+shortenDimensions(tempEP)+" 永恒点数。 "+tempstring
 }
 
 function addEternityTime(time, ep) {
@@ -3079,7 +3079,7 @@ function respecToggle() {
 }
 
 function eternity(force, auto) {
-    if ((player.infinityPoints.gte(Number.MAX_VALUE) && (!player.options.eternityconfirm || auto || confirm("Eternity will reset everything except achievements and challenge records. You will also gain an Eternity point and unlock various upgrades."))) || force === true) {
+    if ((player.infinityPoints.gte(Number.MAX_VALUE) && (!player.options.eternityconfirm || auto || confirm("永恒将重置除成就以及挑战纪录以外的一切。你将获得永恒点数并解锁多种升级。"))) || force === true) {
         if (force) player.currentEternityChall = "";
         if (player.currentEternityChall !== "" && player.infinityPoints.lt(player.eternityChallGoal)) return false
         if (player.thisEternity<player.bestEternity && !force) {
@@ -3410,10 +3410,10 @@ function eternity(force, auto) {
         document.getElementById("eternitystorebtn").style.display = "inline-block"
         document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
         updateEternityUpgrades()
-        document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
+        document.getElementById("totaltickgained").textContent = "你已经获得了 "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" 次时刻间隔减少升级。"
         updateTickSpeed();
         playerInfinityUpgradesOnEternity()
-        document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
+        document.getElementById("eternityPoints2").innerHTML = "你拥有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恒点数。"+((player.eternityPoints.eq(1)) ? "" : "")
         updateEternityChallenges()
         if (player.eternities <= 1) {
             showTab("dimensions")
@@ -4203,10 +4203,10 @@ function startEternityChallenge(name, startgoal, goalIncrease) {
         document.getElementById("eternitystorebtn").style.display = "inline-block"
         document.getElementById("infiMult").innerHTML = "所有来源的无限点数翻倍 <br>当前: "+shorten(player.infMult.times(kongIPMult)) +"x<br>花费: "+shortenCosts(player.infMultCost)+" 无限点数"
         updateEternityUpgrades()
-        document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
+        document.getElementById("totaltickgained").textContent = "你已经获得了 "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" 次时刻间隔减少升级。"
         updateTickSpeed();
         playerInfinityUpgradesOnEternity()
-        document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
+        document.getElementById("eternityPoints2").innerHTML = "你拥有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恒点数。"+((player.eternityPoints.eq(1)) ? "" : "")
         updateEternityChallenges()
         Marathon2 = 0;
 
@@ -4361,7 +4361,7 @@ function updateTimeShards() {
         document.getElementById("timeShardAmount").textContent = shortenMoney(player.timeShards)
         document.getElementById("tickThreshold").textContent = shortenMoney(player.tickThreshold)
         if (player.currentEternityChall == "eterc7") document.getElementById("timeShardsPerSec").textContent = "You are getting "+shortenDimensions(getTimeDimensionProduction(1))+" Eighth Infinity Dimensions per second."
-        else document.getElementById("timeShardsPerSec").textContent = "You are getting "+shortenDimensions(getTimeDimensionProduction(1))+" Timeshards per second."
+        else document.getElementById("timeShardsPerSec").textContent = "你每秒获得 "+shortenDimensions(getTimeDimensionProduction(1))+" 时间碎片。"
     }
 }
 
@@ -4489,7 +4489,7 @@ setInterval(function() {
     document.getElementById("kongep").textContent = "Triple your EP gain from all sources (additive). Forever. Currently: x"+kongEPMult+", next: x"+(kongEPMult==1? 3: kongEPMult+3)
     document.getElementById("kongdim").textContent = "Double all your normal dimension multipliers (multiplicative). Forever. Currently: x"+kongDimMult+", next: x"+(kongDimMult*2)
     document.getElementById("kongalldim").textContent = "Double ALL the dimension multipliers (Normal, Infinity, Time) (multiplicative until 32x). Forever. Currently: x"+kongAllDimMult+", next: x"+((kongAllDimMult < 32) ? kongAllDimMult * 2 : kongAllDimMult + 32)
-    document.getElementById("eternityPoints2").innerHTML = "You have <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> Eternity point"+((player.eternityPoints.eq(1)) ? "." : "s.")
+    document.getElementById("eternityPoints2").innerHTML = "你拥有 <span class=\"EPAmount2\">"+shortenDimensions(player.eternityPoints)+"</span> 永恒点数。"+((player.eternityPoints.eq(1)) ? "" : "")
 
     document.getElementById("eternitybtn").style.display = (player.infinityPoints.gte(player.eternityChallGoal) && (player.infDimensionsUnlocked[7] || player.eternities > 24)) ? "inline-block" : "none"
 
@@ -4837,7 +4837,7 @@ function gameLoop(diff) {
         player.tickspeed = player.tickspeed.times(Decimal.pow(getTickSpeedMultiplier(), gain))
         if (player.timestudy.studies.includes(171)) player.tickThreshold = new Decimal(1).times(1.25).pow(player.totalTickGained)
         else player.tickThreshold = new Decimal(1).times(1.33).pow(player.totalTickGained)
-        document.getElementById("totaltickgained").textContent = "You've gained "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" tickspeed upgrades."
+        document.getElementById("totaltickgained").textContent = "你已经获得了 "+player.totalTickGained.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+" 次时刻间隔减少升级。"
         updateTickSpeed();
     }
 
@@ -4962,9 +4962,9 @@ function gameLoop(diff) {
 
     var currentEPmin = gainedEternityPoints().dividedBy(player.thisEternity/600)
     if (currentEPmin.gt(EPminpeak) && player.infinityPoints.gte(Number.MAX_VALUE)) EPminpeak = currentEPmin
-    document.getElementById("eternitybtn").innerHTML = (player.eternities == 0) ? "Other times await.. I need to become Eternal" : "<b>I need to become Eternal.</b><br>"+"Gain <b>"+shortenDimensions(gainedEternityPoints())+"</b> Eternity points.<br>"+shortenDimensions(currentEPmin)+ " EP/min<br>Peaked at "+shortenDimensions(EPminpeak)+" EP/min"
-    if (gainedEternityPoints().gte(1e6)) document.getElementById("eternitybtn").innerHTML = "Gain <b>"+shortenDimensions(gainedEternityPoints())+"</b> Eternity points.<br>"+shortenDimensions(currentEPmin)+ " EP/min<br>Peaked at "+shortenDimensions(EPminpeak)+" EP/min"
-    if (player.dilation.active) document.getElementById("eternitybtn").innerHTML = "Gain <b>"+shortenDimensions(gainedEternityPoints())+"</b> Eternity points.<br>"+"+"+shortenMoney(Math.round(Math.max(Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles, 0) * 10)/10) +" Tachyon particles."
+    document.getElementById("eternitybtn").innerHTML = (player.eternities == 0) ? "其他的时间在等待着.. 我需要永恒" : "<b>我需要永恒。</b><br>"+"获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+shortenDimensions(currentEPmin)+ " 永恒点数/分钟<br>最高值为 "+shortenDimensions(EPminpeak)+" 永恒点数/分钟"
+    if (gainedEternityPoints().gte(1e6)) document.getElementById("eternitybtn").innerHTML = "获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+shortenDimensions(currentEPmin)+ " 永恒点数/分钟<br>最高值为 "+shortenDimensions(EPminpeak)+" 永恒点数/分钟"
+    if (player.dilation.active) document.getElementById("eternitybtn").innerHTML = "获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+"+"+shortenMoney(Math.round(Math.max(Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles, 0) * 10)/10) +" Tachyon particles."
     if (player.currentEternityChall !== "") document.getElementById("eternitybtn").textContent = "Other challenges await.. I need to become Eternal"
     updateMoney();
     updateCoinPerSec();
