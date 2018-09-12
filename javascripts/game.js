@@ -2065,7 +2065,7 @@ function setAchieveTooltip() {
     infiniteIP.setAttribute('ach-tooltip', "拥有 "+shortenCosts(new Decimal("1e30008"))+" 无限点数。")
     over9000.setAttribute('ach-tooltip', "总共获得 "+shortenCosts(new Decimal("1e9000"))+"的维度献祭倍数。 奖励：维度献祭不会重置你的维度数量。")
     dawg.setAttribute('ach-tooltip', "你过去的10次无限，每一个都比前一次获得无限点数高 "+shortenMoney(Number.MAX_VALUE)+" 倍。 奖励：维度提升以及购买星系反物质不会重置")
-    eatass.setAttribute('ach-tooltip', "拥有 "+shortenCosts(1e100)+" 无限点数并没有到达永恒，也没有第一维度。奖励：基于本次无限花费的时间给予无限点数倍数。")
+    eatass.setAttribute('ach-tooltip', "拥有 "+shortenCosts(1e100)+" 无限点数且没有到达无限，也没有第一维度。奖励：基于本次无限花费的时间给予无限点数倍数。")
     layer.setAttribute('ach-tooltip', "拥有 "+shortenMoney(Number.MAX_VALUE)+" 永恒点数。")
     fkoff.setAttribute('ach-tooltip', "拥有 "+shortenCosts(new Decimal("1e22000"))+" 无限点数，并没有任何时间研究。奖励：时间维度的倍数乘以你拥有的时间研究的数量。")
     minaj.setAttribute('ach-tooltip', "Have 180 times more non-bonus replicanti galaxies than normal galaxies. Reward: Replicanti galaxies divide your replicanti by "+shortenMoney(Number.MAX_VALUE)+" instead of resetting them to 1.")
