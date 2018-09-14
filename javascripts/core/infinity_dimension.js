@@ -236,10 +236,10 @@ function buyMaxInfDims(tier) {
 function switchAutoInf(tier) {
   if (player.infDimBuyers[tier-1]) {
       player.infDimBuyers[tier-1] = false
-      document.getElementById("infauto"+tier).textContent = "Auto: OFF"
+      document.getElementById("infauto"+tier).textContent = "自动购买: 关"
   } else {
       player.infDimBuyers[tier-1] = true
-      document.getElementById("infauto"+tier).textContent = "Auto: ON"
+      document.getElementById("infauto"+tier).textContent = "自动购买: 开"
   }
 }
 
@@ -247,13 +247,13 @@ function toggleAllInfDims() {
   if (player.infDimBuyers[0]) {
       for (var i=1; i<9; i++) {
           player.infDimBuyers[i-1] = false
-          document.getElementById("infauto"+i).textContent = "Auto: OFF"
+          document.getElementById("infauto"+i).textContent = "自动购买: 关"
       }
   } else {
       for (var i=1; i<9; i++) {
           if (player.eternities - 10>=i) {
               player.infDimBuyers[i-1] = true
-              document.getElementById("infauto"+i).textContent = "Auto: ON"
+              document.getElementById("infauto"+i).textContent = "自动购买: 开"
           }
       }
   }
@@ -261,8 +261,8 @@ function toggleAllInfDims() {
 
 function loadInfAutoBuyers() {
   for (var i=1; i<9; i++) {
-      if (player.infDimBuyers[i-1]) document.getElementById("infauto"+i).textContent = "Auto: ON"
-      else document.getElementById("infauto"+i).textContent = "Auto: OFF"
+      if (player.infDimBuyers[i-1]) document.getElementById("infauto"+i).textContent = "自动购买: 开"
+      else document.getElementById("infauto"+i).textContent = "自动购买: 关"
   }
 }
 

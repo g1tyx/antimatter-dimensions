@@ -1225,7 +1225,7 @@ function updateInfCosts() {
         document.getElementById("121desc").textContent = "当前: "+((253 - averageEp.dividedBy(player.epmult).dividedBy(10).min(248).max(3))/5).toFixed(1)+"x"
         document.getElementById("123desc").textContent = "当前: "+Math.sqrt(1.39*player.thisEternity/10).toFixed(1)+"x"
         document.getElementById("141desc").textContent = "当前: "+shortenMoney(new Decimal(1e45).dividedBy(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125))).max(1))+"x"
-        document.getElementById("142desc").textContent = "你获得了 "+shortenCosts(1e25)+"x 的无限点"
+        document.getElementById("142desc").textContent = "获得的无限点数乘以 "+shortenCosts(1e25)+"x 倍"
         document.getElementById("143desc").textContent = "当前: "+shortenMoney(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125)))+"x"
         document.getElementById("151desc").textContent = "所有时间维度倍数乘以 "+shortenCosts(1e4)+"x "
         document.getElementById("161desc").textContent = "所有普通维度倍数乘以 "+shortenCosts(new Decimal("1e616"))+"x"
@@ -1375,8 +1375,8 @@ function toggleCrunchMode() {
         document.getElementById("limittext").textContent = "坍缩之间的秒数:"
     } else if (player.autoCrunchMode == "time"){
         player.autoCrunchMode = "relative"
-        document.getElementById("togglecrunchmode").textContent = "自动坍缩模式: X 时间从上一次坍缩"
-        document.getElementById("limittext").textContent = "X 时间从上一次坍缩:"
+        document.getElementById("togglecrunchmode").textContent = "自动坍缩模式: X 倍无限点数比上一次坍缩"
+        document.getElementById("limittext").textContent = "X 倍无限点数比上一次坍缩:"
     } else {
         player.autoCrunchMode = "amount"
         document.getElementById("togglecrunchmode").textContent = "自动坍缩模式:数量"
@@ -4518,7 +4518,7 @@ setInterval(function() {
 
     if (getTickSpeedMultiplier() < 0.001) giveAchievement("Do you even bend time bro?")
 
-    if (player.eternities > 9) document.getElementById("bulklabel").textContent = "Buy max dimboosts every X seconds:"
+    if (player.eternities > 9) document.getElementById("bulklabel").textContent = "每X秒购买一次最大维度提升:"
     else document.getElementById("bulklabel").textContent = "批量购买维度提升数量:"
 
     if (player.eternities > 10) {
@@ -5288,7 +5288,7 @@ function gameLoop(diff) {
         else document.getElementById("infoScale").textContent = "如果每个反物质都占据 " + formatValue(player.options.notation,2.82e-45 / 4.22419e-105 / player.money, 2, 1) + " 普朗克单位, 你就可以填满一个质子。"
     }
     if (player.money.gt(new Decimal("1e100000"))) {
-        document.getElementById("infoScale").innerHTML = "<br>If you wrote 3 numbers a second, it would take you <br>" + timeDisplay(player.money.log10()*10/3) + "<br> to write down your antimatter amount.";
+        document.getElementById("infoScale").innerHTML = "<br>如果你每秒写3个数字，那么把你的反物质数量写下来需要 <br>" + timeDisplay(player.money.log10()*10/3) + "<br> 。";
     }
 
     var shiftRequirement = getShiftRequirement(0);
