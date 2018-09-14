@@ -417,8 +417,8 @@ function updateMoney() {
     var element = document.getElementById("coinAmount");
     element.textContent = formatValue(player.options.notation, player.money, 2, 1);
     var element2 = document.getElementById("matter");
-    if (player.currentChallenge == "challenge12" || player.currentChallenge == "postc1") element2.textContent = "There is " + formatValue(player.options.notation, player.matter, 2, 1) + " matter."
-    if (player.currentChallenge == "postc6") element2.textContent = "There is " + formatValue(player.options.notation, Decimal.pow(player.matter,20), 2, 1) + " matter."; //TODO
+    if (player.currentChallenge == "challenge12" || player.currentChallenge == "postc1") element2.textContent = "这里有 " + formatValue(player.options.notation, player.matter, 2, 1) + " 物质."
+    if (player.currentChallenge == "postc6") element2.textContent = "这里有 " + formatValue(player.options.notation, Decimal.pow(player.matter,20), 2, 1) + " 物质."; //TODO
 }
 
 function updateCoinPerSec() {
@@ -574,7 +574,7 @@ function updateDimensions() {
 
     if (canBuyTickSpeed() || player.currentEternityChall == "eterc9") {
         var tickmult = getTickSpeedMultiplier()
-        if (tickmult < 1e-9) document.getElementById("tickLabel").textContent = "Divide the tick interval by " + shortenDimensions(1 / tickmult) + '.'
+        if (tickmult < 1e-9) document.getElementById("tickLabel").textContent = "把时间间隔除以 " + shortenDimensions(1 / tickmult) + '.'
         else {
             var places = 0
             if (tickmult < 0.2) places = Math.floor(Math.log10(Math.round(1/tickmult)))
@@ -675,12 +675,12 @@ function updateDimensions() {
     if (document.getElementById("dilation").style.display == "block") {
         if (player.dilation.active) {
             if (Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles <= 0) {
-                document.getElementById("enabledilation").innerHTML = "Disable dilation.<br>Reach " + shortenMoney(Decimal.pow(10, Math.pow(player.dilation.tachyonParticles * Math.pow(400, 1.5) / Math.pow(3, player.dilation.rebuyables[3]), 2/3))) + " antimatter to gain more Tachyon Particles."
+                document.getElementById("enabledilation").innerHTML = "禁用扩张.<br>Reach " + shortenMoney(Decimal.pow(10, Math.pow(player.dilation.tachyonParticles * Math.pow(400, 1.5) / Math.pow(3, player.dilation.rebuyables[3]), 2/3))) + " 反物质获得更多的Tachyon粒子."
             } else {
-                document.getElementById("enabledilation").textContent = "Disable dilation."
+                document.getElementById("enabledilation").textContent = "禁用扩张."
             }
         }
-        else document.getElementById("enabledilation").textContent = "Dilate time."
+        else document.getElementById("enabledilation").textContent = "扩张时间."
     }
 }
 
@@ -738,13 +738,13 @@ function updateChallenges() {
         var buttons = Array.from(document.getElementsByClassName('onchallengebtn')).filter(isEterChall)
         for (var i=0; i < buttons.length; i++) {
             buttons[i].className = "challengesbtn";
-            buttons[i].textContent = "Start"
+            buttons[i].textContent = "开始"
         }
 
         var buttonss = Array.from(document.getElementsByClassName('completedchallengesbtn')).filter(isEterChall)
         for (var i=0; i < buttonss.length; i++) {
             buttonss[i].className = "challengesbtn";
-            buttonss[i].textContent = "Start"
+            buttonss[i].textContent = "开始"
         }
 
 
@@ -755,7 +755,7 @@ function updateChallenges() {
 
         if (player.currentChallenge != "") {
             document.getElementById(player.currentChallenge).className = "onchallengebtn"
-            document.getElementById(player.currentChallenge).textContent = "Running"
+            document.getElementById(player.currentChallenge).textContent = "运行中"
         }
 
         if (player.money.gte(new Decimal("1e2000")) || Object.keys(player.eternityChalls).length > 0 || player.eternityChallUnlocked !== 0) document.getElementById("challTabButtons").style.display = "table"
@@ -780,7 +780,7 @@ function updateEternityChallenges() {
     for (var property in player.eternityChalls) {
         document.getElementById(property+"div").style.display = "inline-block"
         if (player.eternityChalls[property] < 5) {
-            document.getElementById(property).textContent = "Locked"
+            document.getElementById(property).textContent = "未解锁"
             document.getElementById(property).className = "lockedchallengesbtn"
         }
         else {
@@ -790,13 +790,13 @@ function updateEternityChallenges() {
     }
 
     if (player.eternityChallUnlocked !== 0) {
-        document.getElementById("eterc"+player.eternityChallUnlocked).textContent = "Start"
+        document.getElementById("eterc"+player.eternityChallUnlocked).textContent = "开始"
         document.getElementById("eterc"+player.eternityChallUnlocked).className = "challengesbtn"
         document.getElementById("eterctabbtn").style.display = "block"
     } else {
         for (i=1; i<13; i++) {
             if (player.eternityChalls["eterc"+i] !== 5) {
-                document.getElementById("eterc"+i).textContent = "Locked"
+                document.getElementById("eterc"+i).textContent = "未解锁"
                 document.getElementById("eterc"+i).className = "lockedchallengesbtn"
             }
         }
@@ -813,7 +813,7 @@ function updateEternityChallenges() {
     if (player.etercreq !== 0) document.getElementById("eterc"+player.etercreq+"div").style.display = "block"
 
     if (player.currentEternityChall !== "") {
-        document.getElementById(player.currentEternityChall).textContent = "Running"
+        document.getElementById(player.currentEternityChall).textContent = "运行中"
         document.getElementById(player.currentEternityChall).className = "onchallengebtn"
     }
 }
@@ -1212,7 +1212,7 @@ function updateInfCosts() {
     }
 
     if (document.getElementById("timestudies").style.display == "block" && document.getElementById("eternitystore").style.display == "block") {
-        document.getElementById("11desc").textContent = "Currently: "+shortenMoney(Decimal.fromMantissaExponent(10 -player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).mantissa, Math.abs(player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).e)).min("1e2500").max(1))+"x"
+        document.getElementById("11desc").textContent = "当前: "+shortenMoney(Decimal.fromMantissaExponent(10 -player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).mantissa, Math.abs(player.tickspeed.dividedBy(1000).pow(0.005).times(0.95).plus(player.tickspeed.dividedBy(1000).pow(0.0003).times(0.05)).e)).min("1e2500").max(1))+"x"
         document.getElementById("32desc").textContent = "你获取无限次数多 "+Math.max(player.resets, 1)+"x 倍 (基于维度提升次数)"
         document.getElementById("51desc").textContent = "你获取无限点数多 "+shortenCosts(1e15)+"x 倍"
         document.getElementById("71desc").textContent = "当前: "+shortenMoney(calcTotalSacrificeBoost().pow(0.25).max(1).min("1e210000"))+"x"
@@ -1225,7 +1225,7 @@ function updateInfCosts() {
         document.getElementById("121desc").textContent = "当前: "+((253 - averageEp.dividedBy(player.epmult).dividedBy(10).min(248).max(3))/5).toFixed(1)+"x"
         document.getElementById("123desc").textContent = "当前: "+Math.sqrt(1.39*player.thisEternity/10).toFixed(1)+"x"
         document.getElementById("141desc").textContent = "当前: "+shortenMoney(new Decimal(1e45).dividedBy(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125))).max(1))+"x"
-        document.getElementById("142desc").textContent = "You gain "+shortenCosts(1e25)+"x more IP"
+        document.getElementById("142desc").textContent = "你获得了 "+shortenCosts(1e25)+"x 的无限点"
         document.getElementById("143desc").textContent = "当前: "+shortenMoney(Decimal.pow(15, Math.log(player.thisInfinityTime)*Math.pow(player.thisInfinityTime, 0.125)))+"x"
         document.getElementById("151desc").textContent = "所有时间维度倍数乘以 "+shortenCosts(1e4)+"x "
         document.getElementById("161desc").textContent = "所有普通维度倍数乘以 "+shortenCosts(new Decimal("1e616"))+"x"
@@ -1284,7 +1284,7 @@ function upgradeReplicantiChance() {
         player.replicanti.chanceCost = player.replicanti.chanceCost.times(1e15)
         player.replicanti.chance += 0.01
         if (player.currentEternityChall == "eterc8") player.eterc8repl-=1
-        document.getElementById("eterc8repl").textContent = "You have "+player.eterc8repl+" purchases left."
+        document.getElementById("eterc8repl").textContent = "你有 "+player.eterc8repl+" 剩余购买量."
     }
 }
 
@@ -1299,7 +1299,7 @@ function upgradeReplicantiInterval() {
         if (player.timestudy.studies.includes(22) && player.replicanti.interval < 1) player.replicanti.interval = 1
         var places = Math.floor(Math.log10(player.replicanti.interval/1000)) * (-1)
         if (player.currentEternityChall == "eterc8") player.eterc8repl-=1
-        document.getElementById("eterc8repl").textContent = "You have "+player.eterc8repl+" purchases left."
+        document.getElementById("eterc8repl").textContent = "你有 "+player.eterc8repl+" 剩余购买量."
     }
 }
 
@@ -1313,7 +1313,7 @@ function upgradeReplicantiGalaxy() {
         if (player.replicanti.gal >= 100) player.replicanti.galCost = player.replicanti.galCost.times(Decimal.pow(1e50, player.replicanti.gal - 95))
         player.replicanti.gal += 1
         if (player.currentEternityChall == "eterc8") player.eterc8repl-=1
-        document.getElementById("eterc8repl").textContent = "You have "+player.eterc8repl+" purchases left."
+        document.getElementById("eterc8repl").textContent = "你有 "+player.eterc8repl+" 剩余购买量."
         return true
     }
     return false
@@ -1348,22 +1348,22 @@ function updateMilestones() {
 function replicantiGalaxyAutoToggle() {
     if (player.replicanti.galaxybuyer) {
         player.replicanti.galaxybuyer = false
-        if (player.timestudy.studies.includes(131)) document.getElementById("replicantiresettoggle").textContent = "Auto galaxy OFF (disabled)"
-        else document.getElementById("replicantiresettoggle").textContent = "Auto galaxy OFF"
+        if (player.timestudy.studies.includes(131)) document.getElementById("replicantiresettoggle").textContent = "自动星系关闭 (禁用)"
+        else document.getElementById("replicantiresettoggle").textContent = "自动星系关闭"
     } else {
         player.replicanti.galaxybuyer = true
-        if (player.timestudy.studies.includes(131)) document.getElementById("replicantiresettoggle").textContent = "Auto galaxy ON (disabled)"
-        else document.getElementById("replicantiresettoggle").textContent = "Auto galaxy ON"
+        if (player.timestudy.studies.includes(131)) document.getElementById("replicantiresettoggle").textContent = "自动星系开启 (禁用)"
+        else document.getElementById("replicantiresettoggle").textContent = "自动星系开启"
     }
 }
 
 function infMultAutoToggle() {
     if (player.infMultBuyer) {
         player.infMultBuyer = false
-        document.getElementById("infmultbuyer").textContent = "Autobuy IP mult OFF"
+        document.getElementById("infmultbuyer").textContent = "自动购买无限点倍数 关闭"
     } else {
         player.infMultBuyer = true
-        document.getElementById("infmultbuyer").textContent = "Autobuy IP mult ON"
+        document.getElementById("infmultbuyer").textContent = "自动购买无限点倍数 开启"
     }
 }
 
@@ -1371,15 +1371,15 @@ function infMultAutoToggle() {
 function toggleCrunchMode() {
     if (player.autoCrunchMode == "amount") {
         player.autoCrunchMode = "time"
-        document.getElementById("togglecrunchmode").textContent = "Auto crunch mode: time"
-        document.getElementById("limittext").textContent = "Seconds between crunches:"
+        document.getElementById("togglecrunchmode").textContent = "自动坍缩模式:时间"
+        document.getElementById("limittext").textContent = "坍缩之间的秒数:"
     } else if (player.autoCrunchMode == "time"){
         player.autoCrunchMode = "relative"
-        document.getElementById("togglecrunchmode").textContent = "Auto crunch mode: X times last crunch"
-        document.getElementById("limittext").textContent = "X times last crunch:"
+        document.getElementById("togglecrunchmode").textContent = "自动坍缩模式: X 时间从上一次坍缩"
+        document.getElementById("limittext").textContent = "X 时间从上一次坍缩:"
     } else {
         player.autoCrunchMode = "amount"
-        document.getElementById("togglecrunchmode").textContent = "Auto crunch mode: amount"
+        document.getElementById("togglecrunchmode").textContent = "自动坍缩模式:数量"
         document.getElementById("limittext").textContent = "等到可获得这么多无限点数再坍缩:"
     }
 }
@@ -1387,10 +1387,10 @@ function toggleCrunchMode() {
 function toggleEternityConf() {
     if (player.options.eternityconfirm) {
         player.options.eternityconfirm = false
-        document.getElementById("eternityconf").textContent = "Eternity confirmation OFF"
+        document.getElementById("eternityconf").textContent = "永恒确认关闭"
     } else {
         player.options.eternityconfirm = true
-        document.getElementById("eternityconf").textContent = "Eternity confirmation ON"
+        document.getElementById("eternityconf").textContent = "永恒确认开启"
     }
 }
 
@@ -1399,26 +1399,26 @@ function toggleReplAuto(i) {
     if (i == "chance") {
         if (player.replicanti.auto[0]) {
             player.replicanti.auto[0] = false
-            document.getElementById("replauto1").textContent = "Auto: OFF"
+            document.getElementById("replauto1").textContent = "自动: 关闭"
         } else {
             player.replicanti.auto[0] = true
-            document.getElementById("replauto1").textContent = "Auto: ON"
+            document.getElementById("replauto1").textContent = "自动: 开启"
         }
     } else if (i == "interval") {
         if (player.replicanti.auto[1]) {
             player.replicanti.auto[1] = false
-            document.getElementById("replauto2").textContent = "Auto: OFF"
+            document.getElementById("replauto2").textContent = "自动: 关闭"
         } else {
             player.replicanti.auto[1] = true
-            document.getElementById("replauto2").textContent = "Auto: ON"
+            document.getElementById("replauto2").textContent = "自动: 开启"
         }
     } else if (i == "galaxy") {
         if (player.replicanti.auto[2]) {
             player.replicanti.auto[2] = false
-            document.getElementById("replauto3").textContent = "Auto: OFF"
+            document.getElementById("replauto3").textContent = "自动: 关闭"
         } else {
             player.replicanti.auto[2] = true
-            document.getElementById("replauto3").textContent = "Auto: ON"
+            document.getElementById("replauto3").textContent = "自动: 开启"
         }
     }
 }
@@ -1429,8 +1429,8 @@ function toggleReplAuto(i) {
 function toggleCommas() {
     player.options.commas = !player.options.commas
 
-    if (player.options.commas) document.getElementById("commas").textContent = "Commas on exponents"
-    else document.getElementById("commas").textContent = "Notation on exponents"
+    if (player.options.commas) document.getElementById("commas").textContent = "指数上的逗号"
+    else document.getElementById("commas").textContent = "指数的符号"
 }
 
 
@@ -1831,8 +1831,8 @@ document.getElementById("load").onclick = function () {
 	for (var i = 0; i < 3; i++) {
 		var _break = player.break;
         player.break = true;
-        if (currentSave === i) document.querySelector("#save" + (i + 1) + " .save_antimatter").textContent = "Antimatter: " + shortenMoney(player.money);
-        else document.querySelector("#save" + (i + 1) + " .save_antimatter").textContent = "Antimatter: " + shortenMoney(saves[i] ? new Decimal(saves[i].money) : 10);
+        if (currentSave === i) document.querySelector("#save" + (i + 1) + " .save_antimatter").textContent = "反物质: " + shortenMoney(player.money);
+        else document.querySelector("#save" + (i + 1) + " .save_antimatter").textContent = "反物质: " + shortenMoney(saves[i] ? new Decimal(saves[i].money) : 10);
 		player.break = _break;
 	}
 
@@ -4577,40 +4577,40 @@ setInterval(function() {
     }
 
     document.getElementById("eterc1goal").textContent = "目标: "+shortenCosts(new Decimal("1e1800").times(new Decimal("1e200").pow(ECTimesCompleted("eterc1"))).max(new Decimal("1e1800"))) + " 无限点数"
-    document.getElementById("eterc1completed").textContent = "Completed "+ECTimesCompleted("eterc1")+" times."
+    document.getElementById("eterc1completed").textContent = "已完成 "+ECTimesCompleted("eterc1")+" 次."
 
     document.getElementById("eterc2goal").textContent = "目标: "+shortenCosts(new Decimal("1e975").times(new Decimal("1e175").pow(ECTimesCompleted("eterc2"))).max(new Decimal("1e975"))) + " 无限点数"
-    document.getElementById("eterc2completed").textContent = "Completed "+ECTimesCompleted("eterc2")+" times."
+    document.getElementById("eterc2completed").textContent = "已完成 "+ECTimesCompleted("eterc2")+" 次."
 
     document.getElementById("eterc3goal").textContent = "目标: "+shortenCosts(new Decimal("1e600").times(new Decimal("1e75").pow(ECTimesCompleted("eterc3"))).max(new Decimal("1e575"))) + " 无限点数"
-    document.getElementById("eterc3completed").textContent = "Completed "+ECTimesCompleted("eterc3")+" times."
+    document.getElementById("eterc3completed").textContent = "已完成 "+ECTimesCompleted("eterc3")+" 次."
 
     document.getElementById("eterc4goal").textContent = "目标: "+shortenCosts(new Decimal("1e2750").times(new Decimal("1e550").pow(ECTimesCompleted("eterc4"))).max(new Decimal("1e2750"))) + " IP in "+Math.max((16 - (ECTimesCompleted("eterc4")*4)), 0)+" infinities or less."
-    document.getElementById("eterc4completed").textContent = "Completed "+ECTimesCompleted("eterc4")+" times."
+    document.getElementById("eterc4completed").textContent = "已完成 "+ECTimesCompleted("eterc4")+" 次."
 
     document.getElementById("eterc5goal").textContent = "目标: "+shortenCosts(new Decimal("1e750").times(new Decimal("1e400").pow(ECTimesCompleted("eterc5"))).max(new Decimal("1e750"))) + " 无限点数"
-    document.getElementById("eterc5completed").textContent = "Completed "+ECTimesCompleted("eterc5")+" times."
+    document.getElementById("eterc5completed").textContent = "已完成 "+ECTimesCompleted("eterc5")+" 次."
 
     document.getElementById("eterc6goal").textContent = "目标: "+shortenCosts(new Decimal("1e850").times(new Decimal("1e250").pow(ECTimesCompleted("eterc6"))).max(new Decimal("1e850"))) + " 无限点数"
-    document.getElementById("eterc6completed").textContent = "Completed "+ECTimesCompleted("eterc6")+" times."
+    document.getElementById("eterc6completed").textContent = "已完成 "+ECTimesCompleted("eterc6")+" 次."
 
     document.getElementById("eterc7goal").textContent = "目标: "+shortenCosts(new Decimal("1e2000").times(new Decimal("1e530").pow(ECTimesCompleted("eterc7"))).max(new Decimal("1e2000"))) + " 无限点数"
-    document.getElementById("eterc7completed").textContent = "Completed "+ECTimesCompleted("eterc7")+" times."
+    document.getElementById("eterc7completed").textContent = "已完成 "+ECTimesCompleted("eterc7")+" 次."
 
     document.getElementById("eterc8goal").textContent = "目标: "+shortenCosts(new Decimal("1e1300").times(new Decimal("1e900").pow(ECTimesCompleted("eterc8"))).max(new Decimal("1e1300"))) + " 无限点数"
-    document.getElementById("eterc8completed").textContent = "Completed "+ECTimesCompleted("eterc8")+" times."
+    document.getElementById("eterc8completed").textContent = "已完成 "+ECTimesCompleted("eterc8")+" 次."
 
     document.getElementById("eterc9goal").textContent = "目标: "+shortenCosts(new Decimal("1e1750").times(new Decimal("1e250").pow(ECTimesCompleted("eterc9"))).max(new Decimal("1e1750"))) + " 无限点数"
-    document.getElementById("eterc9completed").textContent = "Completed "+ECTimesCompleted("eterc9")+" times."
+    document.getElementById("eterc9completed").textContent = "已完成 "+ECTimesCompleted("eterc9")+" 次."
 
     document.getElementById("eterc10goal").textContent = "目标: "+shortenCosts(new Decimal("1e3000").times(new Decimal("1e300").pow(ECTimesCompleted("eterc10"))).max(new Decimal("1e3000"))) + " 无限点数"
-    document.getElementById("eterc10completed").textContent = "Completed "+ECTimesCompleted("eterc10")+" times."
+    document.getElementById("eterc10completed").textContent = "已完成 "+ECTimesCompleted("eterc10")+" 次."
 
     document.getElementById("eterc11goal").textContent = "目标: "+shortenCosts(new Decimal("1e500").times(new Decimal("1e200").pow(ECTimesCompleted("eterc11"))).max(new Decimal("1e500"))) + " 无限点数"
-    document.getElementById("eterc11completed").textContent = "Completed "+ECTimesCompleted("eterc11")+" times."
+    document.getElementById("eterc11completed").textContent = "已完成 "+ECTimesCompleted("eterc11")+" 次."
 
     document.getElementById("eterc12goal").textContent = "目标: "+shortenCosts(new Decimal("1e110000").times(new Decimal("1e12000").pow(ECTimesCompleted("eterc12"))).max(new Decimal("1e110000"))) + " IP in "+(Math.max(10 - ECTimesCompleted("eterc12")*2, 1)/10) + ((ECTimesCompleted("eterc12") === 0) ? " second or less." :" seconds or less." )
-    document.getElementById("eterc12completed").textContent = "Completed "+ECTimesCompleted("eterc12")+" times."
+    document.getElementById("eterc12completed").textContent = "已完成 "+ECTimesCompleted("eterc12")+" 次."
     updateECUnlockButtons()
 
 
@@ -5375,17 +5375,17 @@ function simulateTime(seconds, real) {
         autoBuyerTick();
         if (real) console.log(ticksDone)
     }
-    var popupString = "While you were away"
-    if (player.money.gt(playerStart.money)) popupString+= ",<br> your antimatter increased "+shortenMoney(player.money.log10() - (playerStart.money).log10())+" orders of magnitude"
-    if (player.infinityPower.gt(playerStart.infinityPower)) popupString+= ",<br> infinity power increased "+shortenMoney(player.infinityPower.log10() - (Decimal.max(playerStart.infinityPower, 1)).log10())+" orders of magnitude"
-    if (player.timeShards.gt(playerStart.timeShards)) popupString+= ",<br> time shards increased "+shortenMoney(player.timeShards.log10() - (Decimal.max(playerStart.timeShards, 1)).log10())+" orders of magnitude"
+    var popupString = "在你离开的时候"
+    if (player.money.gt(playerStart.money)) popupString+= ",<br> 你的反物质增加了 "+shortenMoney(player.money.log10() - (playerStart.money).log10())+" 数量级"
+    if (player.infinityPower.gt(playerStart.infinityPower)) popupString+= ",<br> 无限能量增加 "+shortenMoney(player.infinityPower.log10() - (Decimal.max(playerStart.infinityPower, 1)).log10())+" 数量级"
+    if (player.timeShards.gt(playerStart.timeShards)) popupString+= ",<br> 时间碎片增加 "+shortenMoney(player.timeShards.log10() - (Decimal.max(playerStart.timeShards, 1)).log10())+" 数量级"
     if (player.infinitied > playerStart.infinitied || player.eternities > playerStart.eternities) popupString+= ","
     else popupString+= "."
-    if (player.infinitied > playerStart.infinitied) popupString+= "<br>you infinitied "+(player.infinitied-playerStart.infinitied)+" times."
-    if (player.eternities > playerStart.eternities) popupString+= " <br>you eternitied "+(player.eternities-playerStart.eternities)+" times."
+    if (player.infinitied > playerStart.infinitied) popupString+= "<br>你无限了 "+(player.infinitied-playerStart.infinitied)+" 次."
+    if (player.eternities > playerStart.eternities) popupString+= " <br>你永恒了 "+(player.eternities-playerStart.eternities)+" 次."
     if (popupString.length == 20) {
         popupString = popupString.slice(0, -1);
-        popupString+= "... Nothing happened."
+        popupString+= "... 什么都没有发生."
         giveAchievement("While you were away... Nothing happened.")
     }
 
