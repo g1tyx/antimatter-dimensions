@@ -2605,15 +2605,15 @@
                 <button class="storebtn" id="replicantiinterval" onclick="upgradeReplicantiInterval()" style="width:180px; height: 50px; font-size: 10px">时间间隔: 1000ms<br>-> 900 Costs: 1e6969 IP</button>
                 <button class="storebtn" id="replicantimax" onclick="upgradeReplicantiGalaxy()" style="width:180px; height: 50px; font-size: 10px">Max Replicanti galaxies: 0<br>+1 Costs: 1e6969 IP</button>
                 <br>
-                <button class="storebtn" id="replauto1" onclick="toggleReplAuto('chance')" style="width:180px; font-size: 10px; visibility: hidden">Auto: ON</button>
-                <button class="storebtn" id="replauto2" onclick="toggleReplAuto('interval')" style="width:180px; font-size: 10px; visibility: hidden">Auto: ON</button>
-                <button class="storebtn" id="replauto3" onclick="toggleReplAuto('galaxy')" style="width:180px; font-size: 10px; visibility: hidden">Auto: ON</button>
+                <button class="storebtn" id="replauto1" onclick="toggleReplAuto('chance')" style="width:180px; font-size: 10px; visibility: hidden">自动: 开启</button>
+                <button class="storebtn" id="replauto2" onclick="toggleReplAuto('interval')" style="width:180px; font-size: 10px; visibility: hidden">自动: 开启</button>
+                <button class="storebtn" id="replauto3" onclick="toggleReplAuto('galaxy')" style="width:180px; font-size: 10px; visibility: hidden">自动: 开启</button>
                 <br><br><br>
                 <p id="replicantiapprox"></p>
                 <br>
                 <button class="storebtn" id="replicantireset" onclick="replicantiGalaxy()" style="width: 200px; height: 70px; font-size: 12px">Reset replicanti amount, but get a free galaxy</button>
                 <br>
-                <button class="storebtn" id="replicantiresettoggle" onclick="replicantiGalaxyAutoToggle()" style="width: 200px; height: 25px; font-size: 12px; display: none">Auto galaxy OFF</button>
+                <button class="storebtn" id="replicantiresettoggle" onclick="replicantiGalaxyAutoToggle()" style="width: 200px; height: 25px; font-size: 12px; display: none">自动星系关闭</button>
             </div>
             <div id="footercontainer">
                 <table id="footer">
@@ -2636,71 +2636,71 @@
         </div>
     </div>
     <div class="popup" id="update">
-        <div id="updatePopup">The last test.</div>
-        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">Okay</button>
+        <div id="updatePopup">最后一个测试.</div>
+        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">好的</button>
     </div>
     <div class="popup" id="challfail">
-        <div id="failPopup">You failed the challenge, you will now exit it.</div>
-        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">Okay</button>
+        <div id="failPopup">你挑战失败,现在将退出。</div>
+        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">好的</button>
     </div>
     <div class="popup" id="offlineprogress" style="width: 450px; height: 200px;">
-        <div id="offlinePopup" style="height: 150px">You made X antimatter and stuff</div>
-        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">Okay</button>
+        <div id="offlinePopup" style="height: 150px">你制造了X反物质之类的东西</div>
+        <button class="storebtn" style="font-size: 15px" onclick="closeToolTip()" style="display: inline">好的</button>
 	</div>
 	<div class="popup savemenu" id="loadmenu">
 		<button class="closebtn storebtn" onclick="closeToolTip()">&times;</button>
 		<div id="save1">
-			<strong>Save #1: <span class="save_selected">(selected)</span></strong>
+			<strong>存档 #1: <span class="save_selected">(已选择)</span></strong>
 			<span class="save_antimatter"></span>
-			<button class="storebtn" style="font-size: 15px" onclick="change_save(0)" style="display: inline">Load</button>
+			<button class="storebtn" style="font-size: 15px" onclick="change_save(0)" style="display: inline">加载</button>
 		</div>
 		<div id="save2">
-			<strong>Save #2: <span class="save_selected">(selected)</span></strong>
+			<strong>存档 #2: <span class="save_selected">(已选择)</span></strong>
 			<span class="save_antimatter"></span>
-			<button class="storebtn" style="font-size: 15px" onclick="change_save(1)" style="display: inline">Load</button>
+			<button class="storebtn" style="font-size: 15px" onclick="change_save(1)" style="display: inline">加载</button>
 		</div>
 		<div id="save3">
-			<strong>Save #3: <span class="save_selected">(selected)</span></strong>
+			<strong>存档 #3: <span class="save_selected">(已选择)</span></strong>
 			<span class="save_antimatter"></span>
-			<button class="storebtn" style="font-size: 15px" onclick="change_save(2)" style="display: inline">Load</button>
+			<button class="storebtn" style="font-size: 15px" onclick="change_save(2)" style="display: inline">加载</button>
 		</div>
 	</div>
 	<div class="popup savemenu" id="cloudloadconflict">
-		<strong>Your cloud save appears to be older than your local save. Please select which one you would like to keep.</strong>
+		<strong>您的云存储似乎比本地存储更古老。请选择你想保留的那个。</strong>
 		<div id="local">
-			<strong>Save #<span class="save_id"></span> (local):</strong>
-			<span>Infinities: <span class="save_infinities"></span></span>
-			<span>Eternities: <span class="save_eternities"></span></span>
-			<button class="storebtn" style="font-size: 15px" style="display: inline">Load local</button>
+			<strong>存档 #<span class="save_id"></span> (本地):</strong>
+			<span>无限: <span class="save_infinities"></span></span>
+			<span>永恒: <span class="save_eternities"></span></span>
+			<button class="storebtn" style="font-size: 15px" style="display: inline">加载本地</button>
 		</div>
 		<div id="cloud">
-			<strong>Save #<span class="save_id"></span> (cloud):</strong>
-			<span>Infinities: <span class="save_infinities"></span></span>
-			<span>Eternities: <span class="save_eternities"></span></span>
-			<button class="storebtn" style="font-size: 15px" style="display: inline">Load cloud</button>
+			<strong>存档 #<span class="save_id"></span> (云):</strong>
+			<span>无限: <span class="save_infinities"></span></span>
+			<span>永恒: <span class="save_eternities"></span></span>
+			<button class="storebtn" style="font-size: 15px" style="display: inline">加载云存档</button>
 		</div>
 	</div>
 	<div class="popup savemenu" id="cloudsaveconflict">
-		<strong>Your local save appears to be older than your cloud save. Would you like to overwrite the cloud save?</strong>
+		<strong>您的本地存储似乎比您的云存储更古老。您想要覆盖云存储吗?</strong>
 		<div id="local">
-			<strong>Save #<span class="save_id"></span> (local):</strong>
-			<span>Infinities: <span class="save_infinities"></span></span>
-			<span>Eternities: <span class="save_eternities"></span></span>
+			<strong>存档 #<span class="save_id"></span> (本地):</strong>
+			<span>无限: <span class="save_infinities"></span></span>
+			<span>永恒: <span class="save_eternities"></span></span>
 		</div>
 		<div id="cloud">
-			<strong>Save #<span class="save_id"></span> (cloud):</strong>
-			<span>Infinities: <span class="save_infinities"></span></span>
-			<span>Eternities: <span class="save_eternities"></span></span>
+			<strong>存档 #<span class="save_id"></span> (云):</strong>
+			<span>无限: <span class="save_infinities"></span></span>
+			<span>永恒: <span class="save_eternities"></span></span>
 		</div>
 
-		<button class="storebtn yes" style="font-size: 15px" style="display: inline">Yes</button>
-		<button class="storebtn no" style="font-size: 15px" style="display: inline">No</button>
+		<button class="storebtn yes" style="font-size: 15px" style="display: inline">是的</button>
+		<button class="storebtn no" style="font-size: 15px" style="display: inline">取消</button>
     </div>
     <div class="popup savemenu" id="animationoptions">
         <button class="closebtn storebtn" onclick="closeToolTip()">&times;</button>
-		<button id="floatingTextAnimBtn" class="storebtn" onclick="animationOnOff('floatingText')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">ON</button>
-        <button id="bigCrunchAnimBtn" class="storebtn" onclick="animationOnOff('bigCrunch')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">ON</button>
-        <button id="tachyonParticleAnimBtn" class="storebtn" onclick="animationOnOff('tachyonParticles')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">ON</button>
+		<button id="floatingTextAnimBtn" class="storebtn" onclick="animationOnOff('floatingText')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">开启</button>
+        <button id="bigCrunchAnimBtn" class="storebtn" onclick="animationOnOff('bigCrunch')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">开启</button>
+        <button id="tachyonParticleAnimBtn" class="storebtn" onclick="animationOnOff('tachyonParticles')" style="width: 200px; height: 55px; font-size: 15px" style="display: inline">开启</button>
 	</div>
     <div id="TTbuttons" style="display:none;">
         <button class="timetheorembtn" onclick="maxTheorems()" style="margin-left:-276px; width:130px; height: 30px; font-size: 0.75rem; bottom: 77px;">购买最大时间定律</button>
@@ -2711,7 +2711,7 @@
         <button class="timetheorembtn" onclick="buyWithIP()" id="theoremip" style="margin-left: -86px">购买时间定律 <br>成本: 1 IP</button>
         <button class="timetheorembtnlocked" onclick="buyWithEP()" id="theoremep" style="margin-left: 106px">购买时间定律 <br>成本: 1 EP</button>
         <div id="theorembuybackground"></div>
-        <p id="timetheorems" style="position: fixed;">You have 0 Time Theorems.</p>
+        <p id="timetheorems" style="position: fixed;">你有0个时间定理。</p>
         <p id="studytreeloadsavetext" style="position: fixed;">加载:</p>
     </div>
     <div id="progress" style="display:none">
