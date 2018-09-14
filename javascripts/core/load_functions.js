@@ -566,7 +566,7 @@ if (player.version < 5) {
     document.getElementById("eightRow").style.display = "none";
 }
 
-  if (!player.options.hotkeys) document.getElementById("hotkeys").textContent = "Enable hotkeys"
+  if (!player.options.hotkeys) document.getElementById("hotkeys").textContent = "启用快捷键"
   updateAutobuyers();
   setAchieveTooltip();
   updatePriorities();
