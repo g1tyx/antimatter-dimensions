@@ -1811,7 +1811,7 @@ document.getElementById("exportbtn").onclick = function () {
 
     try {
         if (document.execCommand('copy')) {
-            $.notify("exported to clipboard", "info");
+            $.notify("已导出到剪贴板", "info");
             output.blur();
         }
     } catch(ex) {
@@ -1892,7 +1892,7 @@ document.getElementById("importbtn").onclick = function () {
         if(verify_save(save_data)) document.getElementById("reset").click();
         forceHardReset = false
         if (!save_data || !verify_save(save_data)) {
-            alert('could not load the save..');
+            alert('不能加载此存档..');
             load_custom_game();
             return;
 		}
@@ -4340,7 +4340,7 @@ function updateInfPower() {
     document.getElementById("infPowAmount").textContent = shortenMoney(player.infinityPower)
     if (player.currentEternityChall == "eterc9") document.getElementById("infDimMultAmount").textContent = shortenMoney((Decimal.pow(Math.max(player.infinityPower.log2(), 1), 4)).max(1))
     else document.getElementById("infDimMultAmount").textContent = shortenMoney(player.infinityPower.pow(7))
-    if (player.currentEternityChall == "eterc7") document.getElementById("infPowPerSec").textContent = "You are getting " +shortenDimensions(DimensionProduction(1))+" Seventh Dimensions per second."
+    if (player.currentEternityChall == "eterc7") document.getElementById("infPowPerSec").textContent = "你每秒获得了 " +shortenDimensions(DimensionProduction(1))+" 第七维度."
     else document.getElementById("infPowPerSec").textContent = "你每秒获得 " +shortenDimensions(DimensionProduction(1))+" 无限力量。"
 }
 
@@ -4348,7 +4348,7 @@ function updateTimeShards() {
     if (document.getElementById("timedimensions").style.display == "block" && document.getElementById("dimensions").style.display == "block") {
         document.getElementById("timeShardAmount").textContent = shortenMoney(player.timeShards)
         document.getElementById("tickThreshold").textContent = shortenMoney(player.tickThreshold)
-        if (player.currentEternityChall == "eterc7") document.getElementById("timeShardsPerSec").textContent = "You are getting "+shortenDimensions(getTimeDimensionProduction(1))+" Eighth Infinity Dimensions per second."
+        if (player.currentEternityChall == "eterc7") document.getElementById("timeShardsPerSec").textContent = "你每秒获得了 "+shortenDimensions(getTimeDimensionProduction(1))+" 第八维度."
         else document.getElementById("timeShardsPerSec").textContent = "你每秒获得 "+shortenDimensions(getTimeDimensionProduction(1))+" 时间碎片。"
     }
 }
@@ -5834,7 +5834,7 @@ window.addEventListener('keydown', function(event) {
     if (event.keyCode == 17) controlDown = true;
     if (event.keyCode == 16) {
         shiftDown = true;
-        document.getElementById("studytreeloadsavetext").textContent = "save:"
+        document.getElementById("studytreeloadsavetext").textContent = "保存:"
         drawStudyTree()
     }
     if ((controlDown && shiftDown && (event.keyCode == 67 || event.keyCode == 73 || event.keyCode == 74)) || event.keyCode == 123) {
@@ -5846,7 +5846,7 @@ window.addEventListener('keyup', function(event) {
     if (event.keyCode == 17) controlDown = false;
     if (event.keyCode == 16) {
         shiftDown = false;
-        document.getElementById("studytreeloadsavetext").textContent = "load:"
+        document.getElementById("studytreeloadsavetext").textContent = "加载:"
         drawStudyTree()
     }
 }, false);
@@ -5854,7 +5854,7 @@ window.addEventListener('keyup', function(event) {
 window.onfocus = function() {
     controlDown = false;
     shiftDown = false;
-    document.getElementById("studytreeloadsavetext").textContent = "load:"
+    document.getElementById("studytreeloadsavetext").textContent = "加载:"
     drawStudyTree()
 }
 

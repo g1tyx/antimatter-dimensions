@@ -230,7 +230,7 @@ if (player.infinitied > 0 && !player.challenges.includes("challenge1")) player.c
   if (player.seventhAmount !== 0|| player.eternities >= 30)
   if (player.resets > 3 && player.currentChallenge !== "challenge4") document.getElementById("eightRow").style.display = "table-row";
 
-  document.getElementById("totaltickgained").textContent = "You've gained "+shortenDimensions(player.totalTickGained)+" tickspeed upgrades."
+  document.getElementById("totaltickgained").textContent = "你获得了  "+shortenDimensions(player.totalTickGained)+" 时刻速度升级."
 
   var IPminpeak = new Decimal(0)
   var EPminpeak = new Decimal(0)
