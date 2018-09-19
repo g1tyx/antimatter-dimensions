@@ -397,9 +397,9 @@ function importStudyTree(input) {
 function studyTreeSaveButton(num) {
     if (shiftDown) {
         localStorage.setItem("studyTree"+num, player.timestudy.studies + "|" + player.eternityChallUnlocked);
-        $.notify("Study tree "+num+" saved", "info")
+        $.notify("升级树 "+num+" 已保存", "info")
     } else if (localStorage.getItem("studyTree"+num) !== null && localStorage.getItem("studyTree"+num) !== "|0") {
         importStudyTree(localStorage.getItem("studyTree"+num));
-        $.notify("Study tree "+num+" loaded", "info")
+        $.notify("升级树 "+num+" 已加载", "info")
     }
 }

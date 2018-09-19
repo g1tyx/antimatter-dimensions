@@ -38,7 +38,7 @@ var playFabId = -1
 function playFabLoginCallback(data, error) {
   if (error) {
     console.log(error.errorMessage);
-    $.notify("Couldn't log in to PlayFab Cloud. You need to be logged in to Kongregate.", "error")
+    $.notify("登录 PlayFab 云存储失败. 你需要登录 Kongregate.", "error")
     document.getElementById("cloudOptions").style.display = "none"
     document.getElementById("cloud").style.display = "none"
     return;
@@ -46,7 +46,7 @@ function playFabLoginCallback(data, error) {
   if (data) {
     //NOTE: SAVE 'playFabId' to a global variable somewhere, I just declare mine at the start of the playfab stuff. Use this variable to tell if your player is logged in to playfab or not.
     playFabId = data.data.PlayFabId;
-    $.notify("Logged in to PlayFab Cloud", "info")
+    $.notify("已登录 PlayFab 云存储", "info")
 
     if (player.options.cloud) playFabLoadCheck()
     console.log("Logged in to playFab")
@@ -83,7 +83,7 @@ function saveToPlayFabCallback(data, error) {
   }
   if (data) {
     console.log("Game Saved!");
-    $.notify("Game saved to cloud", "info")
+    $.notify("游戏进度已保存到云存储", "info")
     save_game()
     return true;
   }

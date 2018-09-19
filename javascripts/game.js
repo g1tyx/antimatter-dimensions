@@ -5904,7 +5904,7 @@ window.addEventListener('keydown', function(event) {
 
   window.addEventListener('keyup', function(event) {
     if (event.keyCode === 70) {
-        $.notify("Paying respects", "info")
+        $.notify("支付敬意", "info")
         giveAchievement("It pays to have respect")
     }
     if (!player.options.hotkeys || controlDown === true || document.activeElement.type === "text") return false
