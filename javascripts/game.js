@@ -5235,18 +5235,18 @@ function gameLoop(diff) {
         document.getElementById("challengesbtn").style.display = "inline-block";
     }
 
-    document.getElementById("ec1reward").textContent = "奖励: "+shortenMoney(Math.pow(Math.max(player.thisEternity*10, 1), 0.3+(ECTimesCompleted("eterc1")*0.05)))+"x 在所有时间维度 (基于本次永恒的时间)"
-    document.getElementById("ec2reward").textContent = "奖励: 无限能量影响第1无限维度，效果减小, 当前: "+shortenMoney(player.infinityPower.pow(1.5/(700 - ECTimesCompleted("eterc2")*100)).min(new Decimal("1e100")).max(1))+"x"
-    document.getElementById("ec3reward").textContent = "奖励: 增加购买10个维度的乘数, 当前: "+getDimensionPowerMultiplier().toFixed(2)+"x"
-    document.getElementById("ec4reward").textContent = "奖励: 从未耗尽无限点中获得无限维乘乘数, 当前: "+shortenMoney(player.infinityPoints.pow(0.003 + ECTimesCompleted("eterc4")*0.002).min(new Decimal("1e200")))+"x"
-    document.getElementById("ec5reward").textContent = "奖励: 星系成本削减开始从 "+((ECTimesCompleted("eterc5")*5))+" 星系之后."
-    document.getElementById("ec6reward").textContent = "奖励: 进一步减少维度乘数增加成本, 当前: "+player.dimensionMultDecrease.toFixed(1)+"x "
+    document.getElementById("ec1reward").textContent = "奖励: 所有时间维度倍数乘"+shortenMoney(Math.pow(Math.max(player.thisEternity*10, 1), 0.3+(ECTimesCompleted("eterc1")*0.05)))+"x (基于本次永恒的时间)"
+    document.getElementById("ec2reward").textContent = "奖励: 无限力量影响第1无限维度，效果减小, 当前: "+shortenMoney(player.infinityPower.pow(1.5/(700 - ECTimesCompleted("eterc2")*100)).min(new Decimal("1e100")).max(1))+"x"
+    document.getElementById("ec3reward").textContent = "奖励: 增加购买10个维度的倍数, 当前: "+getDimensionPowerMultiplier().toFixed(2)+"x"
+    document.getElementById("ec4reward").textContent = "奖励: 从未分配无限点中获得无限维度倍数, 当前: "+shortenMoney(player.infinityPoints.pow(0.003 + ECTimesCompleted("eterc4")*0.002).min(new Decimal("1e200")))+"x"
+    document.getElementById("ec5reward").textContent = "奖励: 星系成本增长值的大幅增长推迟 "+((ECTimesCompleted("eterc5")*5))+" 个星系。"
+    document.getElementById("ec6reward").textContent = "奖励: 进一步减少维度成本倍数增加值, 当前: "+player.dimensionMultDecrease.toFixed(1)+"x "
     document.getElementById("ec7reward").textContent = "奖励: 第一时间维度产生第八无限维度, 当前: "+shortenMoney(getTimeDimensionProduction(1).pow(ECTimesCompleted("eterc7")*0.2).minus(1).max(0))+" 每秒. "
-    document.getElementById("ec8reward").textContent = "奖励: 无限的能量为复制星系提供能量, 当前: " + (Math.max(Math.pow(Math.log10(player.infinityPower.plus(1).log10()+1), 0.03 * ECTimesCompleted("eterc8"))-1, 0) * 100).toFixed(2) + "%"
-    document.getElementById("ec9reward").textContent = "奖励: 基于时间碎片的无限维数倍率， 当前: "+shortenMoney(player.timeShards.pow(ECTimesCompleted("eterc9")*0.1).min(new Decimal("1e400")))+"x "
-    document.getElementById("ec10reward").textContent = "奖励: 时间维度从无限属性中获得一个乘数, 当前: "+shortenMoney(new Decimal(Math.max(Math.pow(getInfinitied(), 0.9) * ECTimesCompleted("eterc10") * 0.000002+1, 1)).pow((player.timestudy.studies.includes(31)) ? 4 : 1))+"x "
-    document.getElementById("ec11reward").textContent = "奖励: 进一步减少tickspeed乘数增加成本, 当前: "+player.tickSpeedMultDecrease.toFixed(2)+"x "
-    document.getElementById("ec12reward").textContent = "奖励: 无限维成本乘数降低. (x^"+(1-ECTimesCompleted("eterc12")*0.008)+")"
+    document.getElementById("ec8reward").textContent = "奖励: 无限力量增强复制星系, 当前: " + (Math.max(Math.pow(Math.log10(player.infinityPower.plus(1).log10()+1), 0.03 * ECTimesCompleted("eterc8"))-1, 0) * 100).toFixed(2) + "%"
+    document.getElementById("ec9reward").textContent = "奖励: 基于时间碎片给无限维数提供倍数， 当前: "+shortenMoney(player.timeShards.pow(ECTimesCompleted("eterc9")*0.1).min(new Decimal("1e400")))+"x "
+    document.getElementById("ec10reward").textContent = "奖励: 时间维度从无限次数中获得一个倍数, 当前: "+shortenMoney(new Decimal(Math.max(Math.pow(getInfinitied(), 0.9) * ECTimesCompleted("eterc10") * 0.000002+1, 1)).pow((player.timestudy.studies.includes(31)) ? 4 : 1))+"x "
+    document.getElementById("ec11reward").textContent = "奖励: 进一步减少时间间隔升级的成本倍数增加值, 当前: "+player.tickSpeedMultDecrease.toFixed(2)+"x "
+    document.getElementById("ec12reward").textContent = "奖励: 减少无限维度的成本倍数增加值。 (x^"+(1-ECTimesCompleted("eterc12")*0.008)+")"
 
     // let extraGals = 0
     // if (player.timestudy.studies.includes(225)) extraGals += Math.floor(player.replicanti.amount.e / 2500)
