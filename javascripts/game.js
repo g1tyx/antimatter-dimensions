@@ -2068,9 +2068,9 @@ function setAchieveTooltip() {
     eatass.setAttribute('ach-tooltip', "拥有 "+shortenCosts(1e100)+" 无限点数且没有到达无限，也没有第一维度。奖励：基于本次无限花费的时间给予无限点数倍数。")
     layer.setAttribute('ach-tooltip', "拥有 "+shortenMoney(Number.MAX_VALUE)+" 永恒点数。")
     fkoff.setAttribute('ach-tooltip', "拥有 "+shortenCosts(new Decimal("1e22000"))+" 无限点数，并没有任何时间研究。奖励：时间维度的倍数乘以你拥有的时间研究的数量。")
-    minaj.setAttribute('ach-tooltip', "Have 180 times more non-bonus replicanti galaxies than normal galaxies. Reward: Replicanti galaxies divide your replicanti by "+shortenMoney(Number.MAX_VALUE)+" instead of resetting them to 1.")
-    infstuff.setAttribute('ach-tooltip', "达到 "+shortenCosts(new Decimal("1e140000"))+" IP without buying IDs or IP multipliers. Reward: You start eternities with all Infinity Challenges unlocked and completed.")
-    when.setAttribute('ach-tooltip', "达到 "+shortenCosts( new Decimal("1e20000"))+" replicanti. Reward: You gain replicanti 2 times faster under "+shortenMoney(Number.MAX_VALUE)+" replicanti.")
+    minaj.setAttribute('ach-tooltip', "复制星系(不包括获取的额外复制星系)数量超过普通星系数量的180倍。奖励：获取一个复制星系时会使复制品数量除以 "+shortenMoney(Number.MAX_VALUE)+" ，而不是将它们重置为1。")
+    infstuff.setAttribute('ach-tooltip', "达到 "+shortenCosts(new Decimal("1e140000"))+" 无限点数，且不购买无限维度、无限点数翻倍。 奖励: 开始永恒时所有无限挑战解锁并完成。")
+    when.setAttribute('ach-tooltip', "拥有 "+shortenCosts( new Decimal("1e20000"))+" 复制品。 奖励：在复制品数量低于 "+shortenMoney(Number.MAX_VALUE)+" 时获取速度翻倍。")
     thinking.setAttribute('ach-tooltip', "Eternity for "+shortenCosts( new Decimal("1e600"))+" EP in 1 minute or less while dilated.")
     thisis.setAttribute('ach-tooltip', "达到 "+shortenCosts(new Decimal('1e20000'))+" IP without any time studies while dilated.")
 }
@@ -4621,7 +4621,7 @@ setInterval(function() {
     }
 
     document.getElementById("infinitiedBank").style.display = (player.infinitiedBank > 0) ? "block" : "none"
-    document.getElementById("infinitiedBank").textContent = "You have " + player.infinitiedBank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " banked infinities."
+    document.getElementById("infinitiedBank").textContent = "你拥有 " + player.infinitiedBank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " 储存无限次数。"
 
     if (infchallengeTimes < 7.5) giveAchievement("Never again")
     if (player.infinityPoints.gte(new Decimal("1e22000")) && player.timestudy.studies.length == 0) giveAchievement("What do I have to do to get rid of you")
