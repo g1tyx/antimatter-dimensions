@@ -507,40 +507,40 @@
             <div class="eternitytab" id="dilation" style="font-size: 11px">
                 <canvas id="dilationCanvas"></canvas>
                 <div>
-                    <p>You have <span id="tachyonParticleAmount" style="font-size:35px; color: black">0</span> tachyon particles.</p>
+                    <p>你拥有 <span id="tachyonParticleAmount" style="font-size:35px; color: black">0</span> 超光速粒子.</p>
                 </div>
-                <button id="enabledilation" class="dilationbtn" onclick="startDilatedEternity()">Dilate time.</button>
-                <p>You have <span id="dilatedTimeAmount" style="font-size:35px; color: black">0</span> dilated time <span id="dilatedTimePerSecond" style="font-size:25px; color: black">0</span></p>
-                <p>Next free galaxy at <span id="galaxyThreshold" style="font-size:25px; color: black">1000</span> dilated time, gained total of <span id="dilatedGalaxies" style="font-size:25px; color: black">0</span></p>
+                <button id="enabledilation" class="dilationbtn" onclick="startDilatedEternity()">膨胀时间.</button>
+                <p>你拥有 <span id="dilatedTimeAmount" style="font-size:35px; color: black">0</span> 膨胀时间 <span id="dilatedTimePerSecond" style="font-size:25px; color: black">0</span></p>
+                <p>下一个免费星系 <span id="galaxyThreshold" style="font-size:25px; color: black">1000</span> 膨胀时间, gained total of <span id="dilatedGalaxies" style="font-size:25px; color: black">0</span></p>
                 <table>
                     <tr>
                         <td>
-                            <button class="timestudy" id="dil1" onclick="buyDilationUpgrade(1)">Double time dilation gain.<br><span id="dil1cost">成本: 1e5 dilated time</span></button>
+                            <button class="timestudy" id="dil1" onclick="buyDilationUpgrade(1)">双倍时膨胀时间增益.<br><span id="dil1cost">成本: 1e5 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil2" onclick="buyDilationUpgrade(2)">Decrease the galaxy threshold multiplier, but resets free galaxies and dilated time.<br><span id="dil2cost">成本: 1e6 dilated time</span></button>
+                            <button class="timestudy" id="dil2" onclick="buyDilationUpgrade(2)">降低星系加成倍数，但重置免费星系和膨胀时间<br><span id="dil2cost">成本: 1e6 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil3" onclick="buyDilationUpgrade(3)">Triple the amount of Tachyon Particles gained.<br><span id="dil3cost">成本: 1e7 dilated time</span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="timestudy" id="dil4" onclick="buyDilationUpgrade(4)">Gain twice as many free galaxies.<br><span id="dil4cost">成本: 5e6 dilated time</span></button>
-                        </td>
-                        <td>
-                            <button class="timestudy" id="dil5" onclick="buyDilationUpgrade(5)">Time Dimensions are affected by replicanti multiplier ^ 0.1.<br><span id="dil5cost">成本: 1e9 dilated time</span></button>
-                        </td>
-                        <td>
-                            <button class="timestudy" id="dil6" onclick="buyDilationUpgrade(6)">Normal dimensions gain a multiplier based on dilated time, unaffected by time dilation.<br><span id="dil6cost">成本: 5e7 dilated time</span></button>
+                            <button class="timestudy" id="dil3" onclick="buyDilationUpgrade(3)">获得的超光速粒子是三倍。<br><span id="dil3cost">成本: 1e7 膨胀时间</span></button>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button class="timestudy" id="dil7" onclick="buyDilationUpgrade(7)">Gain a multiplier to IP based on dilated time.<br><span id="dil7desc"></span><br><span id="dil7cost"></span></button>
+                            <button class="timestudy" id="dil4" onclick="buyDilationUpgrade(4)">Gain twice as many free galaxies.<br><span id="dil4cost">成本: 5e6 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil8" onclick="buyDilationUpgrade(8)">Pick all the study paths from the first split.<br><span id="dil8cost"></span></button>
+                            <button class="timestudy" id="dil5" onclick="buyDilationUpgrade(5)">Time Dimensions are affected by replicanti multiplier ^ 0.1.<br><span id="dil5cost">成本: 1e9 膨胀时间</span></button>
+                        </td>
+                        <td>
+                            <button class="timestudy" id="dil6" onclick="buyDilationUpgrade(6)">Normal dimensions gain a multiplier based on dilated time, unaffected by time dilation.<br><span id="dil6cost">成本: 5e7 膨胀时间</span></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="timestudy" id="dil7" onclick="buyDilationUpgrade(7)">根据膨胀时间获得无限点的倍数。<br><span id="dil7desc"></span><br><span id="dil7cost"></span></button>
+                        </td>
+                        <td>
+                            <button class="timestudy" id="dil8" onclick="buyDilationUpgrade(8)">从第一次拆分中选择所有研究路径。<br><span id="dil8cost"></span></button>
                         </td>
                         <td>
                             <button class="timestudy" id="dil9" onclick="buyDilationUpgrade(9)">Reduce the dilation penalty. (^ 1.05 after reduction)<br><span id="dil9cost"></span></button>
