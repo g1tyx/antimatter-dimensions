@@ -4571,7 +4571,7 @@ setInterval(function() {
     document.getElementById("eterc3goal").textContent = "目标: "+shortenCosts(new Decimal("1e600").times(new Decimal("1e75").pow(ECTimesCompleted("eterc3"))).max(new Decimal("1e575"))) + " 无限点数"
     document.getElementById("eterc3completed").textContent = "已完成 "+ECTimesCompleted("eterc3")+" 次."
 
-    document.getElementById("eterc4goal").textContent = "目标: "+shortenCosts(new Decimal("1e2750").times(new Decimal("1e550").pow(ECTimesCompleted("eterc4"))).max(new Decimal("1e2750"))) + " IP in "+Math.max((16 - (ECTimesCompleted("eterc4")*4)), 0)+" infinities or less."
+    document.getElementById("eterc4goal").textContent = "目标: 在 "+Math.max((16 - (ECTimesCompleted("eterc4")*4)), 0)+" 次无限内获取 "+shortenCosts(new Decimal("1e2750").times(new Decimal("1e550").pow(ECTimesCompleted("eterc4"))).max(new Decimal("1e2750"))) + " 无限点数。"
     document.getElementById("eterc4completed").textContent = "已完成 "+ECTimesCompleted("eterc4")+" 次."
 
     document.getElementById("eterc5goal").textContent = "目标: "+shortenCosts(new Decimal("1e750").times(new Decimal("1e400").pow(ECTimesCompleted("eterc5"))).max(new Decimal("1e750"))) + " 无限点数"
