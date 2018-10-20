@@ -4855,7 +4855,7 @@ function gameLoop(diff) {
     var currentIPmin = gainedInfinityPoints().dividedBy(player.thisInfinityTime/600)
     if (currentIPmin.gt(IPminpeak)) IPminpeak = currentIPmin
     if (IPminpeak.lte("1e100000")) document.getElementById("postInfinityButton").innerHTML = "<b>大坍缩来获得 "+shortenDimensions(gainedInfinityPoints())+" 无限点数。</b><br>"+shortenDimensions(currentIPmin) + " 无限点数/分钟"+"<br>最高值为 "+shortenDimensions(IPminpeak)+" 无限点数/分钟"
-    else document.getElementById("postInfinityButton").innerHTML = "<b>Big Crunch for "+shortenDimensions(gainedInfinityPoints())+" Infinity Points.</b>"
+    else document.getElementById("postInfinityButton").innerHTML = "<b>大坍缩来获取 "+shortenDimensions(gainedInfinityPoints())+" 无限点数。</b>"
 
     if (nextAt[player.postChallUnlocked] === undefined) document.getElementById("nextchall").textContent = " "
     else if (!player.achievements.includes("r133")) {
