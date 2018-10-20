@@ -511,39 +511,39 @@
                 </div>
                 <button id="enabledilation" class="dilationbtn" onclick="startDilatedEternity()">膨胀时间.</button>
                 <p>你拥有 <span id="dilatedTimeAmount" style="font-size:35px; color: black">0</span> 膨胀时间 <span id="dilatedTimePerSecond" style="font-size:25px; color: black">0</span></p>
-                <p>下一个免费星系 <span id="galaxyThreshold" style="font-size:25px; color: black">1000</span> 膨胀时间, gained total of <span id="dilatedGalaxies" style="font-size:25px; color: black">0</span></p>
+                <p>下一个免费星系在 <span id="galaxyThreshold" style="font-size:25px; color: black">1000</span> 膨胀时间, 总共已获取 <span id="dilatedGalaxies" style="font-size:25px; color: black">0</span></p>
                 <table>
                     <tr>
                         <td>
-                            <button class="timestudy" id="dil1" onclick="buyDilationUpgrade(1)">双倍时膨胀时间增益.<br><span id="dil1cost">成本: 1e5 膨胀时间</span></button>
+                            <button class="timestudy" id="dil1" onclick="buyDilationUpgrade(1)">膨胀时间获得翻倍。<br><span id="dil1cost">成本: 1e5 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil2" onclick="buyDilationUpgrade(2)">降低星系加成倍数，但重置免费星系和膨胀时间<br><span id="dil2cost">成本: 1e6 膨胀时间</span></button>
+                            <button class="timestudy" id="dil2" onclick="buyDilationUpgrade(2)">降低免费星系的膨胀时间需求值，但重置免费星系和膨胀时间<br><span id="dil2cost">成本: 1e6 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil3" onclick="buyDilationUpgrade(3)">获得的超光速粒子是三倍。<br><span id="dil3cost">成本: 1e7 膨胀时间</span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="timestudy" id="dil4" onclick="buyDilationUpgrade(4)">Gain twice as many free galaxies.<br><span id="dil4cost">成本: 5e6 膨胀时间</span></button>
-                        </td>
-                        <td>
-                            <button class="timestudy" id="dil5" onclick="buyDilationUpgrade(5)">Time Dimensions are affected by replicanti multiplier ^ 0.1.<br><span id="dil5cost">成本: 1e9 膨胀时间</span></button>
-                        </td>
-                        <td>
-                            <button class="timestudy" id="dil6" onclick="buyDilationUpgrade(6)">Normal dimensions gain a multiplier based on dilated time, unaffected by time dilation.<br><span id="dil6cost">成本: 5e7 膨胀时间</span></button>
+                            <button class="timestudy" id="dil3" onclick="buyDilationUpgrade(3)">超光速粒子获取变为三倍。<br><span id="dil3cost">成本: 1e7 膨胀时间</span></button>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button class="timestudy" id="dil7" onclick="buyDilationUpgrade(7)">根据膨胀时间获得无限点的倍数。<br><span id="dil7desc"></span><br><span id="dil7cost"></span></button>
+                            <button class="timestudy" id="dil4" onclick="buyDilationUpgrade(4)">免费星系的获取翻倍。<br><span id="dil4cost">成本: 5e6 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil8" onclick="buyDilationUpgrade(8)">从第一次拆分中选择所有研究路径。<br><span id="dil8cost"></span></button>
+                            <button class="timestudy" id="dil5" onclick="buyDilationUpgrade(5)">时间维度受到复制品倍数0.1次方的影响。<br><span id="dil5cost">成本: 1e9 膨胀时间</span></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil9" onclick="buyDilationUpgrade(9)">Reduce the dilation penalty. (^ 1.05 after reduction)<br><span id="dil9cost"></span></button>
+                            <button class="timestudy" id="dil6" onclick="buyDilationUpgrade(6)">普通维度基于膨胀时间的数值获得一个倍数，这个倍数不受时间膨胀影响。<br><span id="dil6cost">成本: 5e7 膨胀时间</span></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="timestudy" id="dil7" onclick="buyDilationUpgrade(7)">无限点数基于膨胀时间的数值获取一个倍数。<br><span id="dil7desc"></span><br><span id="dil7cost"></span></button>
+                        </td>
+                        <td>
+                            <button class="timestudy" id="dil8" onclick="buyDilationUpgrade(8)">时间研究的第一条分叉中选择所有研究路径。<br><span id="dil8cost"></span></button>
+                        </td>
+                        <td>
+                            <button class="timestudy" id="dil9" onclick="buyDilationUpgrade(9)">减少时间膨胀的惩罚效果。 (减少后将变为1.05次方)<br><span id="dil9cost"></span></button>
                         </td>
                     </tr>
                     <tr>
@@ -551,7 +551,7 @@
                             <button class="timestudybought" style="opacity: 0;"></button>
                         </td>
                         <td>
-                            <button class="timestudy" id="dil10" onclick="buyDilationUpgrade(10)">Generate time theorems based on tachyon particles.<br><span id="dil10desc"></span><br><span id="dil10cost"></span></button>
+                            <button class="timestudy" id="dil10" onclick="buyDilationUpgrade(10)">基于你拥有的超光速粒子数生产时间定律。<br><span id="dil10desc"></span><br><span id="dil10cost"></span></button>
                         </td>
                         <td>
                             <button class="timestudybought" style="opacity: 0;"></button>
@@ -2032,7 +2032,7 @@
                     <tr>
                         <td>
                             <div class="eterchallengediv" id="eterc9div" style="height: 140px; display: none">
-                                <span>你不能买tickspeed升级。无限力量代替了时间维度，大大降低了效果。</span>
+                                <span>你不能买减少时间间隔升级。无限力量加强时间维度，但是效果大大。</span>
                                 <br>
                                 <br>
                                 <div class="outer">
@@ -2046,8 +2046,8 @@
                         </td>
                         <td>
                             <div class="eterchallengediv" id="eterc10div" style="height: 140px; display: none">
-                                <span>时间维度和无限维度被禁用，你从无限状态获得巨大的提升到正常维度<br>
-                                    (无限^1000) 当前: <span id="ec10span">xX</span>
+                                <span>时间维度和无限维度被禁用，你从无限次数获得巨大的加成到正常维度<br>
+                                    (无限次数^1000) 当前: <span id="ec10span">xX</span>
                                 </span>
                                 <br>
                                 <br>
@@ -2064,7 +2064,7 @@
                     <tr>
                         <td>
                             <div class="eterchallengediv" id="eterc11div" style="height: 140px; display: none">
-                                <span>除了从无限能量和维数提升（到正常维度）的乘数外，所有维度倍增器都是禁用的。</span>
+                                <span>除了从无限能量和维数提升（到普通维度）所获取的倍数外，禁用所有购买维度时获取的倍数。</span>
                                 <br>
                                 <br>
                                 <div class="outer">
@@ -2078,7 +2078,7 @@
                         </td>
                         <td>
                             <div class="eterchallengediv" id="eterc12div" style="height: 140px; display: none">
-                                <span>The game runs 1000x slower.</span>
+                                <span>游戏运行速度减少1000倍。</span>
                                 <br>
                                 <br>
                                 <div class="outer">

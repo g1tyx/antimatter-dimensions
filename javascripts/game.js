@@ -656,7 +656,7 @@ function updateDimensions() {
             document.getElementById("postinfi13").innerHTML = "根据你最快到达无限的时间生产无限次数<br>每 "+timeDisplay(player.bestInfinityTime*5)+ "获得一点 <br>花费: "+shortenCosts(20e6)+" 无限点数"
             document.getElementById("postinfi23").innerHTML = "可以选择批量购买维度提升 <br>花费: "+shortenCosts(5e9)+" 无限点数"
             document.getElementById("postinfi33").innerHTML = "自动购买速度翻倍 <br>花费:"+shortenCosts(1e15)+" 无限点数"
-            if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "Dimension cost multiplier increase <br>"+player.dimensionMultDecrease.toFixed(1)+"x"
+            if (player.dimensionMultDecrease <= 3) document.getElementById("postinfi42").innerHTML = "维度的成本倍数增加值 <br>"+player.dimensionMultDecrease.toFixed(1)+"x"
 
             document.getElementById("offlineProd").innerHTML = "自动生产你过去10次无限中，最高的无限点数/分钟的 "+player.offlineProd+"% > "+Math.max(Math.max(5, player.offlineProd + 5), Math.min(50, player.offlineProd + 5))+"% ,离线后仍然生效<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +"无限点数/分钟<br> 花费: "+shortenCosts(player.offlineProdCost)+" 无限点数"
             if (player.offlineProd == 50) document.getElementById("offlineProd").innerHTML = "自动生产你过去10次无限中，最高的无限点数/分钟的 "+player.offlineProd+"%，离线后仍然生效。<br>当前: "+shortenMoney(bestRunIppm.times(player.offlineProd/100)) +" 无限点数/分钟"
@@ -675,12 +675,12 @@ function updateDimensions() {
     if (document.getElementById("dilation").style.display == "block") {
         if (player.dilation.active) {
             if (Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles <= 0) {
-                document.getElementById("enabledilation").innerHTML = "禁用扩张.<br>Reach " + shortenMoney(Decimal.pow(10, Math.pow(player.dilation.tachyonParticles * Math.pow(400, 1.5) / Math.pow(3, player.dilation.rebuyables[3]), 2/3))) + " 反物质获得更多的Tachyon粒子."
+                document.getElementById("enabledilation").innerHTML = "禁用膨胀.<br>拥有 " + shortenMoney(Decimal.pow(10, Math.pow(player.dilation.tachyonParticles * Math.pow(400, 1.5) / Math.pow(3, player.dilation.rebuyables[3]), 2/3))) + " 反物质获得更多的超光速粒子."
             } else {
-                document.getElementById("enabledilation").textContent = "禁用扩张."
+                document.getElementById("enabledilation").textContent = "禁用膨胀."
             }
         }
-        else document.getElementById("enabledilation").textContent = "扩张时间."
+        else document.getElementById("enabledilation").textContent = "时间膨胀."
     }
 }
 
@@ -2071,8 +2071,8 @@ function setAchieveTooltip() {
     minaj.setAttribute('ach-tooltip', "复制星系(不包括获取的额外复制星系)数量超过普通星系数量的180倍。奖励：获取一个复制星系时会使复制品数量除以 "+shortenMoney(Number.MAX_VALUE)+" ，而不是将它们重置为1。")
     infstuff.setAttribute('ach-tooltip', "达到 "+shortenCosts(new Decimal("1e140000"))+" 无限点数，且不购买无限维度、无限点数翻倍。 奖励: 开始永恒时所有无限挑战解锁并完成。")
     when.setAttribute('ach-tooltip', "拥有 "+shortenCosts( new Decimal("1e20000"))+" 复制品。 奖励：在复制品数量低于 "+shortenMoney(Number.MAX_VALUE)+" 时获取速度翻倍。")
-    thinking.setAttribute('ach-tooltip', "Eternity for "+shortenCosts( new Decimal("1e600"))+" EP in 1 minute or less while dilated.")
-    thisis.setAttribute('ach-tooltip', "达到 "+shortenCosts(new Decimal('1e20000'))+" IP without any time studies while dilated.")
+    thinking.setAttribute('ach-tooltip', "在时间膨胀中1分钟内永恒，并获取 "+shortenCosts( new Decimal("1e600"))+" 永恒点数。")
+    thisis.setAttribute('ach-tooltip', "在一次时间膨胀中没有时间研究，并获取 "+shortenCosts(new Decimal('1e20000'))+" 无限点数。")
 }
 
 document.getElementById("notation").onclick = function () {
@@ -4212,7 +4212,7 @@ function startDilatedEternity() {
         }, 250)
         return
     }
-    if (!confirm("Dilating time will start a new eternity, and all of your Dimension/Infinity Dimension/Time Dimension multiplier's exponents and tickspeed multiplier's exponent will be reduced to ^ 0.75. If you can eternity while dilated, you'll be rewarded with tachyon particles based on your antimatter and tachyon particles.")) {
+    if (!confirm("时间膨胀后将开启一个新的永恒，并且你所有的维度/无限维度/时间维度的倍数的指数，以及减少时间升级的倍数将减少为0.75次方。如果你能在时间膨胀时永恒，你将基于你的反物质以及超光速粒子来获取超光速粒子的奖励。")) {
         setTimeout(function() {
             gameLoopIntervalId = setInterval(gameLoop, player.options.updateRate);
         }, 250)
@@ -4302,21 +4302,21 @@ function updateDilationUpgradeButtons() {
             document.getElementById("dil"+i).className = ( DIL_UPG_COSTS[i] > player.dilation.dilatedTime ) ? "dilationupglocked" : "dilationupg";
         }
     }
-    document.getElementById("dil7desc").textContent = "Currently: "+shortenMoney(player.dilation.dilatedTime.pow(1000).max(1))+"x"
-    document.getElementById("dil10desc").textContent = "Currently: "+shortenMoney(Math.floor(player.dilation.tachyonParticles.div(20000).max(1)))+"/s"
+    document.getElementById("dil7desc").textContent = "当前: "+shortenMoney(player.dilation.dilatedTime.pow(1000).max(1))+"x"
+    document.getElementById("dil10desc").textContent = "当前: "+shortenMoney(Math.floor(player.dilation.tachyonParticles.div(20000).max(1)))+"/秒"
 }
 
 function updateDilationUpgradeCosts() {
-    document.getElementById("dil1cost").textContent = "Cost: " + shortenCosts( new Decimal(DIL_UPG_COSTS[1][0]).times(Decimal.pow(DIL_UPG_COSTS[1][1],(player.dilation.rebuyables[1]))) ) + " dilated time"
-    document.getElementById("dil2cost").textContent = "Cost: " + shortenCosts( new Decimal(DIL_UPG_COSTS[2][0]).times(Decimal.pow(DIL_UPG_COSTS[2][1],(player.dilation.rebuyables[2]))) ) + " dilated time"
-    document.getElementById("dil3cost").textContent = "Cost: " + formatValue(player.options.notation, new Decimal(DIL_UPG_COSTS[3][0]).times(Decimal.pow(DIL_UPG_COSTS[3][1],(player.dilation.rebuyables[3]))), 1, 1) + " dilated time"
-    document.getElementById("dil4cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[4]) + " dilated time"
-    document.getElementById("dil5cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[5]) + " dilated time"
-    document.getElementById("dil6cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[6]) + " dilated time"
-    document.getElementById("dil7cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[7]) + " dilated time"
-    document.getElementById("dil8cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[8]) + " dilated time"
-    document.getElementById("dil9cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[9]) + " dilated time"
-    document.getElementById("dil10cost").textContent = "Cost: " + shortenCosts(DIL_UPG_COSTS[10]) + " dilated time"
+    document.getElementById("dil1cost").textContent = "成本: " + shortenCosts( new Decimal(DIL_UPG_COSTS[1][0]).times(Decimal.pow(DIL_UPG_COSTS[1][1],(player.dilation.rebuyables[1]))) ) + " 膨胀时间"
+    document.getElementById("dil2cost").textContent = "成本: " + shortenCosts( new Decimal(DIL_UPG_COSTS[2][0]).times(Decimal.pow(DIL_UPG_COSTS[2][1],(player.dilation.rebuyables[2]))) ) + " 膨胀时间"
+    document.getElementById("dil3cost").textContent = "成本: " + formatValue(player.options.notation, new Decimal(DIL_UPG_COSTS[3][0]).times(Decimal.pow(DIL_UPG_COSTS[3][1],(player.dilation.rebuyables[3]))), 1, 1) + " 膨胀时间"
+    document.getElementById("dil4cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[4]) + " 膨胀时间"
+    document.getElementById("dil5cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[5]) + " 膨胀时间"
+    document.getElementById("dil6cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[6]) + " 膨胀时间"
+    document.getElementById("dil7cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[7]) + " 膨胀时间"
+    document.getElementById("dil8cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[8]) + " 膨胀时间"
+    document.getElementById("dil9cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[9]) + " 膨胀时间"
+    document.getElementById("dil10cost").textContent = "成本: " + shortenCosts(DIL_UPG_COSTS[10]) + " 膨胀时间"
 }
 
 
@@ -4357,7 +4357,7 @@ function updateDilation() {
     if (document.getElementById("dilation").style.display == "block" && document.getElementById("eternitystore").style.display == "block") {
         document.getElementById("tachyonParticleAmount").textContent = shortenMoney(player.dilation.tachyonParticles)
         document.getElementById("dilatedTimeAmount").textContent = shortenMoney(player.dilation.dilatedTime)
-        document.getElementById("dilatedTimePerSecond").textContent = "+" + shortenMoney(player.dilation.tachyonParticles.times(Decimal.pow(2, player.dilation.rebuyables[1]))) + "/s"
+        document.getElementById("dilatedTimePerSecond").textContent = "+" + shortenMoney(player.dilation.tachyonParticles.times(Decimal.pow(2, player.dilation.rebuyables[1]))) + "/秒"
         document.getElementById("galaxyThreshold").textContent = shortenMoney(player.dilation.nextThreshold)
         document.getElementById("dilatedGalaxies").textContent = player.dilation.freeGalaxies
     }
@@ -4595,7 +4595,7 @@ setInterval(function() {
     document.getElementById("eterc11goal").textContent = "目标: "+shortenCosts(new Decimal("1e500").times(new Decimal("1e200").pow(ECTimesCompleted("eterc11"))).max(new Decimal("1e500"))) + " 无限点数"
     document.getElementById("eterc11completed").textContent = "已完成 "+ECTimesCompleted("eterc11")+" 次."
 
-    document.getElementById("eterc12goal").textContent = "目标: "+shortenCosts(new Decimal("1e110000").times(new Decimal("1e12000").pow(ECTimesCompleted("eterc12"))).max(new Decimal("1e110000"))) + " IP in "+(Math.max(10 - ECTimesCompleted("eterc12")*2, 1)/10) + ((ECTimesCompleted("eterc12") === 0) ? " second or less." :" seconds or less." )
+    document.getElementById("eterc12goal").textContent = "目标: "+(Math.max(10 - ECTimesCompleted("eterc12")*2, 1)/10) + "秒内获取" +shortenCosts(new Decimal("1e110000").times(new Decimal("1e12000").pow(ECTimesCompleted("eterc12"))).max(new Decimal("1e110000"))) + "无限点数。"
     document.getElementById("eterc12completed").textContent = "已完成 "+ECTimesCompleted("eterc12")+" 次."
     updateECUnlockButtons()
 
@@ -5363,7 +5363,7 @@ function simulateTime(seconds, real) {
     }
     var popupString = "在你离开的时候"
     if (player.money.gt(playerStart.money)) popupString+= ",<br> 你的反物质增加了 "+shortenMoney(player.money.log10() - (playerStart.money).log10())+" 数量级"
-    if (player.infinityPower.gt(playerStart.infinityPower)) popupString+= ",<br> 无限能量增加 "+shortenMoney(player.infinityPower.log10() - (Decimal.max(playerStart.infinityPower, 1)).log10())+" 数量级"
+    if (player.infinityPower.gt(playerStart.infinityPower)) popupString+= ",<br> 无限力量增加 "+shortenMoney(player.infinityPower.log10() - (Decimal.max(playerStart.infinityPower, 1)).log10())+" 数量级"
     if (player.timeShards.gt(playerStart.timeShards)) popupString+= ",<br> 时间碎片增加 "+shortenMoney(player.timeShards.log10() - (Decimal.max(playerStart.timeShards, 1)).log10())+" 数量级"
     if (player.infinitied > playerStart.infinitied || player.eternities > playerStart.eternities) popupString+= ","
     else popupString+= "."
