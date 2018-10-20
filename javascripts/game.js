@@ -4950,8 +4950,8 @@ function gameLoop(diff) {
     if (currentEPmin.gt(EPminpeak) && player.infinityPoints.gte(Number.MAX_VALUE)) EPminpeak = currentEPmin
     document.getElementById("eternitybtn").innerHTML = (player.eternities == 0) ? "其他的时间在等待着.. 我需要永恒" : "<b>我需要永恒。</b><br>"+"获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+shortenDimensions(currentEPmin)+ " 永恒点数/分钟<br>最高值为 "+shortenDimensions(EPminpeak)+" 永恒点数/分钟"
     if (gainedEternityPoints().gte(1e6)) document.getElementById("eternitybtn").innerHTML = "获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+shortenDimensions(currentEPmin)+ " 永恒点数/分钟<br>最高值为 "+shortenDimensions(EPminpeak)+" 永恒点数/分钟"
-    if (player.dilation.active) document.getElementById("eternitybtn").innerHTML = "获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+"+"+shortenMoney(Math.round(Math.max(Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles, 0) * 10)/10) +" Tachyon particles."
-    if (player.currentEternityChall !== "") document.getElementById("eternitybtn").textContent = "Other challenges await.. I need to become Eternal"
+    if (player.dilation.active) document.getElementById("eternitybtn").innerHTML = "获得 <b>"+shortenDimensions(gainedEternityPoints())+"</b> 永恒点数。<br>"+"+"+shortenMoney(Math.round(Math.max(Math.pow(Decimal.log10(player.money) / 400, 1.5) * (Math.pow(3, player.dilation.rebuyables[3])) - player.dilation.totalTachyonParticles, 0) * 10)/10) +" 超光速粒子."
+    if (player.currentEternityChall !== "") document.getElementById("eternitybtn").textContent = "其他挑战还在等着我..我需要永恒"
     updateMoney();
     updateCoinPerSec();
     updateDimensions()

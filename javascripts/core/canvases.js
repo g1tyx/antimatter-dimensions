@@ -35,8 +35,8 @@ function animationOnOff(name) {
     if (player.options.animations[name]) player.options.animations[name] = false;
     else player.options.animations[name] = true;
     if (name == "floatingText") document.getElementById("floatingTextAnimBtn").textContent = "浮动文本: " + ((player.options.animations.floatingText) ? "开启" : "关闭")
-    else if (name == "bigCrunch") document.getElementById("bigCrunchAnimBtn").textContent = "Big crunch: " + ((player.options.animations.bigCrunch) ? "开启" : "关闭")
-    else if (name == "tachyonParticles") document.getElementById("tachyonParticleAnimBtn").textContent = "Tachyon particles: " + ((player.options.animations.tachyonParticles) ? "ON" : "OFF")
+    else if (name == "bigCrunch") document.getElementById("bigCrunchAnimBtn").textContent = "大坍缩: " + ((player.options.animations.bigCrunch) ? "开启" : "关闭")
+    else if (name == "tachyonParticles") document.getElementById("tachyonParticleAnimBtn").textContent = "超光速粒子: " + ((player.options.animations.tachyonParticles) ? "ON" : "OFF")
     if (player.options.animations[name]) requestAnimationFrame(drawAnimations);
 }
 
