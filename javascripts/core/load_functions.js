@@ -516,6 +516,13 @@ if (player.version < 5) {
         updateAchievements();
     }
   }
+  // If the player's version is 12.2, they'll have seen the earlier popup, so the new one will make sense
+  // (and update player.version to 12.3 itself).
+  // If it's 12.1, though, they probably never loaded the game duing April Fools (e.g., they might be new).
+  // So the popup will make no sense and we just update the version here instead.
+  if (player.version < 12.2) {
+    player.version = 12.3
+  }
 
   // player.version is currently 12.1
   if (player.options.notation == "Default") {

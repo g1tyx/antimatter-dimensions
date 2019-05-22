@@ -1864,9 +1864,8 @@ document.getElementById("importbtn").onclick = function () {
         document.getElementById("body").style.animation = "barrelRoll 5s 1";
         giveAchievement("Do a barrel roll!")
         setTimeout(function(){ document.getElementById("body").style.animation = ""; }, 5000)
-    }
-    if (sha512_256(save_data.replace(/\s/g, '').toUpperCase()) === "857876556a230da15fe1bb6f410ca8dbc9274de47c1a847c2281a7103dd2c274") giveAchievement("So do I");
-    if (sha512_256(save_data) === "de24687ee7ba1acd8f5dc8f71d41a3d4b7f14432fff53a4d4166e7eea48a88c0") {
+    } else if (sha512_256(save_data.replace(/\s/g, '').toUpperCase()) === "857876556a230da15fe1bb6f410ca8dbc9274de47c1a847c2281a7103dd2c274") giveAchievement("So do I");
+    else if (sha512_256(save_data) === "de24687ee7ba1acd8f5dc8f71d41a3d4b7f14432fff53a4d4166e7eea48a88c0") {
         player.options.theme = "S1";
         player.options.secretThemeKey = save_data;
         setTheme(player.options.theme);
@@ -4643,7 +4642,7 @@ setInterval(function() {
     if (player.seventhAmount > 1e12) giveAchievement("Multidimensional");
     if (player.tickspeed.lt(1e-26)) giveAchievement("Faster than a potato");
     if (player.tickspeed.lt(1e-55)) giveAchievement("Faster than a squared potato");
-    if (Math.random() < 0.00001) giveAchievement("Do you feel lucky? Well do ya punk?")
+    if (Math.random() < 0.00001) giveAchievement("Do you feel lucky? Well do ya punk?");
     if ((player.matter.gte(2.586e15) && player.currentChallenge == "postc6") || player.matter.gte(Number.MAX_VALUE)) giveAchievement("It's not called matter dimensions is it?")
 
     document.getElementById("dilationTabbtn").style.display = (player.dilation.studies.includes(1)) ? "inline-block" : "none"
