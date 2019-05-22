@@ -5368,7 +5368,7 @@ function simulateTime(seconds, real) {
     else popupString+= "."
     if (player.infinitied > playerStart.infinitied) popupString+= "<br>你无限了 "+(player.infinitied-playerStart.infinitied)+" 次."
     if (player.eternities > playerStart.eternities) popupString+= " <br>你永恒了 "+(player.eternities-playerStart.eternities)+" 次."
-    if (popupString.length == 20) {
+    if (popupString.length == 8) {
         popupString = popupString.slice(0, -1);
         popupString+= "... 什么都没有发生."
         giveAchievement("While you were away... Nothing happened.")
