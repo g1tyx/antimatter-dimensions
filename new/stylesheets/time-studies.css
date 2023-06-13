@@ -123,7 +123,7 @@
 
 .o-time-study--small {
   width: 12rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
@@ -377,12 +377,16 @@
   color: white;
   background-color: black;
   border-color: white;
+  border-width: 0.3rem;
+  border-style: double;
 }
 
 .o-time-study-light--bought {
   color: black;
   background-color: white;
   border-color: black;
+  border-width: 0.3rem;
+  border-style: double;
 }
 
 .o-time-study-eternity-challenge--bought {
