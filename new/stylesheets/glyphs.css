@@ -37,17 +37,6 @@
   background: var(--color-background);
 }
 
-.l-new-glyph {
-  position: absolute;
-  top: -0.8rem;
-  left: -0.8rem;
-  z-index: 5;
-  color: black;
-  background-color: #ffff00;
-  border-radius: var(--var-border-radius, 0.2rem);
-  padding: 0.2rem;
-}
-
 .l-glyph-info {
   position: absolute;
   right: -0.5rem;
@@ -107,22 +96,6 @@
 
 .l-glyph-sacrifice-options__header {
   margin-bottom: 0.4rem;
-}
-
-.l-glyph-sacrifice-options__help {
-  position: absolute;
-  top: 0;
-  left: calc(100% - 1.8rem);
-  z-index: 2;
-}
-
-.c-glyph-sacrifice-options__help {
-  font-size: 1.2rem;
-  color: var(--color-reality-dark);
-}
-
-.s-base--dark .c-glyph-sacrifice-options__help {
-  color: var(--color-reality-light);
 }
 
 .l-glyph-sacrifice-options__option {
@@ -479,12 +452,6 @@
   background: black;
 }
 
-.l-glyph-auto-pick-options__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .c-glyph-auto-pick-options__option {
   display: flex;
   flex-direction: column;
@@ -600,18 +567,6 @@
   margin-bottom: -0.8rem;
 }
 
-.c-glyph-tooltip__sacrifice {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-.c-glyph-tooltip__sacrifice--touchable {
-  color: var(--color-text-light-blue-gray);
-  border: 0.1rem solid var(--color-text-light-blue-gray);
-  border-radius: var(--var-border-radius, 0.5rem);
-  padding: 0.25rem 1rem;
-}
-
 .l-modal-glyph-selection__row {
   display: flex;
   flex-direction: row;
@@ -686,10 +641,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.l-glyph-set-save__header {
-  margin-top: 1rem;
 }
 
 .c-glyph-single-set-save {

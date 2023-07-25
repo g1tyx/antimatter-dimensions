@@ -2404,6 +2404,41 @@ br {
   line-height: 1rem;
 }
 
+.c-dim-tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.c-dim-tooltip-container .c-dim-purchase-count-tooltip {
+  position: absolute;
+  width: 20rem;
+  top: 50%;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: white;
+  background: black;
+  border: 0.1rem solid var(--color-text);
+  border-radius: var(--var-border-width, 0.5rem);
+  transform: translate(calc(-100% - 1.5rem), -50%);
+  padding: 0.5rem;
+  visibility: hidden;
+}
+
+.c-dim-tooltip-container:hover .c-dim-purchase-count-tooltip {
+  visibility: visible;
+}
+
+.c-dim-tooltip-container .c-dim-purchase-count-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  border-top: 0.5rem solid transparent;
+  border-left: 0.5rem solid var(--color-text);
+  border-bottom: 0.5rem solid transparent;
+  transform: translateY(-50%);
+}
+
 /* #endregion Dimensions */
 
 /* #region Antimatter Dimensions */
@@ -3000,40 +3035,15 @@ br {
   background-image: url("../images/secret achievements.png");
 }
 
-.o-achievement--disabled {
-  background-color: var(--color-pelle--base);
-  border-color: var(--color-bad);
-}
-
-.o-achievement--locked {
-  background-color: #a3a3a3;
-  border-color: var(--color-bad);
-}
-
 .o-achievement--unlocked {
   background-color: #5ac467;
   border-color: #127a20;
-}
-
-.o-achievement--waiting {
-  background-color: #d1d161;
-  border-color: #acac39;
 }
 
 .o-achievement--hidden {
   background-color: #555555;
   background-image: url("../images/achhidden.png");
   border-color: black;
-}
-
-.o-achievement--blink {
-  animation: a-achievement--blink 2s step-start 0s infinite;
-}
-
-@keyframes a-achievement--blink {
-  50% {
-    visibility: hidden;
-  }
 }
 
 .o-achievement:hover .o-achievement__tooltip {
@@ -3201,14 +3211,6 @@ br {
   border-color: #388e3c;
 }
 
-.t-dark-metro .o-achievement--locked {
-  background-color: #9e9e9e;
-}
-
-.t-dark-metro .o-achievement--waiting {
-  background-color: #b9b946;
-  border-color: #7d7d36;
-}
 
 /* #endregion t-dark-metro */
 
@@ -3219,20 +3221,6 @@ br {
 .t-s8 .o-achievement--unlocked {
   background-color: #66bb6a;
   border-color: #43a047;
-}
-
-.t-metro .o-achievement--locked,
-.t-inverted-metro .o-achievement--locked,
-.t-s8 .o-achievement--locked {
-  background-color: #9e9e9e;
-  border-color: var(--color-bad);
-}
-
-.t-metro .o-achievement--waiting,
-.t-inverted-metro .o-achievement--waiting,
-.t-s8 .o-achievement--waiting {
-  background-color: #ffee58;
-  border-color: #757575;
 }
 
 /* #endregion t-metro t-dark-metro t-s8 */
@@ -3246,23 +3234,10 @@ br {
 
 /* #endregion t-s1 */
 
-/* #region t-s2 */
-
-.t-s2 .o-achievement--locked {
-  background-color: rgba(0, 0, 0, 0%);
-}
-
-/* #endregion t-s2 */
-
 /* #region t-s5 */
 
 .t-s5 .o-achievement--unlocked {
   border-color: #bbbbbb;
-}
-
-.t-s5 .o-achievement--locked {
-  background-color: #222222;
-  border-color: #000000;
 }
 
 /* #endregion t-s5 */
@@ -3281,11 +3256,6 @@ br {
 .t-s7 .o-achievement--unlocked {
   background-color: #bbbbbb;
   border-color: #666666;
-}
-
-.t-s7 .o-achievement--locked {
-  background-color: #555555;
-  border-color: #111111;
 }
 
 /* #endregion t-s7 */
@@ -4745,23 +4715,6 @@ properly on certain themes. */
 /* #endregion eternity-tab */
 
 /* #region Eternity Upgrades */
-
-.l-eternity-upgrades-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.l-eternity-upgrades-grid__row {
-  display: flex;
-  flex-direction: row;
-}
-
-.l-eternity-upgrades-grid__cell {
-  margin: 0.5rem 0.8rem;
-}
-
 .o-eternity-upgrade {
   width: 20rem;
   height: 9rem;
@@ -5675,46 +5628,6 @@ properly on certain themes. */
 }
 
 /* #region c-modal-hotkeys */
-
-.c-modal-hotkeys {
-  font-size: 1.25rem;
-}
-
-.l-modal-hotkeys {
-  display: flex;
-  flex-direction: row;
-}
-
-.l-modal-hotkeys__column {
-  display: flex;
-  flex-direction: column;
-  width: 25rem;
-}
-
-.l-modal-hotkeys__column--right {
-  margin-left: 1rem;
-}
-
-.l-modal-hotkeys-row {
-  display: flex;
-  flex-direction: row;
-  line-height: 1.6rem;
-  padding-bottom: 0.3rem;
-}
-
-.c-modal-hotkeys-row__name {
-  text-align: left;
-}
-
-.l-modal-hotkeys-row__name {
-  flex: 1 1 auto;
-}
-
-.c-modal-hotkeys__shift-description {
-  text-align: left;
-  font-size: 1rem;
-}
-
 kbd {
   display: inline-block;
   vertical-align: middle;
@@ -8678,6 +8591,16 @@ kbd {
   background-color: #802222;
 }
 
+.o-requirement-lock {
+  position: absolute;
+  font-size: 5rem;
+  padding: 0.5rem 1.8rem;
+  color: black;
+  opacity: 0.4;
+  user-select: none;
+  pointer-events: none;
+}
+
 .c-reality-upgrade-btn--black-hole-unlock {
   text-shadow: -0.1rem 0.1rem 0.3rem var(--color-reality-light);
   margin: auto;
@@ -8742,11 +8665,6 @@ kbd {
 .t-s1 .c-black-hole-canvas {
   background: black;
   border-radius: var(--var-border-radius, 50%);
-}
-
-.l-black-hole-sliders {
-  width: 55rem;
-  margin: 1rem auto;
 }
 
 .c-perk-tab__header {
@@ -9088,21 +9006,6 @@ input.o-automator-block-input {
   border-bottom: 0.1rem solid black;
 }
 
-.l-help-me {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  z-index: 1;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.9rem;
-  border-radius: var(--var-border-radius, 50%);
-  pointer-events: auto;
-  cursor: pointer;
-}
-
 .l-information {
   top: 3.1rem;
 }
@@ -9382,6 +9285,7 @@ input.o-automator-block-input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--color-text);
 }
 
 .l-pelle-panel-container {
