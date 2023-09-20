@@ -172,6 +172,7 @@ transTaskMgr = {
     },
 }
 
+// it returns TRUE if trans the node won't break the game
 function nodeFilter(node) {
     if(node.classList !== undefined && node.classList.contains("c-automator-split-pane")) return false;
     return node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA";
@@ -219,7 +220,7 @@ function TransSubTextNode(node) {
         //window.beforeTransTime = performance.now();
         observer.disconnect();
         for (let mutation of e) {
-            if (nodeFilter(mutation.target)) continue;
+            if (!nodeFilter(mutation.target)) continue;
 			if (mutation.target.nodeName === "#text") {
                 mutation.target.textContent = cnItem(mutation.target.textContent, mutation.target);
             } else if (!mutation.target.childNodes || mutation.target.childNodes.length == 0) {
