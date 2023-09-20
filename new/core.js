@@ -172,6 +172,11 @@ transTaskMgr = {
     },
 }
 
+function nodeFilter(node) {
+    if(node.classList !== undefined && node.classList.contains("c-automator-split-pane")) return false;
+    return node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA";
+}
+
 function TransSubTextNode(node) {
     if (node.childNodes.length > 0) {
         for (let subnode of node.childNodes) {
@@ -180,12 +185,12 @@ function TransSubTextNode(node) {
                 let cnText = cnItem(text, subnode);
                 cnText !== text && transTaskMgr.addTask(subnode, 'textContent', cnText);
                 //console.log(subnode);
-            } else if (subnode.nodeName !== "SCRIPT" && subnode.nodeName !== "STYLE" && subnode.nodeName !== "TEXTAREA") {
+            } else if (nodeFilter(subnode)) {
                 if (!subnode.childNodes || subnode.childNodes.length == 0) {
                     let text = subnode.innerText;
                     let cnText = cnItem(text, subnode);
                     cnText !== text && transTaskMgr.addTask(subnode, 'innerText', cnText);
-                    //console.log(subnode);
+                    // console.log(subnode);
                 } else {
                     TransSubTextNode(subnode);
                 }
@@ -214,7 +219,7 @@ function TransSubTextNode(node) {
         //window.beforeTransTime = performance.now();
         observer.disconnect();
         for (let mutation of e) {
-            if (mutation.target.nodeName === "SCRIPT"|| mutation.target.nodeName === "STYLE" || mutation.target.nodeName === "TEXTAREA") continue;
+            if (nodeFilter(mutation.target)) continue;
 			if (mutation.target.nodeName === "#text") {
                 mutation.target.textContent = cnItem(mutation.target.textContent, mutation.target);
             } else if (!mutation.target.childNodes || mutation.target.childNodes.length == 0) {
@@ -224,7 +229,7 @@ function TransSubTextNode(node) {
                     if (node.nodeName === "#text") {
                         node.textContent = cnItem(node.textContent, node);
                         //console.log(node);
-                    } else if (node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA") {
+                    } else if (nodeFilter(node)) {
                         if (!node.childNodes || node.childNodes.length == 0) {
 							if (node.innerText)
 								node.innerText = cnItem(node.innerText, node);
