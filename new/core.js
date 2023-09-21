@@ -1,8 +1,8 @@
 /*
 
- @name    : 锅巴汉化 - Web汉化插件
- @author  : 麦子、JAR、小蓝、好阳光的小锅巴
- @version : V0.6.1 - 2019-07-09
+ @name    : 锅巴汉化 - Web汉化插件 - AD 特供版
+ @author  : 麦子、JAR、小蓝、好阳光的小锅巴、rainy
+ @version : V0.6.2 - 2023-09-20
  @website : http://www.g8hh.com
  @idle games : http://www.gityx.com
  @QQ Group : 627141737
@@ -58,11 +58,18 @@ function cnItemByTag(text, itemgroup, node, textori){
 	return null;
 }
 
+function isCodePanel(node) {
+    while(true) {
+        if(node.classList !== undefined && node.classList.contains('c-automator-split-pane')) return true
+        node = node.parentNode
+        if(!node) return false
+    }
+}
+
 //2.采集新词
 //20190320@JAR  rewrite by 麦子
 var cnItem = function (text, node) {
-
-    if (typeof (text) != "string")
+    if (typeof (text) != "string" || isCodePanel(node))
         return text;
 	let textori = text;
     //处理前缀
@@ -172,9 +179,7 @@ transTaskMgr = {
     },
 }
 
-// it returns TRUE if trans the node won't break the game
 function nodeFilter(node) {
-    if(node.classList !== undefined && node.classList.contains("c-automator-split-pane")) return false;
     return node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA";
 }
 
