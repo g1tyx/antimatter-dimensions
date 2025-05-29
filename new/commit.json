@@ -1,1 +1,1 @@
-{"sha":"772ab98ab16c5ad5de91bcc4956012394172291d","message":"Fix minor bugs with exponent notation modal","author":"SpectralFlame"}
+{"sha":"7b29fa1c0771b93a8bf8198ca04886167ecffc0b","message":"attempting to fix pipelines (https://github.com/actions/setup-node/issues/1275)","author":"IvarK"}

@@ -1648,20 +1648,6 @@ br {
   cursor: auto;
 }
 
-.o-primary-btn--dimboost {
-  width: 21rem;
-  height: 4.5rem;
-  position: relative;
-  font-size: 0.9rem;
-}
-
-.o-primary-btn--galaxy {
-  width: 21rem;
-  height: 4.5rem;
-  position: relative;
-  font-size: 0.9rem;
-}
-
 .o-primary-btn--quick-reset {
   width: 20rem;
   height: 7rem;
@@ -2830,9 +2816,8 @@ br {
   background-color: var(--color-base);
   border: 0.1rem var(--color-good);
   border-style: solid;
+  border-top-color: transparent;
   border-radius: var(--var-border-radius, 0.4rem);
-  /* May be removed if it makes things to blurry */
-  transform: translateY(-0.1rem);
 }
 
 /* We need scrollbar-color in this rule as well as identical color specifications in the following two; some
@@ -6558,7 +6543,10 @@ kbd {
 }
 
 .c-enslaved-run-button__icon__sigil {
-  font-size: 12rem;
+  position: absolute;
+  top: -3.7rem;
+  right: -0.2rem;
+  font-size: 14.8rem;
   transform: rotate(45deg);
 }
 
