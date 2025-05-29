@@ -1,8 +1,8 @@
 /*
 
- @name    : 锅巴汉化 - Web汉化插件 - AD 特供版
- @author  : 麦子、JAR、小蓝、好阳光的小锅巴、rainy
- @version : V0.6.2 - 2023-09-20
+ @name    : 锅巴汉化 - Web汉化插件
+ @author  : 麦子、JAR、小蓝、好阳光的小锅巴
+ @version : V0.6.1 - 2019-07-09
  @website : http://www.g8hh.com
  @idle games : http://www.gityx.com
  @QQ Group : 627141737
@@ -58,18 +58,11 @@ function cnItemByTag(text, itemgroup, node, textori){
 	return null;
 }
 
-function isCodePanel(node) {
-    while(true) {
-        if(node.classList !== undefined && node.classList.contains('c-automator-split-pane')) return true
-        node = node.parentNode
-        if(!node) return false
-    }
-}
-
 //2.采集新词
 //20190320@JAR  rewrite by 麦子
 var cnItem = function (text, node) {
-    if (typeof (text) != "string" || isCodePanel(node))
+
+    if (typeof (text) != "string")
         return text;
 	let textori = text;
     //处理前缀
@@ -179,10 +172,6 @@ transTaskMgr = {
     },
 }
 
-function nodeFilter(node) {
-    return node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA";
-}
-
 function TransSubTextNode(node) {
     if (node.childNodes.length > 0) {
         for (let subnode of node.childNodes) {
@@ -191,12 +180,12 @@ function TransSubTextNode(node) {
                 let cnText = cnItem(text, subnode);
                 cnText !== text && transTaskMgr.addTask(subnode, 'textContent', cnText);
                 //console.log(subnode);
-            } else if (nodeFilter(subnode)) {
+            } else if (subnode.nodeName !== "SCRIPT" && subnode.nodeName !== "STYLE" && subnode.nodeName !== "TEXTAREA") {
                 if (!subnode.childNodes || subnode.childNodes.length == 0) {
                     let text = subnode.innerText;
                     let cnText = cnItem(text, subnode);
                     cnText !== text && transTaskMgr.addTask(subnode, 'innerText', cnText);
-                    // console.log(subnode);
+                    //console.log(subnode);
                 } else {
                     TransSubTextNode(subnode);
                 }
@@ -225,7 +214,7 @@ function TransSubTextNode(node) {
         //window.beforeTransTime = performance.now();
         observer.disconnect();
         for (let mutation of e) {
-            if (!nodeFilter(mutation.target)) continue;
+            if (mutation.target.nodeName === "SCRIPT"|| mutation.target.nodeName === "STYLE" || mutation.target.nodeName === "TEXTAREA") continue;
 			if (mutation.target.nodeName === "#text") {
                 mutation.target.textContent = cnItem(mutation.target.textContent, mutation.target);
             } else if (!mutation.target.childNodes || mutation.target.childNodes.length == 0) {
@@ -235,18 +224,18 @@ function TransSubTextNode(node) {
                     if (node.nodeName === "#text") {
                         node.textContent = cnItem(node.textContent, node);
                         //console.log(node);
-                    } else if (nodeFilter(node)) {
+                    } else if (node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE" && node.nodeName !== "TEXTAREA") {
                         if (!node.childNodes || node.childNodes.length == 0) {
 							if (node.innerText)
 								node.innerText = cnItem(node.innerText, node);
                         } else {
                             TransSubTextNode(node);
-                            transTaskMgr.doTask();
                         }
                     }
                 }
             }
         }
+        transTaskMgr.doTask();
         observer.observe(targetNode, observer_config);
         //window.afterTransTime = performance.now();
         //console.log("捕获到页面变化并执行汉化，耗时" + (afterTransTime - beforeTransTime) + "毫秒");
