@@ -37,7 +37,7 @@ export default {
   computed: {
     isDoomed: () => Pelle.isDoomed,
     name() {
-      return `${AntimatterDimension(this.tier).shortDisplayName} Antimatter Dimension`;
+      return `第${this.tier}反物质维度`;
     },
     costDisplay() {
       return this.buyUntil10 ? format(this.until10Cost) : format(this.singleCost);
@@ -49,25 +49,25 @@ export default {
       return this.isShown || this.isUnlocked || this.amount.gt(0);
     },
     boughtTooltip() {
-      if (this.isCapped) return `Nameless prevents the purchase of more than ${format(1)} 8th Antimatter Dimension`;
-      if (this.isContinuumActive) return "Continuum produces all your Antimatter Dimensions";
-      return `Purchased ${quantifyInt("time", this.bought)}`;
+      if (this.isCapped) return `无名氏限制最多购买${format(1)}个第8反物质维度`;
+      if (this.isContinuumActive) return "continuum* 生产所有的反物质维度";
+      return `购买了${this.bought}次`;
     },
     costUnit() {
-      return `${AntimatterDimension(this.tier - 2).shortDisplayName} AD`;
+      return `第${this.tier - 2}反物质维度`;
     },
     buttonPrefix() {
-      if (!this.isUnlocked) return "Locked";
-      if (this.isCapped) return "Shattered by Nameless";
-      if (this.isContinuumActive) return "Continuum: ";
-      return `Buy ${formatInt(this.howManyCanBuy)}`;
+      if (!this.isUnlocked) return "已锁定";
+      if (this.isCapped) return "被无名氏击破";
+      if (this.isContinuumActive) return "Continuum*: ";
+      return `购买${formatInt(this.howManyCanBuy)}个`;
     },
     buttonValue() {
       if (this.isCapped) return "";
       if (this.isContinuumActive) return this.continuumString;
-      const prefix = this.showCostTitle(this.buyUntil10 ? this.until10Cost : this.singleCost) ? "Cost: " : "";
-      const suffix = this.isCostsAD ? this.costUnit : "AM";
-      return `${prefix}${this.costDisplay} ${suffix}`;
+      const prefix = this.showCostTitle(this.buyUntil10 ? this.until10Cost : this.singleCost) ? "花费: " : "";
+      const suffix = this.isCostsAD ? this.costUnit : "反物质";
+      return `${prefix}${this.costDisplay}${suffix}`;
     },
     hasLongText() {
       return this.buttonValue.length > 20;

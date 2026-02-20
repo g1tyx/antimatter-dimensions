@@ -14,57 +14,57 @@ function newsAnimSpd(seconds) {
 export const news = [
   {
     id: "a1",
-    text: "The cookie is a lie.",
+    text: "这块饼干是个谎言。",
   },
   {
     id: "a2",
-    text: "Antimatter ghosts do not exist. Just like matter ghosts. They don't have any matter, for that matter."
+    text: "与物质构成的幽灵一样，反物质幽灵不存在。事实上，它们不含任何物质。"
   },
   {
     id: "a3",
-    text: "Nuclear power plants have been abandoned in favor of antimatter power."
+    text: "如今, 反物质能源取缔了已被废弃的核电站。"
   },
   {
     id: "a4",
-    text: "Antimatter cookies have been confirmed to not exist, whoever claims that, stop."
+    text: "反物质饼干已被证实并不存在，任何声称存在这种东西的人，请立即停止这种说法。"
   },
   {
     id: "a5",
-    text: "Antimatter prices have drastically dropped due to newfound abundance."
+    text: "由于反物质储量激增，其价格大幅下降。"
   },
   {
     id: "a6",
-    text: "In the news today, humans make an antimatter animal sacrifice to the antimatter god."
+    text: "今日新闻：人类向反物质之神献祭反物质动物。"
   },
   {
     id: "a7",
-    text: "You made one antimatter! Whatever that means."
+    text: "你制造出了一个反物质！不管这意味着什么。"
   },
   {
     id: "a8",
-    text: "\"IN THE END, IT DOESN'T ANTIMATTER\" -hevipelle"
+    text: "\"可是结果，并非无济于事。\" -hevipelle"
   },
   {
     id: "a9",
-    text: "None of this matters."
+    text: "这一切都无关紧要。"
   },
   {
     id: "a10",
-    text: "How does it matter if it's antimatter?"
+    text: "即使它是反物质，又有什么关系呢？"
   },
   {
     id: "a11",
-    text: "Scientists confirm that the colour of antimatter is Blurple."
+    text: "科学家们证实了反物质是蓝紫色的。"
   },
   {
     id: "a12",
-    text: "How does NASA organise a party? They planet."
+    text: "NASA是如何组织派对的？行于星上。"
   },
   {
     id: "a13",
     text:
-      `Electrons are now seeing the happy things in life.
-      We're calling these happy electrons 'Positrons.' Wait, that's taken?`
+      `电子现在感受到了生活中的美好。
+      我们把这些快乐的电子称为“正电子”。等等，这个名字已经被用了？`
   },
   {
     id: "a14",

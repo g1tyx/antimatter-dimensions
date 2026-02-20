@@ -1,0 +1,279 @@
+{
+  "constants": {
+    "acv": "成就",
+    "ad": "反物质维度",
+    "am": "反物质",
+    "atb": "自动购买器",
+    "cel3": "无名氏",
+    "db": "维度提升",
+    "di": "维度",
+    "/sec": "/秒",
+    "sec": "秒",
+    "sf": "献祭",
+    "tks": "刻频率",
+    "tksu": "刻升级"
+  },
+  "translation": {
+    "src/components/ui-modes/prestige-header/HeaderCenterContainer.vue": [
+      {
+        "org": "You have",
+        "row": 50,
+        "trans": "你有"
+      },
+      {
+        "org": "antimatter.",
+        "row": 50,
+        "col": 98,
+        "trans": "#_(am)。"
+      },
+      {
+        "org": "You are getting {{ format(antimatterPerSec, 2) }} antimatter per second.",
+        "row": 63,
+        "trans": "你正在生产{{ format(antimatterPerSec, 2) }}#_(am)#_(/sec)"
+      }
+    ],
+    "src/components/ui-modes/HeaderTickspeedInfo.vue": [
+      {
+        "org": "Total Tickspeed: ${format(this.tickspeed, 2, 3)} / sec",
+        "row": 20,
+        "trans": "总#_(tks): ${format(this.tickspeed, 2, 3)}#_(/sec)"
+      },
+      {
+        "org": "Tickspeed upgrades give",
+        "row": 23,
+        "trans": "#_(tks)升级给予所有#_(ad)"
+      },
+      {
+        "org": "${formatX(1.05 + this.galaxyCount * 0.005, 3, 3)} to all ADs",
+        "row": 24,
+        "trans": "${formatX(1.05 + this.galaxyCount * 0.005, 3, 3)}"
+      },
+      {
+        "org": "ADs produce ${formatX(this.mult.reciprocal(), 2, 3)} faster per Tickspeed upgrade",
+        "row": 25,
+        "trans": "每个#_(tksu)让#_(ad)生产速度提高${formatX(this.mult.reciprocal(), 2, 3)}"
+      }
+    ],
+    "src/components/tabs/antimatter-dimensions/ModernAntimatterDimensionsTab.vue": [
+      {
+        "org": "Sacrifice autobuyer is enabled and Achievement 118 is unlocked, so Sacrifice is now fully automated",
+        "row": 39,
+        "trans": "#_(sf)#(atb)已打开，#_(acv)118已经解锁，因此#_(sf)现在已经完全自动化"
+      },
+      {
+        "org": "Boosts 8th Antimatter Dimension by ${formatX(this.sacrificeBoost, 2, 2)}",
+        "row": 41,
+        "trans": "第8#_(ad)生产速度提高${formatX(this.sacrificeBoost, 2, 2)}"
+      },
+      {
+        "org": "Continuum",
+        "row": 72,
+        "col": 43,
+        "trans": "Continuum*"
+      },
+      {
+        "org": "Until 10",
+        "row": 73,
+        "trans": "直到10个才购买"
+      },
+      {
+        "org": "Buy 1",
+        "row": 73,
+        "trans": "购买每个"
+      },
+      {
+        "org": "Buy 10 Dimension purchase multiplier: ${formatX(this.buy10Mult, 2, 2)}",
+        "row": 87,
+        "trans": "每购买10个#_(di)的乘数: ${formatX(this.buy10Mult, 2, 2)}"
+      },
+      {
+        "org": " | Dimensional Sacrifice multiplier: ${formatX(this.currentSacrifice, 2, 2)}",
+        "row": 95,
+        "trans": " | #_(di)#_(sf)乘数: ${formatX(this.currentSacrifice, 2, 2)}"
+      },
+      {
+        "org": "Dimensional Sacrifice ({{ formatX(sacrificeBoost, 2, 2) }})",
+        "row": 119,
+        "trans": "#_(di)#_(sf)({{ formatX(sacrificeBoost, 2, 2) }})"
+      },
+      {
+        "org": "Dimensional Sacrifice is Automated (Achievement 118)",
+        "row": 121,
+        "trans": "#_(di)#_(sf)已自动化(#_(acv)118)"
+      },
+      {
+        "org": "Dimensional Sacrifice Disabled ({{ disabledCondition }})",
+        "row": 123,
+        "trans": "#_(di)#_(sf)已被禁用({{ disabledCondition }})"
+      },
+      {
+        "org": "Max All (M)",
+        "row": 129,
+        "trans": "购买至最大(M)"
+      },
+      {
+        "org": "Perform a Dimension Boost reset",
+        "row": 148,
+        "trans": "进行一次#_(db)重置"
+      },
+      {
+        "org": " but lose a Dimension Boost",
+        "row": 149,
+        "trans": "但失去一次#_(db)"
+      },
+      {
+        "org": " for no gain",
+        "row": 150,
+        "trans": "但不获得任何奖励"
+      }
+    ],
+    "src/components/tabs/antimatter-dimensions/ModernAntimatterDimensionRow.vue": [
+      {
+        "org": "${AntimatterDimension(this.tier).shortDisplayName} Antimatter Dimension",
+        "row": 40,
+        "trans": "第${this.tier}#_(ad)"
+      },
+      {
+        "org": "Nameless prevents the purchase of more than ${format(1)} 8th Antimatter Dimension",
+        "row": 52,
+        "trans": "#_(cel3)限制最多购买${format(1)}个第8#_(ad)"
+      },
+      {
+        "org": "Continuum produces all your Antimatter Dimensions",
+        "row": 53,
+        "trans": "continuum* 生产所有的#_(ad)"
+      },
+      {
+        "org": "Purchased ${quantifyInt(\"time\", this.bought)}",
+        "row": 54,
+        "trans": "购买了${this.bought}次"
+      },
+      {
+        "org": "${AntimatterDimension(this.tier - 2).shortDisplayName} AD",
+        "row": 57,
+        "trans": "第${this.tier - 2}#_(ad)"
+      },
+      {
+        "org": "Locked",
+        "row": 60,
+        "trans": "已锁定"
+      },
+      {
+        "org": "Shattered by Nameless",
+        "row": 61,
+        "trans": "被#_(cel3)击破"
+      },
+      {
+        "org": "Continuum: ",
+        "row": 62,
+        "trans": "Continuum*: "
+      },
+      {
+        "org": "Buy ${formatInt(this.howManyCanBuy)}",
+        "row": 63,
+        "trans": "购买${formatInt(this.howManyCanBuy)}个"
+      },
+      {
+        "org": "Cost: ",
+        "row": 68,
+        "trans": "花费: "
+      },
+      {
+        "org": "AM",
+        "row": 69,
+        "trans": "#_(am)"
+      },
+      {
+        "org": "${prefix}${this.costDisplay} ${suffix}",
+        "row": 70,
+        "trans": "${prefix}${this.costDisplay}${suffix}"
+      }
+    ],
+    "src/core/secret-formula/news.js": [
+      {
+        "org": "The cookie is a lie.",
+        "row": 17,
+        "id": "a1",
+        "trans": "这块饼干是个谎言。"
+      },
+      {
+        "org": "Antimatter ghosts do not exist. Just like matter ghosts. They don't have any matter, for that matter.",
+        "row": 21,
+        "id": "a2",
+        "trans": "与物质构成的幽灵一样，反物质幽灵不存在。事实上，它们不含任何物质。"
+      },
+      {
+        "org": "Nuclear power plants have been abandoned in favor of antimatter power.",
+        "row": 25,
+        "id": "a3",
+        "trans": "如今, 反物质能源取缔了已被废弃的核电站。"
+      },
+      {
+        "org": "Antimatter cookies have been confirmed to not exist, whoever claims that, stop.",
+        "row": 29,
+        "id": "a4",
+        "trans": "反物质饼干已被证实并不存在，任何声称存在这种东西的人，请立即停止这种说法。"
+      },
+      {
+        "org": "Antimatter prices have drastically dropped due to newfound abundance.",
+        "row": 33,
+        "id": "a5",
+        "trans": "由于反物质储量激增，其价格大幅下降。"
+      },
+      {
+        "org": "In the news today, humans make an antimatter animal sacrifice to the antimatter god.",
+        "row": 37,
+        "id": "a6",
+        "trans": "今日新闻：人类向反物质之神献祭反物质动物。"
+      },
+      {
+        "org": "You made one antimatter! Whatever that means.",
+        "row": 41,
+        "id": "a7",
+        "trans": "你制造出了一个反物质！不管这意味着什么。"
+      },
+      {
+        "org": "\\\"IN THE END, IT DOESN'T ANTIMATTER\\\" -hevipelle",
+        "row": 45,
+        "id": "a8",
+        "trans": "\\\"可是结果，并非无济于事。\\\" -hevipelle"
+      },
+      {
+        "org": "None of this matters.",
+        "row": 49,
+        "id": "a9",
+        "trans": "这一切都无关紧要。"
+      },
+      {
+        "org": "How does it matter if it's antimatter?",
+        "row": 53,
+        "id": "a10",
+        "trans": "即使它是反物质，又有什么关系呢？"
+      },
+      {
+        "org": "Scientists confirm that the colour of antimatter is Blurple.",
+        "row": 57,
+        "id": "a11",
+        "trans": "科学家们证实了反物质是蓝紫色的。"
+      },
+      {
+        "org": "How does NASA organise a party? They planet.",
+        "row": 61,
+        "id": "a12",
+        "trans": "NASA是如何组织派对的？行于星上。"
+      },
+      {
+        "org": "Electrons are now seeing the happy things in life.",
+        "row": 66,
+        "id": "a13",
+        "trans": "电子现在感受到了生活中的美好。"
+      },
+      {
+        "org": "We're calling these happy electrons 'Positrons.' Wait, that's taken?",
+        "row": 67,
+        "id": "a13",
+        "trans": "我们把这些快乐的电子称为“正电子”。等等，这个名字已经被用了？"
+      }
+    ]
+  }
+}
